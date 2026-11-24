@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0a3971338e1b7774fa60f5e9eff38cd4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: fx_textures_flare_materials.unity3d
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 286708
+  packageName: RPG Game VFX Collection(Built-in)
+  packageVersion: 1.01
+  assetPath: Assets/GameVFX Collection/FX_Slash01/Textures/Materials/flare02_blue.mat
+  uploadId: 844976

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 4c0463515093c11469cfcda74a37ce07
+timeCreated: 1550565805
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 286708
+  packageName: RPG Game VFX Collection(Built-in)
+  packageVersion: 1.01
+  assetPath: Assets/GameVFX Collection/FX_MagicCircle/Animator/FX_Magic_Circle.anim
+  uploadId: 844976

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e64f5fb47c44b9e4291f7b3528f90819
+timeCreated: 1547119325
+licenseType: Store
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  userData: 
+  assetBundleName: shaders.unity3d
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 286708
+  packageName: RPG Game VFX Collection(Built-in)
+  packageVersion: 1.01
+  assetPath: Assets/GameVFX Collection/FX_Groundexplosion/Shader/ParticleBlend.shader
+  uploadId: 844976

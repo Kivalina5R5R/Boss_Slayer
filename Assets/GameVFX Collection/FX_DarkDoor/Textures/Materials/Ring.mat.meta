@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 5e4676fcdf623f94597f3edca0656b8a
+timeCreated: 1532360647
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 286708
+  packageName: RPG Game VFX Collection(Built-in)
+  packageVersion: 1.01
+  assetPath: Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/Ring.mat
+  uploadId: 844976

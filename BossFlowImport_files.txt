@@ -1,0 +1,2535 @@
+Files added from deepspace on 2026-11-20 (Boss Slayer flow import). Also changed: Packages/manifest.json (+shadergraph, +visualeffectgraph), ProjectSettings/TagManager.asset (layers 8 WallLayer, 9 FloorLayer, 14 BossLayer).
+Assets/Asset.meta
+Assets/Asset/
+Assets/Asset/Cut UI Deepspace.meta
+Assets/Asset/Cut UI Deepspace/
+Assets/Asset/Cut UI Deepspace/Result.meta
+Assets/Asset/Cut UI Deepspace/Result/
+Assets/Asset/Cut UI Deepspace/Result/BG Score Player.png
+Assets/Asset/Cut UI Deepspace/Result/BG Score Player.png.meta
+Assets/Asset/Cut UI Deepspace/Result/BT Exit.png
+Assets/Asset/Cut UI Deepspace/Result/BT Exit.png.meta
+Assets/Asset/Cut UI Deepspace/Result/BT Replay.png
+Assets/Asset/Cut UI Deepspace/Result/BT Replay.png.meta
+Assets/Asset/Cut UI Deepspace/Result/Group 33.png
+Assets/Asset/Cut UI Deepspace/Result/Group 33.png.meta
+Assets/Asset/Cut UI Deepspace/Start.meta
+Assets/Asset/Cut UI Deepspace/Start/
+Assets/Asset/Cut UI Deepspace/Start/Arrow1.png
+Assets/Asset/Cut UI Deepspace/Start/Arrow1.png.meta
+Assets/Asset/Cut UI Deepspace/Start/Arrow2.png
+Assets/Asset/Cut UI Deepspace/Start/Arrow2.png.meta
+Assets/Asset/Cut UI Deepspace/Start/BG.png
+Assets/Asset/Cut UI Deepspace/Start/BG.png.meta
+Assets/Asset/Cut UI Deepspace/Start/BG_Ground.png
+Assets/Asset/Cut UI Deepspace/Start/BG_Ground.png.meta
+Assets/Asset/Cut UI Deepspace/Start/Line BT.png
+Assets/Asset/Cut UI Deepspace/Start/Line BT.png.meta
+Assets/Asset/Cut UI Deepspace/Start/Logo.png
+Assets/Asset/Cut UI Deepspace/Start/Logo.png.meta
+Assets/Asset/Cut UI Deepspace/Start/Start BT.png
+Assets/Asset/Cut UI Deepspace/Start/Start BT.png.meta
+Assets/Asset/UI Theme.meta
+Assets/Asset/UI Theme/
+Assets/Asset/UI Theme/Outline Cinzel Black SDF 0.12 1A1208.mat
+Assets/Asset/UI Theme/Outline Cinzel Black SDF 0.12 1A1208.mat.meta
+Assets/Asset/UI Theme/Outline Cinzel Black SDF 0.18 0B0812.mat
+Assets/Asset/UI Theme/Outline Cinzel Black SDF 0.18 0B0812.mat.meta
+Assets/Asset/UI Theme/Outline Cinzel Black SDF 0.20 1A1208.mat
+Assets/Asset/UI Theme/Outline Cinzel Black SDF 0.20 1A1208.mat.meta
+Assets/Asset/UI Theme/Theme Chamfer Plate.png
+Assets/Asset/UI Theme/Theme Chamfer Plate.png.meta
+Assets/Asset/UI Theme/Theme Chamfer Trim.png
+Assets/Asset/UI Theme/Theme Chamfer Trim.png.meta
+Assets/Asset/UI Theme/Theme Glow.png
+Assets/Asset/UI Theme/Theme Glow.png.meta
+Assets/Asset/UI Theme/Theme Rounded Plate.png
+Assets/Asset/UI Theme/Theme Rounded Plate.png.meta
+Assets/Asset/UI Theme/Theme Rounded Trim.png
+Assets/Asset/UI Theme/Theme Rounded Trim.png.meta
+Assets/BossSlayerSkins.meta
+Assets/BossSlayerSkins/
+Assets/BossSlayerSkins/Animations.meta
+Assets/BossSlayerSkins/Animations/
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@atk_heavy.fbx
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@atk_heavy.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@atk_light.fbx
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@atk_light.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@atk_light_l.fbx
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@atk_light_l.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@blast.fbx
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@blast.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@charge.fbx
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@charge.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@death.fbx
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@death.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@idle.fbx
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@idle.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@intro.fbx
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@intro.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@move_l.fbx
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@move_l.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@move_r.fbx
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@move_r.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@stun.fbx
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@stun.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@transform.fbx
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@transform.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@ultimate.fbx
+Assets/BossSlayerSkins/Animations/Boss_AbyssalKing@ultimate.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@atk_heavy.fbx
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@atk_heavy.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@atk_light.fbx
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@atk_light.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@atk_light_l.fbx
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@atk_light_l.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@death.fbx
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@death.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@escape.fbx
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@escape.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@idle.fbx
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@idle.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@intro.fbx
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@intro.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@move.fbx
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@move.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@stun.fbx
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@stun.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@transform.fbx
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@transform.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@ultimate.fbx
+Assets/BossSlayerSkins/Animations/Boss_CrystalGolem@ultimate.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@atk_heavy.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@atk_heavy.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@atk_light.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@atk_light.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@death.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@death.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@escape.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@escape.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@idle.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@idle.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@intro.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@intro.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@move.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@move.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@stun.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@stun.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@transform.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@transform.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@ultimate.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_RedBoy@ultimate.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@atk_heavy.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@atk_heavy.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@atk_light.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@atk_light.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@death.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@death.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@escape.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@escape.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@idle.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@idle.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@move.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@move.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@roar.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@roar.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@stun.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@stun.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@ultimate.fbx
+Assets/BossSlayerSkins/Animations/Boss_Demon_YakshaKing@ultimate.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Dragon@atk_heavy.fbx
+Assets/BossSlayerSkins/Animations/Boss_Dragon@atk_heavy.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Dragon@atk_light.fbx
+Assets/BossSlayerSkins/Animations/Boss_Dragon@atk_light.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Dragon@death.fbx
+Assets/BossSlayerSkins/Animations/Boss_Dragon@death.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Dragon@escape.fbx
+Assets/BossSlayerSkins/Animations/Boss_Dragon@escape.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Dragon@fire.fbx
+Assets/BossSlayerSkins/Animations/Boss_Dragon@fire.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Dragon@idle.fbx
+Assets/BossSlayerSkins/Animations/Boss_Dragon@idle.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Dragon@intro.fbx
+Assets/BossSlayerSkins/Animations/Boss_Dragon@intro.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Dragon@move.fbx
+Assets/BossSlayerSkins/Animations/Boss_Dragon@move.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Dragon@stun.fbx
+Assets/BossSlayerSkins/Animations/Boss_Dragon@stun.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Dragon@transform.fbx
+Assets/BossSlayerSkins/Animations/Boss_Dragon@transform.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Dragon@ultimate.fbx
+Assets/BossSlayerSkins/Animations/Boss_Dragon@ultimate.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@atk_heavy.fbx
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@atk_heavy.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@atk_light.fbx
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@atk_light.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@death.fbx
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@death.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@escape.fbx
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@escape.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@idle.fbx
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@idle.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@intro.fbx
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@intro.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@move.fbx
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@move.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@stun.fbx
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@stun.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@ultimate.fbx
+Assets/BossSlayerSkins/Animations/Boss_GiantFish@ultimate.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Hydra@atk_heavy.fbx
+Assets/BossSlayerSkins/Animations/Boss_Hydra@atk_heavy.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Hydra@atk_light.fbx
+Assets/BossSlayerSkins/Animations/Boss_Hydra@atk_light.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Hydra@death.fbx
+Assets/BossSlayerSkins/Animations/Boss_Hydra@death.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Hydra@escape.fbx
+Assets/BossSlayerSkins/Animations/Boss_Hydra@escape.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Hydra@idle.fbx
+Assets/BossSlayerSkins/Animations/Boss_Hydra@idle.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Hydra@intro.fbx
+Assets/BossSlayerSkins/Animations/Boss_Hydra@intro.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Hydra@move.fbx
+Assets/BossSlayerSkins/Animations/Boss_Hydra@move.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Hydra@stun.fbx
+Assets/BossSlayerSkins/Animations/Boss_Hydra@stun.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Hydra@ultimate.fbx
+Assets/BossSlayerSkins/Animations/Boss_Hydra@ultimate.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@atk_heavy.fbx
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@atk_heavy.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@atk_light.fbx
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@atk_light.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@death.fbx
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@death.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@escape.fbx
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@escape.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@idle.fbx
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@idle.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@intro.fbx
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@intro.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@move.fbx
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@move.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@shield.fbx
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@shield.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@stun.fbx
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@stun.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@ultimate.fbx
+Assets/BossSlayerSkins/Animations/Boss_Jellyfish@ultimate.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@atk_heavy.fbx
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@atk_heavy.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@atk_light.fbx
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@atk_light.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@death.fbx
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@death.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@escape.fbx
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@escape.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@idle.fbx
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@idle.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@intro.fbx
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@intro.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@move.fbx
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@move.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@stun.fbx
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@stun.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@ultimate.fbx
+Assets/BossSlayerSkins/Animations/Boss_SeaSerpent@ultimate.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@atk_heavy.fbx
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@atk_heavy.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@atk_light.fbx
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@atk_light.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@atk_light_l.fbx
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@atk_light_l.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@death.fbx
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@death.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@escape.fbx
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@escape.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@idle.fbx
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@idle.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@intro.fbx
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@intro.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@move.fbx
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@move.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@stun.fbx
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@stun.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@ultimate.fbx
+Assets/BossSlayerSkins/Animations/Boss_Sentinel@ultimate.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@atk_heavy.fbx
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@atk_heavy.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@atk_light.fbx
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@atk_light.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@death.fbx
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@death.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@escape.fbx
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@escape.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@idle.fbx
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@idle.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@intro.fbx
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@intro.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@mist.fbx
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@mist.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@move.fbx
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@move.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@stun.fbx
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@stun.fbx.meta
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@ultimate.fbx
+Assets/BossSlayerSkins/Animations/Boss_VoidWraith@ultimate.fbx.meta
+Assets/BossSlayerSkins/BossSkinThemeWipe.shader
+Assets/BossSlayerSkins/BossSkinThemeWipe.shader.meta
+Assets/BossSlayerSkins/Boss_AbyssalKing.fbx
+Assets/BossSlayerSkins/Boss_AbyssalKing.fbx.meta
+Assets/BossSlayerSkins/Boss_CrystalGolem.fbx
+Assets/BossSlayerSkins/Boss_CrystalGolem.fbx.meta
+Assets/BossSlayerSkins/Boss_Demon_RedBoy.fbx
+Assets/BossSlayerSkins/Boss_Demon_RedBoy.fbx.meta
+Assets/BossSlayerSkins/Boss_Demon_YakshaKing.fbx
+Assets/BossSlayerSkins/Boss_Demon_YakshaKing.fbx.meta
+Assets/BossSlayerSkins/Boss_Dragon.fbx
+Assets/BossSlayerSkins/Boss_Dragon.fbx.meta
+Assets/BossSlayerSkins/Boss_GiantFish.fbx
+Assets/BossSlayerSkins/Boss_GiantFish.fbx.meta
+Assets/BossSlayerSkins/Boss_Hydra.fbx
+Assets/BossSlayerSkins/Boss_Hydra.fbx.meta
+Assets/BossSlayerSkins/Boss_Jellyfish.fbx
+Assets/BossSlayerSkins/Boss_Jellyfish.fbx.meta
+Assets/BossSlayerSkins/Boss_SeaSerpent.fbx
+Assets/BossSlayerSkins/Boss_SeaSerpent.fbx.meta
+Assets/BossSlayerSkins/Boss_Sentinel.fbx
+Assets/BossSlayerSkins/Boss_Sentinel.fbx.meta
+Assets/BossSlayerSkins/Boss_VoidWraith.fbx
+Assets/BossSlayerSkins/Boss_VoidWraith.fbx.meta
+Assets/BossSlayerSkins/Materials.meta
+Assets/BossSlayerSkins/Materials/
+Assets/BossSlayerSkins/Materials/BossSkinShield.mat
+Assets/BossSlayerSkins/Materials/BossSkinShield.mat.meta
+Assets/BossSlayerSkins/Materials/BossSkinThemeWipe.mat
+Assets/BossSlayerSkins/Materials/BossSkinThemeWipe.mat.meta
+Assets/BossSlayerSkins/Materials/BossVoxelShard.mat
+Assets/BossSlayerSkins/Materials/BossVoxelShard.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_AbyssalKing_Abyss.mat
+Assets/BossSlayerSkins/Materials/Boss_AbyssalKing_Abyss.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_AbyssalKing_Ignite.mat
+Assets/BossSlayerSkins/Materials/Boss_AbyssalKing_Ignite.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_CrystalGolem_Crimson.mat
+Assets/BossSlayerSkins/Materials/Boss_CrystalGolem_Crimson.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_CrystalGolem_Land.mat
+Assets/BossSlayerSkins/Materials/Boss_CrystalGolem_Land.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_Demon_RedBoy_Ember.mat
+Assets/BossSlayerSkins/Materials/Boss_Demon_RedBoy_Ember.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_Demon_RedBoy_Red.mat
+Assets/BossSlayerSkins/Materials/Boss_Demon_RedBoy_Red.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_Demon_YakshaKing_Ember.mat
+Assets/BossSlayerSkins/Materials/Boss_Demon_YakshaKing_Ember.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_Demon_YakshaKing_Lava.mat
+Assets/BossSlayerSkins/Materials/Boss_Demon_YakshaKing_Lava.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_Dragon_Inferno.mat
+Assets/BossSlayerSkins/Materials/Boss_Dragon_Inferno.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_Dragon_Jade.mat
+Assets/BossSlayerSkins/Materials/Boss_Dragon_Jade.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_GiantFish.mat
+Assets/BossSlayerSkins/Materials/Boss_GiantFish.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_Hydra.mat
+Assets/BossSlayerSkins/Materials/Boss_Hydra.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_Jellyfish.mat
+Assets/BossSlayerSkins/Materials/Boss_Jellyfish.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_SeaSerpent.mat
+Assets/BossSlayerSkins/Materials/Boss_SeaSerpent.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_Sentinel.mat
+Assets/BossSlayerSkins/Materials/Boss_Sentinel.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_VoidWraith_Mist.mat
+Assets/BossSlayerSkins/Materials/Boss_VoidWraith_Mist.mat.meta
+Assets/BossSlayerSkins/Materials/Boss_VoidWraith_Void.mat
+Assets/BossSlayerSkins/Materials/Boss_VoidWraith_Void.mat.meta
+Assets/BossSlayerSkins/Textures.meta
+Assets/BossSlayerSkins/Textures/
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_AO.png
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_AO.png.meta
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_Abyss_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_Abyss_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_Abyss_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_Abyss_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_Abyss_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_Abyss_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_Ignite_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_Ignite_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_Ignite_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_Ignite_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_Ignite_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_AbyssalKing_Ignite_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_AO.png
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_AO.png.meta
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_Crimson_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_Crimson_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_Crimson_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_Crimson_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_Crimson_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_Crimson_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_Land_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_Land_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_Land_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_Land_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_Land_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_CrystalGolem_Land_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_AO.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_AO.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_Ember_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_Ember_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_Ember_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_Ember_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_Ember_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_Ember_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_Red_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_Red_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_Red_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_Red_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_Red_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_RedBoy_Red_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_AO.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_AO.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_Ember_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_Ember_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_Ember_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_Ember_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_Ember_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_Ember_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_Lava_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_Lava_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_Lava_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_Lava_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_Lava_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_Demon_YakshaKing_Lava_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Dragon_AO.png
+Assets/BossSlayerSkins/Textures/Boss_Dragon_AO.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Dragon_Inferno_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_Dragon_Inferno_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Dragon_Inferno_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_Dragon_Inferno_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Dragon_Inferno_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_Dragon_Inferno_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Dragon_Jade_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_Dragon_Jade_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Dragon_Jade_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_Dragon_Jade_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Dragon_Jade_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_Dragon_Jade_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_GiantFish_AO.png
+Assets/BossSlayerSkins/Textures/Boss_GiantFish_AO.png.meta
+Assets/BossSlayerSkins/Textures/Boss_GiantFish_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_GiantFish_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_GiantFish_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_GiantFish_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_GiantFish_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_GiantFish_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Hydra_AO.png
+Assets/BossSlayerSkins/Textures/Boss_Hydra_AO.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Hydra_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_Hydra_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Hydra_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_Hydra_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Hydra_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_Hydra_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Jellyfish_AO.png
+Assets/BossSlayerSkins/Textures/Boss_Jellyfish_AO.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Jellyfish_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_Jellyfish_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Jellyfish_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_Jellyfish_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Jellyfish_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_Jellyfish_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_SeaSerpent_AO.png
+Assets/BossSlayerSkins/Textures/Boss_SeaSerpent_AO.png.meta
+Assets/BossSlayerSkins/Textures/Boss_SeaSerpent_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_SeaSerpent_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_SeaSerpent_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_SeaSerpent_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_SeaSerpent_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_SeaSerpent_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Sentinel_AO.png
+Assets/BossSlayerSkins/Textures/Boss_Sentinel_AO.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Sentinel_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_Sentinel_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Sentinel_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_Sentinel_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_Sentinel_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_Sentinel_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_AO.png
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_AO.png.meta
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_Mist_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_Mist_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_Mist_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_Mist_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_Mist_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_Mist_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_Void_Albedo.png
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_Void_Albedo.png.meta
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_Void_Emission.png
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_Void_Emission.png.meta
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_Void_MetallicSmoothness.png
+Assets/BossSlayerSkins/Textures/Boss_VoidWraith_Void_MetallicSmoothness.png.meta
+Assets/BossSlayerSkins/VoxelData.meta
+Assets/BossSlayerSkins/VoxelData/
+Assets/BossSlayerSkins/VoxelData/Boss_AbyssalKing_voxels.json
+Assets/BossSlayerSkins/VoxelData/Boss_AbyssalKing_voxels.json.meta
+Assets/BossSlayerSkins/VoxelData/Boss_CrystalGolem_voxels.json
+Assets/BossSlayerSkins/VoxelData/Boss_CrystalGolem_voxels.json.meta
+Assets/BossSlayerSkins/VoxelData/Boss_Demon_RedBoy_voxels.json
+Assets/BossSlayerSkins/VoxelData/Boss_Demon_RedBoy_voxels.json.meta
+Assets/BossSlayerSkins/VoxelData/Boss_Demon_YakshaKing_voxels.json
+Assets/BossSlayerSkins/VoxelData/Boss_Demon_YakshaKing_voxels.json.meta
+Assets/BossSlayerSkins/VoxelData/Boss_Dragon_voxels.json
+Assets/BossSlayerSkins/VoxelData/Boss_Dragon_voxels.json.meta
+Assets/BossSlayerSkins/VoxelData/Boss_GiantFish_voxels.json
+Assets/BossSlayerSkins/VoxelData/Boss_GiantFish_voxels.json.meta
+Assets/BossSlayerSkins/VoxelData/Boss_Hydra_voxels.json
+Assets/BossSlayerSkins/VoxelData/Boss_Hydra_voxels.json.meta
+Assets/BossSlayerSkins/VoxelData/Boss_Jellyfish_voxels.json
+Assets/BossSlayerSkins/VoxelData/Boss_Jellyfish_voxels.json.meta
+Assets/BossSlayerSkins/VoxelData/Boss_SeaSerpent_voxels.json
+Assets/BossSlayerSkins/VoxelData/Boss_SeaSerpent_voxels.json.meta
+Assets/BossSlayerSkins/VoxelData/Boss_Sentinel_voxels.json
+Assets/BossSlayerSkins/VoxelData/Boss_Sentinel_voxels.json.meta
+Assets/BossSlayerSkins/VoxelData/Boss_VoidWraith_voxels.json
+Assets/BossSlayerSkins/VoxelData/Boss_VoidWraith_voxels.json.meta
+Assets/Cool Visual Effects - Part 1.meta
+Assets/Cool Visual Effects - Part 1/
+Assets/Cool Visual Effects - Part 1/Effects.meta
+Assets/Cool Visual Effects - Part 1/Effects/
+Assets/Cool Visual Effects - Part 1/Effects/Magic Ball.meta
+Assets/Cool Visual Effects - Part 1/Effects/Magic Ball/
+Assets/Cool Visual Effects - Part 1/Effects/Magic Ball/Magic Ball.vfx
+Assets/Cool Visual Effects - Part 1/Effects/Magic Ball/Magic Ball.vfx.meta
+Assets/Cool Visual Effects - Part 1/Effects/Portals.meta
+Assets/Cool Visual Effects - Part 1/Effects/Portals/
+Assets/Cool Visual Effects - Part 1/Effects/Portals/Portal1.vfx
+Assets/Cool Visual Effects - Part 1/Effects/Portals/Portal1.vfx.meta
+Assets/Deepspace BGM.mixer
+Assets/Deepspace BGM.mixer.meta
+Assets/DeepspacePresentation.meta
+Assets/DeepspacePresentation/
+Assets/DeepspacePresentation/Fonts.meta
+Assets/DeepspacePresentation/Fonts/
+Assets/DeepspacePresentation/Fonts/Body SDF.asset
+Assets/DeepspacePresentation/Fonts/Body SDF.asset.meta
+Assets/DeepspacePresentation/Fonts/Cinzel Black SDF.asset
+Assets/DeepspacePresentation/Fonts/Cinzel Black SDF.asset.meta
+Assets/DeepspacePresentation/Fonts/Cinzel Bold SDF.asset
+Assets/DeepspacePresentation/Fonts/Cinzel Bold SDF.asset.meta
+Assets/DeepspacePresentation/Fonts/Outfit-Bold.ttf
+Assets/DeepspacePresentation/Fonts/Outfit-Bold.ttf.meta
+Assets/DeepspacePresentation/Fonts/Thai SDF.asset
+Assets/DeepspacePresentation/Fonts/Thai SDF.asset.meta
+Assets/Fonts.meta
+Assets/Fonts/
+Assets/Fonts/Mitr.meta
+Assets/Fonts/Mitr/
+Assets/Fonts/Mitr/Mitr-SemiBold.ttf
+Assets/Fonts/Mitr/Mitr-SemiBold.ttf.meta
+Assets/GabrielAguiarProductions.meta
+Assets/GabrielAguiarProductions/
+Assets/GabrielAguiarProductions/Prefabs.meta
+Assets/GabrielAguiarProductions/Prefabs/
+Assets/GabrielAguiarProductions/Prefabs/VFXGraphs.meta
+Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/
+Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_Electricity_v1.vfx
+Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_Electricity_v1.vfx.meta
+Assets/GabrielAguiarProductions/Shaders.meta
+Assets/GabrielAguiarProductions/Shaders/
+Assets/GabrielAguiarProductions/Shaders/ElectricityShader.shadergraph
+Assets/GabrielAguiarProductions/Shaders/ElectricityShader.shadergraph.meta
+Assets/GameVFX Collection.meta
+Assets/GameVFX Collection/
+Assets/GameVFX Collection/FX_Arrow.meta
+Assets/GameVFX Collection/FX_Arrow/
+Assets/GameVFX Collection/FX_Arrow/Textures.meta
+Assets/GameVFX Collection/FX_Arrow/Textures/
+Assets/GameVFX Collection/FX_Arrow/Textures/grad01_13.png
+Assets/GameVFX Collection/FX_Arrow/Textures/grad01_13.png.meta
+Assets/GameVFX Collection/FX_DarkDoor.meta
+Assets/GameVFX Collection/FX_DarkDoor/
+Assets/GameVFX Collection/FX_DarkDoor/Textures.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Galaxy_01.png
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Galaxy_01.png.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/Galaxy_01.mat
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/Galaxy_01.mat.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/Ring.mat
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/Ring.mat.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/dust_01.mat
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/dust_01.mat.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/glow_purple_01.mat
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/glow_purple_01.mat.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/glowa_hot_grey_12.mat
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/glowa_hot_grey_12.mat.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/glowa_hot_grey_15.mat
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/glowa_hot_grey_15.mat.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/ring02_00.mat
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/ring02_00.mat.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/sd_21a_10.mat
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/sd_21a_10.mat.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/smoke_01.mat
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/smoke_01.mat.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/smoke_02.mat
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Materials/smoke_02.mat.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Ring.png
+Assets/GameVFX Collection/FX_DarkDoor/Textures/Ring.png.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/dk_effect_016.png
+Assets/GameVFX Collection/FX_DarkDoor/Textures/dk_effect_016.png.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/dust_01.png
+Assets/GameVFX Collection/FX_DarkDoor/Textures/dust_01.png.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/glow_blue_01.png
+Assets/GameVFX Collection/FX_DarkDoor/Textures/glow_blue_01.png.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/glowa_hot_grey.png
+Assets/GameVFX Collection/FX_DarkDoor/Textures/glowa_hot_grey.png.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/ring02_00.png
+Assets/GameVFX Collection/FX_DarkDoor/Textures/ring02_00.png.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/sd_21a.png
+Assets/GameVFX Collection/FX_DarkDoor/Textures/sd_21a.png.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/smoke_01.png
+Assets/GameVFX Collection/FX_DarkDoor/Textures/smoke_01.png.meta
+Assets/GameVFX Collection/FX_DarkDoor/Textures/smoke_02.png
+Assets/GameVFX Collection/FX_DarkDoor/Textures/smoke_02.png.meta
+Assets/GameVFX Collection/FX_Deflector_Shield.meta
+Assets/GameVFX Collection/FX_Deflector_Shield/
+Assets/GameVFX Collection/FX_Deflector_Shield/Textures.meta
+Assets/GameVFX Collection/FX_Deflector_Shield/Textures/
+Assets/GameVFX Collection/FX_Deflector_Shield/Textures/glow_point2_yellow.png
+Assets/GameVFX Collection/FX_Deflector_Shield/Textures/glow_point2_yellow.png.meta
+Assets/GameVFX Collection/FX_Groundexplosion.meta
+Assets/GameVFX Collection/FX_Groundexplosion/
+Assets/GameVFX Collection/FX_Groundexplosion/Shader.meta
+Assets/GameVFX Collection/FX_Groundexplosion/Shader/
+Assets/GameVFX Collection/FX_Groundexplosion/Shader/ParticleBlend.shader
+Assets/GameVFX Collection/FX_Groundexplosion/Shader/ParticleBlend.shader.meta
+Assets/GameVFX Collection/FX_Groundexplosion/Textures.meta
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/Materials.meta
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/Materials/
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/Materials/decal_fire.mat
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/Materials/decal_fire.mat.meta
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/Materials/firedust_01.mat
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/Materials/firedust_01.mat.meta
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/Materials/shock_02.mat
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/Materials/shock_02.mat.meta
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/decal_fire.png
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/decal_fire.png.meta
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/firedust_01.png
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/firedust_01.png.meta
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/shock_02.png
+Assets/GameVFX Collection/FX_Groundexplosion/Textures/shock_02.png.meta
+Assets/GameVFX Collection/FX_Lightningball.meta
+Assets/GameVFX Collection/FX_Lightningball/
+Assets/GameVFX Collection/FX_Lightningball/Animator.meta
+Assets/GameVFX Collection/FX_Lightningball/Animator/
+Assets/GameVFX Collection/FX_Lightningball/Animator/Lightningball.anim
+Assets/GameVFX Collection/FX_Lightningball/Animator/Lightningball.anim.meta
+Assets/GameVFX Collection/FX_Lightningball/Animator/Lightningball.controller
+Assets/GameVFX Collection/FX_Lightningball/Animator/Lightningball.controller.meta
+Assets/GameVFX Collection/FX_Lightningball/Textures.meta
+Assets/GameVFX Collection/FX_Lightningball/Textures/
+Assets/GameVFX Collection/FX_Lightningball/Textures/Background_paticle02.png
+Assets/GameVFX Collection/FX_Lightningball/Textures/Background_paticle02.png.meta
+Assets/GameVFX Collection/FX_Lightningball/Textures/Electric_Splat_Hit_02.png
+Assets/GameVFX Collection/FX_Lightningball/Textures/Electric_Splat_Hit_02.png.meta
+Assets/GameVFX Collection/FX_Lightningball/Textures/Electro03.png
+Assets/GameVFX Collection/FX_Lightningball/Textures/Electro03.png.meta
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials.meta
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials/
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials/Electric_Splat_Hit_02.mat
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials/Electric_Splat_Hit_02.mat.meta
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials/alpha_point_8.mat
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials/alpha_point_8.mat.meta
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials/glowblue.mat
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials/glowblue.mat.meta
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials/lightning02_01_blue.mat
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials/lightning02_01_blue.mat.meta
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials/lightning_blue.mat
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials/lightning_blue.mat.meta
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials/ring02_09.mat
+Assets/GameVFX Collection/FX_Lightningball/Textures/Materials/ring02_09.mat.meta
+Assets/GameVFX Collection/FX_Lightningball/Textures/alpha_point.png
+Assets/GameVFX Collection/FX_Lightningball/Textures/alpha_point.png.meta
+Assets/GameVFX Collection/FX_Lightningball/Textures/lightning02_01_blue.png
+Assets/GameVFX Collection/FX_Lightningball/Textures/lightning02_01_blue.png.meta
+Assets/GameVFX Collection/FX_MagicCircle.meta
+Assets/GameVFX Collection/FX_MagicCircle/
+Assets/GameVFX Collection/FX_MagicCircle/Animator.meta
+Assets/GameVFX Collection/FX_MagicCircle/Animator/
+Assets/GameVFX Collection/FX_MagicCircle/Animator/FX_Magic_Circle.anim
+Assets/GameVFX Collection/FX_MagicCircle/Animator/FX_Magic_Circle.anim.meta
+Assets/GameVFX Collection/FX_MagicCircle/Animator/FX_Magic_Circle.controller
+Assets/GameVFX Collection/FX_MagicCircle/Animator/FX_Magic_Circle.controller.meta
+Assets/GameVFX Collection/FX_MagicCircle/Textures.meta
+Assets/GameVFX Collection/FX_MagicCircle/Textures/
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Materials.meta
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Materials/
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Materials/Rune_01.mat
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Materials/Rune_01.mat.meta
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Materials/Rune_02.mat
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Materials/Rune_02.mat.meta
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Materials/glow_point2_yellow_3.mat
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Materials/glow_point2_yellow_3.mat.meta
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Materials/grad10_05.mat
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Materials/grad10_05.mat.meta
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Materials/grad12_07.mat
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Materials/grad12_07.mat.meta
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Rune_01.png
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Rune_01.png.meta
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Rune_02.png
+Assets/GameVFX Collection/FX_MagicCircle/Textures/Rune_02.png.meta
+Assets/GameVFX Collection/FX_MagicCircle/Textures/grad10_05.png
+Assets/GameVFX Collection/FX_MagicCircle/Textures/grad10_05.png.meta
+Assets/GameVFX Collection/FX_MagicCircle/Textures/grad12_05.png
+Assets/GameVFX Collection/FX_MagicCircle/Textures/grad12_05.png.meta
+Assets/GameVFX Collection/FX_Slash01.meta
+Assets/GameVFX Collection/FX_Slash01/
+Assets/GameVFX Collection/FX_Slash01/Textures.meta
+Assets/GameVFX Collection/FX_Slash01/Textures/
+Assets/GameVFX Collection/FX_Slash01/Textures/Materials.meta
+Assets/GameVFX Collection/FX_Slash01/Textures/Materials/
+Assets/GameVFX Collection/FX_Slash01/Textures/Materials/flare02_blue.mat
+Assets/GameVFX Collection/FX_Slash01/Textures/Materials/flare02_blue.mat.meta
+Assets/GameVFX Collection/FX_Slash01/Textures/Materials/glow_blue_01.mat
+Assets/GameVFX Collection/FX_Slash01/Textures/Materials/glow_blue_01.mat.meta
+Assets/GameVFX Collection/FX_Slash01/Textures/flare02_blue.png
+Assets/GameVFX Collection/FX_Slash01/Textures/flare02_blue.png.meta
+Assets/GameVFX Collection/FX_Slash01/Textures/glow_blue_01.png
+Assets/GameVFX Collection/FX_Slash01/Textures/glow_blue_01.png.meta
+Assets/GameVFX Collection/FX_Starfall.meta
+Assets/GameVFX Collection/FX_Starfall/
+Assets/GameVFX Collection/FX_Starfall/Textures.meta
+Assets/GameVFX Collection/FX_Starfall/Textures/
+Assets/GameVFX Collection/FX_Starfall/Textures/Background_paticle02.png
+Assets/GameVFX Collection/FX_Starfall/Textures/Background_paticle02.png.meta
+Assets/GameVFX Collection/FX_Starfall/Textures/Materials.meta
+Assets/GameVFX Collection/FX_Starfall/Textures/Materials/
+Assets/GameVFX Collection/FX_Starfall/Textures/Materials/Gamestar_Particle 3.mat
+Assets/GameVFX Collection/FX_Starfall/Textures/Materials/Gamestar_Particle 3.mat.meta
+Assets/GameVFX Collection/FX_Thunder.meta
+Assets/GameVFX Collection/FX_Thunder/
+Assets/GameVFX Collection/FX_Thunder/Textures.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/
+Assets/GameVFX Collection/FX_Thunder/Textures/Electro03.png
+Assets/GameVFX Collection/FX_Thunder/Textures/Electro03.png.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/FineLightning_03.png
+Assets/GameVFX Collection/FX_Thunder/Textures/FineLightning_03.png.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/Ground_Crack_02.png
+Assets/GameVFX Collection/FX_Thunder/Textures/Ground_Crack_02.png.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/MudRockyAlbedoSpecular_1.bmp
+Assets/GameVFX Collection/FX_Thunder/Textures/MudRockyAlbedoSpecular_1.bmp.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/decal_fire3.png
+Assets/GameVFX Collection/FX_Thunder/Textures/decal_fire3.png.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/genericglow2c.png
+Assets/GameVFX Collection/FX_Thunder/Textures/genericglow2c.png.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/glow_ball2_blue.png
+Assets/GameVFX Collection/FX_Thunder/Textures/glow_ball2_blue.png.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/lightning02_02.png
+Assets/GameVFX Collection/FX_Thunder/Textures/lightning02_02.png.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/materials.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/Background_paticle02.mat
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/Background_paticle02.mat.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/Electro03.mat
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/Electro03.mat.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/FineLightning_03.mat
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/FineLightning_03.mat.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/Glow_CPxs_rm_017.mat
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/Glow_CPxs_rm_017.mat.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/God_hit00_light00.mat
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/God_hit00_light00.mat.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/Ground_Crack_02.mat
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/Ground_Crack_02.mat.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/MudRockyAlbedoSpecular_1.mat
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/MudRockyAlbedoSpecular_1.mat.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/alpha_point 5.mat
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/alpha_point 5.mat.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/decal_fire3.mat
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/decal_fire3.mat.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/flare2b_purple.mat
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/flare2b_purple.mat.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/glow_ball2_blue_4.mat
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/glow_ball2_blue_4.mat.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/lightning02_02.mat
+Assets/GameVFX Collection/FX_Thunder/Textures/materials/lightning02_02.mat.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/particle_0007.png
+Assets/GameVFX Collection/FX_Thunder/Textures/particle_0007.png.meta
+Assets/GameVFX Collection/FX_Thunder/Textures/razorFlash.png
+Assets/GameVFX Collection/FX_Thunder/Textures/razorFlash.png.meta
+Assets/GameVFX Collection/Mesh.meta
+Assets/GameVFX Collection/Mesh/
+Assets/GameVFX Collection/Mesh/Dust_Sphere002.FBX
+Assets/GameVFX Collection/Mesh/Dust_Sphere002.FBX.meta
+Assets/GameVFX Collection/Mesh/Star.FBX
+Assets/GameVFX Collection/Mesh/Star.FBX.meta
+Assets/GameVFX Collection/Mesh/cone02_20pl.fbx
+Assets/GameVFX Collection/Mesh/cone02_20pl.fbx.meta
+Assets/GameVFX Collection/Mesh/floorbroke.FBX
+Assets/GameVFX Collection/Mesh/floorbroke.FBX.meta
+Assets/GameVFX Collection/Mesh/pzplane.FBX
+Assets/GameVFX Collection/Mesh/pzplane.FBX.meta
+Assets/GameVFX Collection/Prefabs.meta
+Assets/GameVFX Collection/Prefabs/
+Assets/GameVFX Collection/Prefabs/FX_DarkDoor_Purple.prefab
+Assets/GameVFX Collection/Prefabs/FX_DarkDoor_Purple.prefab.meta
+Assets/GameVFX Collection/Prefabs/FX_Lightningball.prefab
+Assets/GameVFX Collection/Prefabs/FX_Lightningball.prefab.meta
+Assets/GameVFX Collection/Prefabs/FX_Magic_Circle.prefab
+Assets/GameVFX Collection/Prefabs/FX_Magic_Circle.prefab.meta
+Assets/GameVFX Collection/Prefabs/FX_Thunder.prefab
+Assets/GameVFX Collection/Prefabs/FX_Thunder.prefab.meta
+Assets/Magic VFX.meta
+Assets/Magic VFX/
+Assets/Magic VFX/Magic VFX - Ice (FREE).meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FlakesA1_01.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FlakesA1_01.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FlakesA1_01.png
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FlakesA1_01.png.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FrostFlake_01.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FrostFlake_01.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FrostFlake_01.png
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/FrostFlake_01.png.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02.png
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02.png.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02add.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02add.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02mobile.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_02mobile.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_03.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_03.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_04.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_04.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_04.png
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_04.png.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_05.png
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_05.png.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_06.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_06.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_06.png
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/Glow_Ice_06.png.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SmokeA1_01.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SmokeA1_01.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SmokeA1_01.png
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SmokeA1_01.png.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SmokeA1_SphereM.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SmokeA1_SphereM.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_01.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_01.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_01.png
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_01.png.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_02.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_02.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_02.png
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_02.png.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_03.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_03.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_03.png
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_03.png.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_04.mat
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_04.mat.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_04.png
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Models/Materials/SnowFlakes_04.png.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Sounds.meta
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Sounds/
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Sounds/Magic_Glow_01.wav
+Assets/Magic VFX/Magic VFX - Ice (FREE)/Sounds/Magic_Glow_01.wav.meta
+Assets/Plugins.meta
+Assets/Plugins/
+Assets/Plugins/Demigiant.meta
+Assets/Plugins/Demigiant/
+Assets/Plugins/Demigiant/DOTween.meta
+Assets/Plugins/Demigiant/DOTween/
+Assets/Plugins/Demigiant/DOTween/DOTween.XML
+Assets/Plugins/Demigiant/DOTween/DOTween.XML.meta
+Assets/Plugins/Demigiant/DOTween/DOTween.dll
+Assets/Plugins/Demigiant/DOTween/DOTween.dll.meta
+Assets/Plugins/Demigiant/DOTween/DOTween.dll.mdb
+Assets/Plugins/Demigiant/DOTween/DOTween.dll.mdb.meta
+Assets/Plugins/Demigiant/DOTween/Editor.meta
+Assets/Plugins/Demigiant/DOTween/Editor/
+Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.XML
+Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.XML.meta
+Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll
+Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll.meta
+Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll.mdb
+Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll.mdb.meta
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs.meta
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenIcon.png
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenIcon.png.meta
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenMiniIcon.png
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenMiniIcon.png.meta
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer.png
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer.png.meta
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer_dark.png
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer_dark.png.meta
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg
+Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg.meta
+Assets/Plugins/Demigiant/DOTween/Modules.meta
+Assets/Plugins/Demigiant/DOTween/Modules/
+Assets/Plugins/Demigiant/DOTween/Modules/DOTween.Modules.asmdef
+Assets/Plugins/Demigiant/DOTween/Modules/DOTween.Modules.asmdef.meta
+Assets/Plugins/Demigiant/DOTween/readme.txt
+Assets/Plugins/Demigiant/DOTween/readme.txt.meta
+Assets/Plugins/Demigiant/DOTweenPro.meta
+Assets/Plugins/Demigiant/DOTweenPro/
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.Scripts.asmdef
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.Scripts.asmdef.meta
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.XML
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.XML.meta
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll.meta
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll.mdb
+Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll.mdb.meta
+Assets/Plugins/Demigiant/DOTweenPro/Editor.meta
+Assets/Plugins/Demigiant/DOTweenPro/Editor/
+Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenPro.EditorScripts.asmdef
+Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenPro.EditorScripts.asmdef.meta
+Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.XML
+Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.XML.meta
+Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll
+Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll.meta
+Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll.mdb
+Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll.mdb.meta
+Assets/Plugins/Demigiant/DOTweenPro/readme.txt
+Assets/Plugins/Demigiant/DOTweenPro/readme.txt.meta
+Assets/Plugins/Demigiant/DemiLib.meta
+Assets/Plugins/Demigiant/DemiLib/
+Assets/Plugins/Demigiant/DemiLib/Core.meta
+Assets/Plugins/Demigiant/DemiLib/Core/
+Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll
+Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll.meta
+Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll.mdb
+Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll.mdb.meta
+Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.xml
+Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.xml.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll.mdb
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll.mdb.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.xml
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.xml.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquare.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha10.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha10.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha15.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha15.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha25.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha25.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha50.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha50.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha80.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha80.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blueSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blueSquare.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/circle.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/circle.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/circle_dashedBorderEmpty.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/circle_dashedBorderEmpty.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/greenSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/greenSquare.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/grid_bright.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/grid_bright.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/grid_dark.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/grid_dark.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alert.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alert.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignB.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignB.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBC.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBC.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBL.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBL.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBR.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignBR.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCC.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCC.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCL.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCL.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCR.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCR.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignHC.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignHC.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignL.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignL.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignR.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignR.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignT.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignT.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTC.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTC.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTL.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTL.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTR.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignTR.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignVC.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignVC.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_audio.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_audio.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_audio_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_audio_border.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_camera.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_camera.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_camera_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_camera_border.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_cog.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_cog.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_cog_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_cog_border.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_comment.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_comment.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_comment_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_comment_border.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_delete.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_delete.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_demigiant.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_demigiant.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_demigiantLogo.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_demigiantLogo.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_demigiantLogo_color.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_demigiantLogo_color.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_distributeHAlignT.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_distributeHAlignT.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_distributeVAlignL.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_distributeVAlignL.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_doing.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_doing.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_end.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_end.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_flipV.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_flipV.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_foldout_closed.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_foldout_closed.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_foldout_open.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_foldout_open.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_heart.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_heart.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_heart_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_heart_border.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_light.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_light.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_light_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_light_border.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_lock.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_lock.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_lock_open.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_lock_open.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_nodeArrow.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_nodeArrow.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ok.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ok.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_optionsDropdown.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_optionsDropdown.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_play.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_play.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_play_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_play_border.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_skull.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_skull.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_skull_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_skull_border.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_star.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_star.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_star_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_star_border.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_todo.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_todo.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui_border.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui_border.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility_off.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility_off.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/orangeSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/orangeSquare.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_atlas.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_atlas.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_audio.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_audio.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_bundle.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_bundle.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cog.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cog.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cross.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cross.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_demigiant.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_demigiant.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_folder.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_folder.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_fonts.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_fonts.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_heart.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_heart.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_materials.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_materials.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_models.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_models.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_particles.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_particles.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_play.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_play.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_prefab.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_prefab.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_scripts.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_scripts.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_shaders.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_shaders.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_skull.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_skull.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_star.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_star.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_terrains.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_terrains.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_textures.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_textures.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/purpleSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/purpleSquare.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/redSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/redSquare.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorder.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorder.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderAlpha15.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderAlpha15.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02_darkBorders.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02_darkBorders.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedAlpha.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedAlpha.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmpty.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmpty.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmpty02.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmpty02.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmptyThick.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmptyThick.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved_darkBorders.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved_darkBorders.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved_darkBordersAlpha.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved_darkBordersAlpha.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty01.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty01.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty02.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty02.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty03.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty03.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickEmpty.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickEmpty.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickerEmpty.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickerEmpty.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareCorners03.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareCorners03.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareCornersEmpty02.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareCornersEmpty02.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_empty.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_empty.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_slanted.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_slanted.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_slanted_alpha.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileBars_slanted_alpha.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileCheckerboard.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/tileCheckerboard.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/transparentSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/transparentSquare.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_darkBorder.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_darkBorder.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_whiteBorderAlpha.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_whiteBorderAlpha.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha10.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha10.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha15.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha15.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha25.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha25.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha50.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha50.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha80.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha80.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved02.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved02.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare_fadeOut_bt.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare_fadeOut_bt.png.meta
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/yellowSquare.png
+Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/yellowSquare.png.meta
+Assets/Plugins/Demigiant/readme_DOTweenPro.txt
+Assets/Plugins/Demigiant/readme_DOTweenPro.txt.meta
+Assets/Resources.meta
+Assets/Resources/
+Assets/Resources/BossAttackSpark.shader
+Assets/Resources/BossAttackSpark.shader.meta
+Assets/Resources/BossAttackSurface.shader
+Assets/Resources/BossAttackSurface.shader.meta
+Assets/Resources/BossBackgrounds.meta
+Assets/Resources/BossBackgrounds/
+Assets/Resources/BossBackgrounds/BGBlueSkyBoss.png
+Assets/Resources/BossBackgrounds/BGBlueSkyBoss.png.meta
+Assets/Resources/BossBackgrounds/BGFireWall.png
+Assets/Resources/BossBackgrounds/BGFireWall.png.meta
+Assets/Resources/BossBackgrounds/BGFloorFire.png
+Assets/Resources/BossBackgrounds/BGFloorFire.png.meta
+Assets/Resources/BossBackgrounds/BGFloorHellBoss.png
+Assets/Resources/BossBackgrounds/BGFloorHellBoss.png.meta
+Assets/Resources/BossBackgrounds/BGFloorWaterBoss.png
+Assets/Resources/BossBackgrounds/BGFloorWaterBoss.png.meta
+Assets/Resources/BossBackgrounds/BGGrassFloorBoss.png
+Assets/Resources/BossBackgrounds/BGGrassFloorBoss.png.meta
+Assets/Resources/BossBackgrounds/BGHellBoss.png
+Assets/Resources/BossBackgrounds/BGHellBoss.png.meta
+Assets/Resources/BossBackgrounds/BGWaterBoss.png
+Assets/Resources/BossBackgrounds/BGWaterBoss.png.meta
+Assets/Resources/BossBackgrounds/Fire.meta
+Assets/Resources/BossBackgrounds/Fire/
+Assets/Resources/BossBackgrounds/Fire/Flame.png
+Assets/Resources/BossBackgrounds/Fire/Flame.png.meta
+Assets/Resources/BossBackgrounds/Fire/Particle.png
+Assets/Resources/BossBackgrounds/Fire/Particle.png.meta
+Assets/Resources/BossBackgrounds/Fire/RedAlpha.png
+Assets/Resources/BossBackgrounds/Fire/RedAlpha.png.meta
+Assets/Resources/BossCharge.shader
+Assets/Resources/BossCharge.shader.meta
+Assets/Resources/BossChargeBurst.shader
+Assets/Resources/BossChargeBurst.shader.meta
+Assets/Resources/BossCrystalBeamVolume.shader
+Assets/Resources/BossCrystalBeamVolume.shader.meta
+Assets/Resources/BossDemonRageFlame.shader
+Assets/Resources/BossDemonRageFlame.shader.meta
+Assets/Resources/BossDivineHalo.shader
+Assets/Resources/BossDivineHalo.shader.meta
+Assets/Resources/BossDragonChestHeat.shader
+Assets/Resources/BossDragonChestHeat.shader.meta
+Assets/Resources/BossDragonFireEdge.shader
+Assets/Resources/BossDragonFireEdge.shader.meta
+Assets/Resources/BossDragonPhaseFlame.shader
+Assets/Resources/BossDragonPhaseFlame.shader.meta
+Assets/Resources/BossEnvironmentMotion.shader
+Assets/Resources/BossEnvironmentMotion.shader.meta
+Assets/Resources/BossFantasyExplosion.shader
+Assets/Resources/BossFantasyExplosion.shader.meta
+Assets/Resources/BossFightAudio.asset
+Assets/Resources/BossFightAudio.asset.meta
+Assets/Resources/BossFightScore.asset
+Assets/Resources/BossFightScore.asset.meta
+Assets/Resources/BossFightScore.meta
+Assets/Resources/BossFightScore/
+Assets/Resources/BossFightScore/music_CrystalGolem.wav
+Assets/Resources/BossFightScore/music_CrystalGolem.wav.meta
+Assets/Resources/BossFightScore/music_DemonBoss.wav
+Assets/Resources/BossFightScore/music_DemonBoss.wav.meta
+Assets/Resources/BossFightScore/music_DragonBoss.wav
+Assets/Resources/BossFightScore/music_DragonBoss.wav.meta
+Assets/Resources/BossFightScore/music_GiantFish.wav
+Assets/Resources/BossFightScore/music_GiantFish.wav.meta
+Assets/Resources/BossFightScore/music_HydraBoss.wav
+Assets/Resources/BossFightScore/music_HydraBoss.wav.meta
+Assets/Resources/BossFightScore/music_JeelyFishBoss.wav
+Assets/Resources/BossFightScore/music_JeelyFishBoss.wav.meta
+Assets/Resources/BossFightScore/music_Menu.wav
+Assets/Resources/BossFightScore/music_Menu.wav.meta
+Assets/Resources/BossFightScore/music_Result.wav
+Assets/Resources/BossFightScore/music_Result.wav.meta
+Assets/Resources/BossFightScore/music_SeaSerpentBoss.wav
+Assets/Resources/BossFightScore/music_SeaSerpentBoss.wav.meta
+Assets/Resources/BossFightScore/music_SentinelBoss.wav
+Assets/Resources/BossFightScore/music_SentinelBoss.wav.meta
+Assets/Resources/BossFightScore/music_VoidWraithBoss.wav
+Assets/Resources/BossFightScore/music_VoidWraithBoss.wav.meta
+Assets/Resources/BossFightScore/roar_CrystalGolem.wav
+Assets/Resources/BossFightScore/roar_CrystalGolem.wav.meta
+Assets/Resources/BossFightScore/roar_DemonBoss.wav
+Assets/Resources/BossFightScore/roar_DemonBoss.wav.meta
+Assets/Resources/BossFightScore/roar_DragonBoss.wav
+Assets/Resources/BossFightScore/roar_DragonBoss.wav.meta
+Assets/Resources/BossFightScore/roar_GiantFish.wav
+Assets/Resources/BossFightScore/roar_GiantFish.wav.meta
+Assets/Resources/BossFightScore/roar_HydraBoss.wav
+Assets/Resources/BossFightScore/roar_HydraBoss.wav.meta
+Assets/Resources/BossFightScore/roar_JeelyFishBoss.wav
+Assets/Resources/BossFightScore/roar_JeelyFishBoss.wav.meta
+Assets/Resources/BossFightScore/roar_SeaSerpentBoss.wav
+Assets/Resources/BossFightScore/roar_SeaSerpentBoss.wav.meta
+Assets/Resources/BossFightScore/roar_SentinelBoss.wav
+Assets/Resources/BossFightScore/roar_SentinelBoss.wav.meta
+Assets/Resources/BossFightScore/roar_VoidWraithBoss.wav
+Assets/Resources/BossFightScore/roar_VoidWraithBoss.wav.meta
+Assets/Resources/BossFightSfx.meta
+Assets/Resources/BossFightSfx/
+Assets/Resources/BossFightSfx/battle_start.wav
+Assets/Resources/BossFightSfx/battle_start.wav.meta
+Assets/Resources/BossFightSfx/boss_defeat.wav
+Assets/Resources/BossFightSfx/boss_defeat.wav.meta
+Assets/Resources/BossFightSfx/boss_enter.wav
+Assets/Resources/BossFightSfx/boss_enter.wav.meta
+Assets/Resources/BossFightSfx/charge_0.wav
+Assets/Resources/BossFightSfx/charge_0.wav.meta
+Assets/Resources/BossFightSfx/charge_1.wav
+Assets/Resources/BossFightSfx/charge_1.wav.meta
+Assets/Resources/BossFightSfx/charge_2.wav
+Assets/Resources/BossFightSfx/charge_2.wav.meta
+Assets/Resources/BossFightSfx/charge_3.wav
+Assets/Resources/BossFightSfx/charge_3.wav.meta
+Assets/Resources/BossFightSfx/charge_4.wav
+Assets/Resources/BossFightSfx/charge_4.wav.meta
+Assets/Resources/BossFightSfx/charge_5.wav
+Assets/Resources/BossFightSfx/charge_5.wav.meta
+Assets/Resources/BossFightSfx/charge_6.wav
+Assets/Resources/BossFightSfx/charge_6.wav.meta
+Assets/Resources/BossFightSfx/charge_7.wav
+Assets/Resources/BossFightSfx/charge_7.wav.meta
+Assets/Resources/BossFightSfx/charge_8.wav
+Assets/Resources/BossFightSfx/charge_8.wav.meta
+Assets/Resources/BossFightSfx/countdown.wav
+Assets/Resources/BossFightSfx/countdown.wav.meta
+Assets/Resources/BossFightSfx/death_burst.wav
+Assets/Resources/BossFightSfx/death_burst.wav.meta
+Assets/Resources/BossFightSfx/death_final.wav
+Assets/Resources/BossFightSfx/death_final.wav.meta
+Assets/Resources/BossFightSfx/gem_attack.wav
+Assets/Resources/BossFightSfx/gem_attack.wav.meta
+Assets/Resources/BossFightSfx/gem_expire.wav
+Assets/Resources/BossFightSfx/gem_expire.wav.meta
+Assets/Resources/BossFightSfx/gem_heal.wav
+Assets/Resources/BossFightSfx/gem_heal.wav.meta
+Assets/Resources/BossFightSfx/gem_hold.wav
+Assets/Resources/BossFightSfx/gem_hold.wav.meta
+Assets/Resources/BossFightSfx/gem_impact.wav
+Assets/Resources/BossFightSfx/gem_impact.wav.meta
+Assets/Resources/BossFightSfx/gem_spawn.wav
+Assets/Resources/BossFightSfx/gem_spawn.wav.meta
+Assets/Resources/BossFightSfx/gem_stun.wav
+Assets/Resources/BossFightSfx/gem_stun.wav.meta
+Assets/Resources/BossFightSfx/gem_ultimate.wav
+Assets/Resources/BossFightSfx/gem_ultimate.wav.meta
+Assets/Resources/BossFightSfx/heal.wav
+Assets/Resources/BossFightSfx/heal.wav.meta
+Assets/Resources/BossFightSfx/low_health.wav
+Assets/Resources/BossFightSfx/low_health.wav.meta
+Assets/Resources/BossFightSfx/phase.wav
+Assets/Resources/BossFightSfx/phase.wav.meta
+Assets/Resources/BossFightSfx/player_down.wav
+Assets/Resources/BossFightSfx/player_down.wav.meta
+Assets/Resources/BossFightSfx/player_hit.wav
+Assets/Resources/BossFightSfx/player_hit.wav.meta
+Assets/Resources/BossFightSfx/portal_open.wav
+Assets/Resources/BossFightSfx/portal_open.wav.meta
+Assets/Resources/BossFightSfx/release_0.wav
+Assets/Resources/BossFightSfx/release_0.wav.meta
+Assets/Resources/BossFightSfx/release_1.wav
+Assets/Resources/BossFightSfx/release_1.wav.meta
+Assets/Resources/BossFightSfx/release_2.wav
+Assets/Resources/BossFightSfx/release_2.wav.meta
+Assets/Resources/BossFightSfx/release_3.wav
+Assets/Resources/BossFightSfx/release_3.wav.meta
+Assets/Resources/BossFightSfx/release_4.wav
+Assets/Resources/BossFightSfx/release_4.wav.meta
+Assets/Resources/BossFightSfx/release_5.wav
+Assets/Resources/BossFightSfx/release_5.wav.meta
+Assets/Resources/BossFightSfx/release_6.wav
+Assets/Resources/BossFightSfx/release_6.wav.meta
+Assets/Resources/BossFightSfx/release_7.wav
+Assets/Resources/BossFightSfx/release_7.wav.meta
+Assets/Resources/BossFightSfx/release_8.wav
+Assets/Resources/BossFightSfx/release_8.wav.meta
+Assets/Resources/BossFightSfx/revive.wav
+Assets/Resources/BossFightSfx/revive.wav.meta
+Assets/Resources/BossFightSfx/round_clear.wav
+Assets/Resources/BossFightSfx/round_clear.wav.meta
+Assets/Resources/BossFightSfx/safe_zone.wav
+Assets/Resources/BossFightSfx/safe_zone.wav.meta
+Assets/Resources/BossFightSfx/session_start.wav
+Assets/Resources/BossFightSfx/session_start.wav.meta
+Assets/Resources/BossFightSfx/stun.wav
+Assets/Resources/BossFightSfx/stun.wav.meta
+Assets/Resources/BossFightSfx/stun_end.wav
+Assets/Resources/BossFightSfx/stun_end.wav.meta
+Assets/Resources/BossFightSfx/transition.wav
+Assets/Resources/BossFightSfx/transition.wav.meta
+Assets/Resources/BossFightSfx/ui_back.wav
+Assets/Resources/BossFightSfx/ui_back.wav.meta
+Assets/Resources/BossFightSfx/ui_click.wav
+Assets/Resources/BossFightSfx/ui_click.wav.meta
+Assets/Resources/BossFightSfx/ui_hover.wav
+Assets/Resources/BossFightSfx/ui_hover.wav.meta
+Assets/Resources/BossFightSfx/ultimate_end.wav
+Assets/Resources/BossFightSfx/ultimate_end.wav.meta
+Assets/Resources/BossFightSfx/ultimate_ready.wav
+Assets/Resources/BossFightSfx/ultimate_ready.wav.meta
+Assets/Resources/BossFightSfx/victory.wav
+Assets/Resources/BossFightSfx/victory.wav.meta
+Assets/Resources/BossGemAura.shader
+Assets/Resources/BossGemAura.shader.meta
+Assets/Resources/BossGemCrystal.shader
+Assets/Resources/BossGemCrystal.shader.meta
+Assets/Resources/BossGemParticle.shader
+Assets/Resources/BossGemParticle.shader.meta
+Assets/Resources/BossJellyElectric.shader
+Assets/Resources/BossJellyElectric.shader.meta
+Assets/Resources/BossModelFocus.shader
+Assets/Resources/BossModelFocus.shader.meta
+Assets/Resources/BossSafeZone.shader
+Assets/Resources/BossSafeZone.shader.meta
+Assets/Resources/BossSerpentWater.shader
+Assets/Resources/BossSerpentWater.shader.meta
+Assets/Resources/BossSlayer.meta
+Assets/Resources/BossSlayer/
+Assets/Resources/BossSlayer/BossSlayerLogo.png
+Assets/Resources/BossSlayer/BossSlayerLogo.png.meta
+Assets/Resources/BossSlayer/BossSlayerWallBackground.png
+Assets/Resources/BossSlayer/BossSlayerWallBackground.png.meta
+Assets/Resources/BossSlayer/Fonts.meta
+Assets/Resources/BossSlayer/Fonts/
+Assets/Resources/BossSlayer/Fonts/Jersey15 SDF.asset
+Assets/Resources/BossSlayer/Fonts/Jersey15 SDF.asset.meta
+Assets/Resources/BossSlayer/Fonts/Jersey15-OFL.txt
+Assets/Resources/BossSlayer/Fonts/Jersey15-OFL.txt.meta
+Assets/Resources/BossSlayer/Fonts/Jersey15-Regular.ttf
+Assets/Resources/BossSlayer/Fonts/Jersey15-Regular.ttf.meta
+Assets/Resources/BossSlayer/Gems.meta
+Assets/Resources/BossSlayer/Gems/
+Assets/Resources/BossSlayer/Gems/Blue.png
+Assets/Resources/BossSlayer/Gems/Blue.png.meta
+Assets/Resources/BossSlayer/Gems/BlueParticles.png
+Assets/Resources/BossSlayer/Gems/BlueParticles.png.meta
+Assets/Resources/BossSlayer/Gems/Green.png
+Assets/Resources/BossSlayer/Gems/Green.png.meta
+Assets/Resources/BossSlayer/Gems/GreenParticles.png
+Assets/Resources/BossSlayer/Gems/GreenParticles.png.meta
+Assets/Resources/BossSlayer/Gems/Red.png
+Assets/Resources/BossSlayer/Gems/Red.png.meta
+Assets/Resources/BossSlayer/Gems/RedParticles.png
+Assets/Resources/BossSlayer/Gems/RedParticles.png.meta
+Assets/Resources/BossSlayer/Gems/Yellow.png
+Assets/Resources/BossSlayer/Gems/Yellow.png.meta
+Assets/Resources/BossSlayer/Gems/YellowParticles.png
+Assets/Resources/BossSlayer/Gems/YellowParticles.png.meta
+Assets/Resources/BossSlayer/Hud.meta
+Assets/Resources/BossSlayer/Hud/
+Assets/Resources/BossSlayer/Hud/HpBack.png
+Assets/Resources/BossSlayer/Hud/HpBack.png.meta
+Assets/Resources/BossSlayer/Hud/HpFill.png
+Assets/Resources/BossSlayer/Hud/HpFill.png.meta
+Assets/Resources/BossSlayer/Hud/NamePlate.png
+Assets/Resources/BossSlayer/Hud/NamePlate.png.meta
+Assets/Resources/BossSlayer/Hud/StunBack.png
+Assets/Resources/BossSlayer/Hud/StunBack.png.meta
+Assets/Resources/BossSlayer/Hud/StunFill.png
+Assets/Resources/BossSlayer/Hud/StunFill.png.meta
+Assets/Resources/BossSlayer/Hud/StunPlate.png
+Assets/Resources/BossSlayer/Hud/StunPlate.png.meta
+Assets/Resources/BossSlayer/Hud/UltimateBack.png
+Assets/Resources/BossSlayer/Hud/UltimateBack.png.meta
+Assets/Resources/BossSlayer/Hud/UltimateFill.png
+Assets/Resources/BossSlayer/Hud/UltimateFill.png.meta
+Assets/Resources/BossSlayer/Hud/UltimatePlate.png
+Assets/Resources/BossSlayer/Hud/UltimatePlate.png.meta
+Assets/Resources/BossSlayer/PlayerSelect.meta
+Assets/Resources/BossSlayer/PlayerSelect/
+Assets/Resources/BossSlayer/PlayerSelect/Core.png
+Assets/Resources/BossSlayer/PlayerSelect/Core.png.meta
+Assets/Resources/BossSlayer/PlayerSelect/Cursor.png
+Assets/Resources/BossSlayer/PlayerSelect/Cursor.png.meta
+Assets/Resources/BossSlayer/PlayerSelect/Floor.png
+Assets/Resources/BossSlayer/PlayerSelect/Floor.png.meta
+Assets/Resources/BossSlayer/PlayerSelect/Glow.png
+Assets/Resources/BossSlayer/PlayerSelect/Glow.png.meta
+Assets/Resources/BossSlayer/PlayerSelect/HoldRing.png
+Assets/Resources/BossSlayer/PlayerSelect/HoldRing.png.meta
+Assets/Resources/BossSlayer/PlayerSelect/Plaque.png
+Assets/Resources/BossSlayer/PlayerSelect/Plaque.png.meta
+Assets/Resources/BossSlayer/PlayerSelect/Ring.png
+Assets/Resources/BossSlayer/PlayerSelect/Ring.png.meta
+Assets/Resources/BossSlayer/PlayerSelectCards.meta
+Assets/Resources/BossSlayer/PlayerSelectCards/
+Assets/Resources/BossSlayer/PlayerSelectCards/Card.png
+Assets/Resources/BossSlayer/PlayerSelectCards/Card.png.meta
+Assets/Resources/BossSlayer/PlayerSelectCards/CardReady.png
+Assets/Resources/BossSlayer/PlayerSelectCards/CardReady.png.meta
+Assets/Resources/BossSlayer/PlayerSelectCards/Floor.png
+Assets/Resources/BossSlayer/PlayerSelectCards/Floor.png.meta
+Assets/Resources/BossSlayer/Players.meta
+Assets/Resources/BossSlayer/Players/
+Assets/Resources/BossSlayer/Players/P1.png
+Assets/Resources/BossSlayer/Players/P1.png.meta
+Assets/Resources/BossSlayer/Players/P2.png
+Assets/Resources/BossSlayer/Players/P2.png.meta
+Assets/Resources/BossSlayer/Players/P3.png
+Assets/Resources/BossSlayer/Players/P3.png.meta
+Assets/Resources/BossSlayer/Players/P4.png
+Assets/Resources/BossSlayer/Players/P4.png.meta
+Assets/Resources/BossSlayer/Players/P5.png
+Assets/Resources/BossSlayer/Players/P5.png.meta
+Assets/Resources/BossSlayer/Players/P6.png
+Assets/Resources/BossSlayer/Players/P6.png.meta
+Assets/Resources/BossSlayer/SelectBoss.meta
+Assets/Resources/BossSlayer/SelectBoss/
+Assets/Resources/BossSlayer/SelectBoss/CardBlue.png
+Assets/Resources/BossSlayer/SelectBoss/CardBlue.png.meta
+Assets/Resources/BossSlayer/SelectBoss/CardBrown.png
+Assets/Resources/BossSlayer/SelectBoss/CardBrown.png.meta
+Assets/Resources/BossSlayer/SelectBoss/CardRed.png
+Assets/Resources/BossSlayer/SelectBoss/CardRed.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Clear.png
+Assets/Resources/BossSlayer/SelectBoss/Clear.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Eyes.meta
+Assets/Resources/BossSlayer/SelectBoss/Eyes/
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Demon.png
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Demon.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Dragon.png
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Dragon.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Fish.png
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Fish.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Golem.png
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Golem.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Hydra.png
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Hydra.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Jellyfish.png
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Jellyfish.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Sentinel.png
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Sentinel.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Serpent.png
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Serpent.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Eyes/StatueParticle.png
+Assets/Resources/BossSlayer/SelectBoss/Eyes/StatueParticle.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Eyes/UnderLight.png
+Assets/Resources/BossSlayer/SelectBoss/Eyes/UnderLight.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Wraith.png
+Assets/Resources/BossSlayer/SelectBoss/Eyes/Wraith.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Rocks.meta
+Assets/Resources/BossSlayer/SelectBoss/Rocks/
+Assets/Resources/BossSlayer/SelectBoss/Rocks/Rock0.png
+Assets/Resources/BossSlayer/SelectBoss/Rocks/Rock0.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Rocks/Rock1.png
+Assets/Resources/BossSlayer/SelectBoss/Rocks/Rock1.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Rocks/Rock2.png
+Assets/Resources/BossSlayer/SelectBoss/Rocks/Rock2.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Rocks/Rock3.png
+Assets/Resources/BossSlayer/SelectBoss/Rocks/Rock3.png.meta
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG.png
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG.png.meta
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG_v2.png
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG_v2.png.meta
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG_v3.png
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG_v3.png.meta
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG_v4.png
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG_v4.png.meta
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG_v5.png
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG_v5.png.meta
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG_v6.png
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG_v6.png.meta
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG_v7.png
+Assets/Resources/BossSlayer/SelectBoss/SelectBossBG_v7.png.meta
+Assets/Resources/BossSlayer/SelectBoss/SelectButton.png
+Assets/Resources/BossSlayer/SelectBoss/SelectButton.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Shatter.meta
+Assets/Resources/BossSlayer/SelectBoss/Shatter/
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Demon.png
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Demon.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Dragon.png
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Dragon.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Fish.png
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Fish.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Golem.png
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Golem.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Hydra.png
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Hydra.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Jellyfish.png
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Jellyfish.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Sentinel.png
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Sentinel.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Serpent.png
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Serpent.png.meta
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Wraith.png
+Assets/Resources/BossSlayer/SelectBoss/Shatter/Wraith.png.meta
+Assets/Resources/BossSlayer/Showcase.meta
+Assets/Resources/BossSlayer/Showcase/
+Assets/Resources/BossSlayer/Showcase/Backdrop.png
+Assets/Resources/BossSlayer/Showcase/Backdrop.png.meta
+Assets/Resources/BossSlayer/Showcase/Fade.png
+Assets/Resources/BossSlayer/Showcase/Fade.png.meta
+Assets/Resources/BossSlayer/Showcase/Logo.png
+Assets/Resources/BossSlayer/Showcase/Logo.png.meta
+Assets/Resources/BossSlayer/Showcase/Slide1.png
+Assets/Resources/BossSlayer/Showcase/Slide1.png.meta
+Assets/Resources/BossSlayer/Showcase/Slide2.png
+Assets/Resources/BossSlayer/Showcase/Slide2.png.meta
+Assets/Resources/BossSlayer/Showcase/Slide3.png
+Assets/Resources/BossSlayer/Showcase/Slide3.png.meta
+Assets/Resources/BossSlayer/Showcase/Slide4.png
+Assets/Resources/BossSlayer/Showcase/Slide4.png.meta
+Assets/Resources/BossSlayer/Skins.meta
+Assets/Resources/BossSlayer/Skins/
+Assets/Resources/BossSlayer/Skins/Boss_AbyssalKing.prefab
+Assets/Resources/BossSlayer/Skins/Boss_AbyssalKing.prefab.meta
+Assets/Resources/BossSlayer/Skins/Boss_CrystalGolem.prefab
+Assets/Resources/BossSlayer/Skins/Boss_CrystalGolem.prefab.meta
+Assets/Resources/BossSlayer/Skins/Boss_Demon_RedBoy.prefab
+Assets/Resources/BossSlayer/Skins/Boss_Demon_RedBoy.prefab.meta
+Assets/Resources/BossSlayer/Skins/Boss_Demon_YakshaKing.prefab
+Assets/Resources/BossSlayer/Skins/Boss_Demon_YakshaKing.prefab.meta
+Assets/Resources/BossSlayer/Skins/Boss_Dragon.prefab
+Assets/Resources/BossSlayer/Skins/Boss_Dragon.prefab.meta
+Assets/Resources/BossSlayer/Skins/Boss_GiantFish.prefab
+Assets/Resources/BossSlayer/Skins/Boss_GiantFish.prefab.meta
+Assets/Resources/BossSlayer/Skins/Boss_Hydra.prefab
+Assets/Resources/BossSlayer/Skins/Boss_Hydra.prefab.meta
+Assets/Resources/BossSlayer/Skins/Boss_Jellyfish.prefab
+Assets/Resources/BossSlayer/Skins/Boss_Jellyfish.prefab.meta
+Assets/Resources/BossSlayer/Skins/Boss_SeaSerpent.prefab
+Assets/Resources/BossSlayer/Skins/Boss_SeaSerpent.prefab.meta
+Assets/Resources/BossSlayer/Skins/Boss_Sentinel.prefab
+Assets/Resources/BossSlayer/Skins/Boss_Sentinel.prefab.meta
+Assets/Resources/BossSlayer/Skins/Boss_VoidWraith.prefab
+Assets/Resources/BossSlayer/Skins/Boss_VoidWraith.prefab.meta
+Assets/Resources/BossSlayer/Start.meta
+Assets/Resources/BossSlayer/Start/
+Assets/Resources/BossSlayer/Start/BG.png
+Assets/Resources/BossSlayer/Start/BG.png.meta
+Assets/Resources/BossSlayer/Start/LineBG1.png
+Assets/Resources/BossSlayer/Start/LineBG1.png.meta
+Assets/Resources/BossSlayer/Start/LineBG2.png
+Assets/Resources/BossSlayer/Start/LineBG2.png.meta
+Assets/Resources/BossSlayer/Start/Logo.png
+Assets/Resources/BossSlayer/Start/Logo.png.meta
+Assets/Resources/BossSlayer/Start/Particle.png
+Assets/Resources/BossSlayer/Start/Particle.png.meta
+Assets/Resources/BossSlayer/Start/Shard.png
+Assets/Resources/BossSlayer/Start/Shard.png.meta
+Assets/Resources/BossSlayer/Transition.meta
+Assets/Resources/BossSlayer/Transition/
+Assets/Resources/BossSlayer/Transition/Cracks.png
+Assets/Resources/BossSlayer/Transition/Cracks.png.meta
+Assets/Resources/BossSlayer/Transition/Dust.png
+Assets/Resources/BossSlayer/Transition/Dust.png.meta
+Assets/Resources/BossSlayer/Transition/Shards.json
+Assets/Resources/BossSlayer/Transition/Shards.json.meta
+Assets/Resources/BossSlayer/Transition/Smoke.png
+Assets/Resources/BossSlayer/Transition/Smoke.png.meta
+Assets/Resources/BossThemeSurface.shader
+Assets/Resources/BossThemeSurface.shader.meta
+Assets/Resources/BossVoxelEnergy.shader
+Assets/Resources/BossVoxelEnergy.shader.meta
+Assets/Resources/BossWraithMist.shader
+Assets/Resources/BossWraithMist.shader.meta
+Assets/Resources/DOTweenSettings.asset
+Assets/Resources/DOTweenSettings.asset.meta
+Assets/Resources/MenuIntro.meta
+Assets/Resources/MenuIntro/
+Assets/Resources/MenuIntro/BossFight.meta
+Assets/Resources/MenuIntro/BossFight/
+Assets/Resources/MenuIntro/BossFight/Intro-Loop-Wall.mp4
+Assets/Resources/MenuIntro/BossFight/Intro-Loop-Wall.mp4.meta
+Assets/Resources/MenuIntro/BossFight/Intro-Loop.mp4
+Assets/Resources/MenuIntro/BossFight/Intro-Loop.mp4.meta
+Assets/Resources/MenuIntro/BossFight/Intro-Wall.mp4
+Assets/Resources/MenuIntro/BossFight/Intro-Wall.mp4.meta
+Assets/Resources/MenuIntro/BossFight/Intro.mp4
+Assets/Resources/MenuIntro/BossFight/Intro.mp4.meta
+Assets/Scenes/BossFight.meta
+Assets/Scenes/BossFight/
+Assets/Scenes/BossFight/LightingData.asset
+Assets/Scenes/BossFight/LightingData.asset.meta
+Assets/Scenes/Bosses.meta
+Assets/Scenes/Bosses/
+Assets/Scenes/Bosses/CrystalGolem.fbx
+Assets/Scenes/Bosses/CrystalGolem.fbx.meta
+Assets/Scenes/Bosses/DragonBoss.fbx
+Assets/Scenes/Bosses/DragonBoss.fbx.meta
+Assets/Scenes/Bosses/JeelyFishBoss.fbx
+Assets/Scenes/Bosses/JeelyFishBoss.fbx.meta
+Assets/Scenes/Bosses/Material_0.001.mat
+Assets/Scenes/Bosses/Material_0.001.mat.meta
+Assets/Scenes/Bosses/Material_0.002.mat
+Assets/Scenes/Bosses/Material_0.002.mat.meta
+Assets/Scenes/Bosses/Material_0.003.mat
+Assets/Scenes/Bosses/Material_0.003.mat.meta
+Assets/Scenes/Bosses/Material_0.004.mat
+Assets/Scenes/Bosses/Material_0.004.mat.meta
+Assets/Scenes/Bosses/Material_0.005.mat
+Assets/Scenes/Bosses/Material_0.005.mat.meta
+Assets/Scenes/Bosses/Material_0.006.mat
+Assets/Scenes/Bosses/Material_0.006.mat.meta
+Assets/Scenes/Bosses/Material_1.mat
+Assets/Scenes/Bosses/Material_1.mat.meta
+Assets/Scenes/Bosses/Material_2.mat
+Assets/Scenes/Bosses/Material_2.mat.meta
+Assets/Scenes/Bosses/Material_3.mat
+Assets/Scenes/Bosses/Material_3.mat.meta
+Assets/Scenes/Bosses/Material_4.mat
+Assets/Scenes/Bosses/Material_4.mat.meta
+Assets/Scenes/Bosses/Material_5.mat
+Assets/Scenes/Bosses/Material_5.mat.meta
+Assets/Scenes/Bosses/Material_6.mat
+Assets/Scenes/Bosses/Material_6.mat.meta
+Assets/Scenes/Bosses/Material_7.mat
+Assets/Scenes/Bosses/Material_7.mat.meta
+Assets/Scenes/Bosses/Material_8.mat
+Assets/Scenes/Bosses/Material_8.mat.meta
+Assets/Scenes/Bosses/Material_9.mat
+Assets/Scenes/Bosses/Material_9.mat.meta
+Assets/Scenes/Bosses/SeaSerpentBoss.fbx
+Assets/Scenes/Bosses/SeaSerpentBoss.fbx.meta
+Assets/Scenes/Bosses/SentinelBoss.fbx
+Assets/Scenes/Bosses/SentinelBoss.fbx.meta
+Assets/Scenes/Bosses/ThemePalette.meta
+Assets/Scenes/Bosses/ThemePalette/
+Assets/Scenes/Bosses/ThemePalette/Demon_042b1a7d53a32594ebd8fa202edfcb0c_RedBoy_Head.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_042b1a7d53a32594ebd8fa202edfcb0c_RedBoy_Head.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_06601365d22246a47af7ff5188ed601f_YakshaKing_RightFoot.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_06601365d22246a47af7ff5188ed601f_YakshaKing_RightFoot.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_092c9faba42d37f4eaa4ebb71406f907_YakshaKing_WhiteHair.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_092c9faba42d37f4eaa4ebb71406f907_YakshaKing_WhiteHair.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_12d453f39deb3ae4da83bba03320daea_YakshaKing_RightForearm.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_12d453f39deb3ae4da83bba03320daea_YakshaKing_RightForearm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_1a885f1e6bded3349ac8e8ba467f1e73_YakshaKing_Pelvis.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_1a885f1e6bded3349ac8e8ba467f1e73_YakshaKing_Pelvis.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_1cbab7a229d973f48944cec5cccca258_RedBoy_RightArm.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_1cbab7a229d973f48944cec5cccca258_RedBoy_RightArm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_3f94a374bfbc9744e98d8fd50dfec3d1_YakshaKing_Head.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_3f94a374bfbc9744e98d8fd50dfec3d1_YakshaKing_Head.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_4d04c10502e0efb4db88297dcfbccb2a_YakshaKing_RightArm.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_4d04c10502e0efb4db88297dcfbccb2a_YakshaKing_RightArm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_5210895216690fa49aa02c688f463eb6_DemonBounds.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_5210895216690fa49aa02c688f463eb6_DemonBounds.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_5cabdb3593affb2488a7d7cec91fedca_RedBoy_RightThigh.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_5cabdb3593affb2488a7d7cec91fedca_RedBoy_RightThigh.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_5e744637631edf441ad2841aea281d01_YakshaKing_LeftForearm.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_5e744637631edf441ad2841aea281d01_YakshaKing_LeftForearm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_714ab6cd72d57c249b4419cb54fce589_RedBoy_RightFoot.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_714ab6cd72d57c249b4419cb54fce589_RedBoy_RightFoot.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_71b9daf247e54e34f97e1fc8a0f7737d_RedBoy_WhiteHair.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_71b9daf247e54e34f97e1fc8a0f7737d_RedBoy_WhiteHair.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_7f64d82a37190584788c6f85ebc3227a_YakshaKing_LeftArm.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_7f64d82a37190584788c6f85ebc3227a_YakshaKing_LeftArm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_806290478829d0a41a7e51aeed6d0eff_YakshaKing_RightShin.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_806290478829d0a41a7e51aeed6d0eff_YakshaKing_RightShin.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_90a828048a0a5ea41a4222cd265fb8ed_RedBoy_Pelvis.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_90a828048a0a5ea41a4222cd265fb8ed_RedBoy_Pelvis.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_91ddd6454fb01fb4a927f7ef0a071490_YakshaKing_Torso.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_91ddd6454fb01fb4a927f7ef0a071490_YakshaKing_Torso.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_9c4d8c6604c4df74c95b23461a030a15_RedBoy_Spear.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_9c4d8c6604c4df74c95b23461a030a15_RedBoy_Spear.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_a559996d2354455489d8ca4c60d3ec85_RedBoy_LeftFoot.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_a559996d2354455489d8ca4c60d3ec85_RedBoy_LeftFoot.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_ab47fc302a0be344281172591769af9d_YakshaKing_LeftFoot.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_ab47fc302a0be344281172591769af9d_YakshaKing_LeftFoot.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_bc6091d9bc403584dac6cad6c003dae5_YakshaKing_LeftThigh.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_bc6091d9bc403584dac6cad6c003dae5_YakshaKing_LeftThigh.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_bd4337c52846e31499349b3461da445b_RedBoy_RightShin.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_bd4337c52846e31499349b3461da445b_RedBoy_RightShin.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_c2780fb762db88148a1919305f301f4e_RedBoy_RightForearm.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_c2780fb762db88148a1919305f301f4e_RedBoy_RightForearm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_cbae7c5aec943a3419e36f99e6059906_YakshaKing_Robe.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_cbae7c5aec943a3419e36f99e6059906_YakshaKing_Robe.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_ccfffceb85776c847b6574535f39a21d_YakshaKing_LeftShin.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_ccfffceb85776c847b6574535f39a21d_YakshaKing_LeftShin.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_d3d943a4372db2e4db6de2276f70f213.mat
+Assets/Scenes/Bosses/ThemePalette/Demon_d3d943a4372db2e4db6de2276f70f213.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_d754f3df58dd77142acbe10de73841f9_RedBoy_LeftThigh.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_d754f3df58dd77142acbe10de73841f9_RedBoy_LeftThigh.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_d78593e518950204a981bc6079ac3978_RedBoy_LeftForearm.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_d78593e518950204a981bc6079ac3978_RedBoy_LeftForearm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_db380b688e930f44291b3ff6ab0acd0b_RedBoy_LeftShin.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_db380b688e930f44291b3ff6ab0acd0b_RedBoy_LeftShin.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_e22a1df4921e96c4c9870c4514d2113f_YakshaKing_RightThigh.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_e22a1df4921e96c4c9870c4514d2113f_YakshaKing_RightThigh.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_e598e80e2535e5b43ae55c9582f171c6_RedBoy_Robe.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_e598e80e2535e5b43ae55c9582f171c6_RedBoy_Robe.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_f57f7c84e4b31184cac46f0287ccb678_RedBoy_LeftArm.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_f57f7c84e4b31184cac46f0287ccb678_RedBoy_LeftArm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_f725715e5fdca4f469c58823d28465ea_YakshaKing_Spear.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_f725715e5fdca4f469c58823d28465ea_YakshaKing_Spear.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Demon_fe27ac2e78df7bf41a69e769d837261d_RedBoy_Torso.asset
+Assets/Scenes/Bosses/ThemePalette/Demon_fe27ac2e78df7bf41a69e769d837261d_RedBoy_Torso.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_06bc7e7480049cc4990aa4ea0f03472b_DragonReference_Jaw.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_06bc7e7480049cc4990aa4ea0f03472b_DragonReference_Jaw.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_13d38fac00e58064e87af31ad260af18_DragonReference_LeftWing.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_13d38fac00e58064e87af31ad260af18_DragonReference_LeftWing.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_48188885b37cf924984ef6a51db58e56_DragonReference_LowerNeck.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_48188885b37cf924984ef6a51db58e56_DragonReference_LowerNeck.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_4baaa7fad4d23124094f3801c83cffdc_DragonReference_RightRearLeg.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_4baaa7fad4d23124094f3801c83cffdc_DragonReference_RightRearLeg.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_5cdccfebbd207fb4aa1e541f2d6547c2_DragonReference_MiddleTail.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_5cdccfebbd207fb4aa1e541f2d6547c2_DragonReference_MiddleTail.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_7141efe8ce43f0449bcdb105165abc80_DragonReference_LeftFrontLeg.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_7141efe8ce43f0449bcdb105165abc80_DragonReference_LeftFrontLeg.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_7d3d2f84b4a061e43a793d9d584dd29f_DragonReference_LeftRearLeg.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_7d3d2f84b4a061e43a793d9d584dd29f_DragonReference_LeftRearLeg.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_90cac8ee2c47e6c43aa66a9112ca877e.mat
+Assets/Scenes/Bosses/ThemePalette/Dragon_90cac8ee2c47e6c43aa66a9112ca877e.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_983b6343fb1aad841b439596148e6e01_DragonReference_RightFrontLeg.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_983b6343fb1aad841b439596148e6e01_DragonReference_RightFrontLeg.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_b29a766bcd6a6fd4789e61eb48b563e2_DragonReference_TailTip.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_b29a766bcd6a6fd4789e61eb48b563e2_DragonReference_TailTip.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_c733a311eb1481f4081935b483b9db00_DragonReference_RightWing.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_c733a311eb1481f4081935b483b9db00_DragonReference_RightWing.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_d5f9d1fe8df560f47ba833946b01a88f_DragonReference_Body.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_d5f9d1fe8df560f47ba833946b01a88f_DragonReference_Body.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_d8d5ba924c6c69b48bafcb5c54a36d79_DragonReference_Head.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_d8d5ba924c6c69b48bafcb5c54a36d79_DragonReference_Head.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_df248d0a7d988e34d8227cddbc9c8abe_DragonReference_UpperNeck.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_df248d0a7d988e34d8227cddbc9c8abe_DragonReference_UpperNeck.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_f36af42e957add64aae47ae4e8250934_DragonReference_BossMesh.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_f36af42e957add64aae47ae4e8250934_DragonReference_BossMesh.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Dragon_f4bc0ac6949c64a439c3984c1bc3837e_DragonReference_Tail.asset
+Assets/Scenes/Bosses/ThemePalette/Dragon_f4bc0ac6949c64a439c3984c1bc3837e_DragonReference_Tail.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Fish_0806d178eb7d2234491a4e65d47db961_Plesioth_Jaw.asset
+Assets/Scenes/Bosses/ThemePalette/Fish_0806d178eb7d2234491a4e65d47db961_Plesioth_Jaw.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Fish_121db95757e7b524dac606b366b1b484_Plesioth_LeftFin.asset
+Assets/Scenes/Bosses/ThemePalette/Fish_121db95757e7b524dac606b366b1b484_Plesioth_LeftFin.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Fish_182b6c2935024624b96c9a96d79fe9ad_Plesioth_Neck.asset
+Assets/Scenes/Bosses/ThemePalette/Fish_182b6c2935024624b96c9a96d79fe9ad_Plesioth_Neck.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Fish_2b98ee48a5cf0c84c889e9f2def9624d_Plesioth_BossMesh.asset
+Assets/Scenes/Bosses/ThemePalette/Fish_2b98ee48a5cf0c84c889e9f2def9624d_Plesioth_BossMesh.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Fish_46445de2919474b418c5132f5beadff9_Plesioth_RightFin.asset
+Assets/Scenes/Bosses/ThemePalette/Fish_46445de2919474b418c5132f5beadff9_Plesioth_RightFin.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Fish_846cac79cb39c0e4dbb0fcc1dbd671eb_Plesioth_Head.asset
+Assets/Scenes/Bosses/ThemePalette/Fish_846cac79cb39c0e4dbb0fcc1dbd671eb_Plesioth_Head.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Fish_8801721e26705fd4fb8f4eb4602f9171.mat
+Assets/Scenes/Bosses/ThemePalette/Fish_8801721e26705fd4fb8f4eb4602f9171.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Fish_8d34502ad22eff440a71f754958d7fc5_Plesioth_Tail.asset
+Assets/Scenes/Bosses/ThemePalette/Fish_8d34502ad22eff440a71f754958d7fc5_Plesioth_Tail.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Fish_990211249ea5176459d30399355e38f4_Plesioth_DorsalFin.asset
+Assets/Scenes/Bosses/ThemePalette/Fish_990211249ea5176459d30399355e38f4_Plesioth_DorsalFin.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Fish_99e36756b7cf89c458b189d4d2bd9f9b_Plesioth_TailFin.asset
+Assets/Scenes/Bosses/ThemePalette/Fish_99e36756b7cf89c458b189d4d2bd9f9b_Plesioth_TailFin.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Fish_c965ebf860ea00a4fb9bbdbb8eac183b_Plesioth_MiddleTail.asset
+Assets/Scenes/Bosses/ThemePalette/Fish_c965ebf860ea00a4fb9bbdbb8eac183b_Plesioth_MiddleTail.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Fish_efd0b858eee8f8f48bffa4da7249311e_Plesioth_Body.asset
+Assets/Scenes/Bosses/ThemePalette/Fish_efd0b858eee8f8f48bffa4da7249311e_Plesioth_Body.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Golem_1d78d1d90cfde4a46bdc56d2afb7e404_CrystalGolem_Head.asset
+Assets/Scenes/Bosses/ThemePalette/Golem_1d78d1d90cfde4a46bdc56d2afb7e404_CrystalGolem_Head.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Golem_9f30d25de37463842924a28c862b3ed8.mat
+Assets/Scenes/Bosses/ThemePalette/Golem_9f30d25de37463842924a28c862b3ed8.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Golem_bc30dd2ed8f660d458a01767199b6d8b_CrystalGolem_Body.asset
+Assets/Scenes/Bosses/ThemePalette/Golem_bc30dd2ed8f660d458a01767199b6d8b_CrystalGolem_Body.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Golem_bffc0e118848de241bfb07a698080109_CrystalGolem_RightArm.asset
+Assets/Scenes/Bosses/ThemePalette/Golem_bffc0e118848de241bfb07a698080109_CrystalGolem_RightArm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Golem_bffc24967abf0d04996d5da3a955a60b_CrystalGolem_BossMesh.asset
+Assets/Scenes/Bosses/ThemePalette/Golem_bffc24967abf0d04996d5da3a955a60b_CrystalGolem_BossMesh.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Golem_f8e677ea8e377c8488dc4b1778d67f53_CrystalGolem_LeftArm.asset
+Assets/Scenes/Bosses/ThemePalette/Golem_f8e677ea8e377c8488dc4b1778d67f53_CrystalGolem_LeftArm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_001fa10afbfff2f48bc01557f39dc0c9.mat
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_001fa10afbfff2f48bc01557f39dc0c9.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_0d2290d77d974334380cf59dd4e4de8f_JellyfishPart_001.asset
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_0d2290d77d974334380cf59dd4e4de8f_JellyfishPart_001.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_1050de409ccf84349ac0221eabc194ce_JellyfishPart_002.asset
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_1050de409ccf84349ac0221eabc194ce_JellyfishPart_002.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_17b76817a9ae64e45a3679126ea0e8ba.mat
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_17b76817a9ae64e45a3679126ea0e8ba.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_22393cd0d0143c94387b6c6e5dbd2390_HemisphereBell.asset
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_22393cd0d0143c94387b6c6e5dbd2390_HemisphereBell.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_34736ccd0f341924699c983fbd6819bc_JellyfishPart_008.asset
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_34736ccd0f341924699c983fbd6819bc_JellyfishPart_008.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_42af75e1ad70bad4d935bd8e89d3d250_JellyfishPart_005.asset
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_42af75e1ad70bad4d935bd8e89d3d250_JellyfishPart_005.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_4a6a83865d4893a45bee6e9e58097839.mat
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_4a6a83865d4893a45bee6e9e58097839.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_5a0a6b7fbe5c7414da3dc3ebc2ca22d7.mat
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_5a0a6b7fbe5c7414da3dc3ebc2ca22d7.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_5a16525537080e14c87ac7b1c3be22ba.mat
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_5a16525537080e14c87ac7b1c3be22ba.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_845bcd3b40e583c42a8511155fdf1bdd_JellyfishPart_009.asset
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_845bcd3b40e583c42a8511155fdf1bdd_JellyfishPart_009.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_8a55a4e553d2a194581b2d57fd20fd60.mat
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_8a55a4e553d2a194581b2d57fd20fd60.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_bb39dbb65e96f294aad3ffb59ff2b0ca_JellyfishPart_007.asset
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_bb39dbb65e96f294aad3ffb59ff2b0ca_JellyfishPart_007.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_ccdae309cb6baf748a44409f73dd38a1.mat
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_ccdae309cb6baf748a44409f73dd38a1.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_cd419538659491e41a11adeaebae13b7_JellyfishPart_004.asset
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_cd419538659491e41a11adeaebae13b7_JellyfishPart_004.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_d533609ffeeb26448a6bb784f5abc5f0.mat
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_d533609ffeeb26448a6bb784f5abc5f0.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_d74fc15224c2e834485ce37d56ca2fd1_JellyfishPart_003.asset
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_d74fc15224c2e834485ce37d56ca2fd1_JellyfishPart_003.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_dbc8655d2f2eabd46a30c6560f8144bb.mat
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_dbc8655d2f2eabd46a30c6560f8144bb.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_ee705f44a220e6f45b6fea95bee3dba6_JellyfishPart_006.asset
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_ee705f44a220e6f45b6fea95bee3dba6_JellyfishPart_006.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_fd4dbfbd1b122854ca397fa5f4992b5b.mat
+Assets/Scenes/Bosses/ThemePalette/Jellyfish_fd4dbfbd1b122854ca397fa5f4992b5b.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_0c1d27434a1a08f4c97aa7cb7b7f31ec_VoidSentinelBounds.asset
+Assets/Scenes/Bosses/ThemePalette/Sentinel_0c1d27434a1a08f4c97aa7cb7b7f31ec_VoidSentinelBounds.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_0ce1dc25c14f17a469567e44269779f7_Sentinel_RightArm.asset
+Assets/Scenes/Bosses/ThemePalette/Sentinel_0ce1dc25c14f17a469567e44269779f7_Sentinel_RightArm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_1179135ae4a0e4c489622932444e24c8_Sentinel_Torso.asset
+Assets/Scenes/Bosses/ThemePalette/Sentinel_1179135ae4a0e4c489622932444e24c8_Sentinel_Torso.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_3fe7f9c172576f6488e01fd1360673a7_Sentinel_RightForearm.asset
+Assets/Scenes/Bosses/ThemePalette/Sentinel_3fe7f9c172576f6488e01fd1360673a7_Sentinel_RightForearm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_55073433ab2af1d41b041889933b4c33_Sentinel_RightShoulderDoor.asset
+Assets/Scenes/Bosses/ThemePalette/Sentinel_55073433ab2af1d41b041889933b4c33_Sentinel_RightShoulderDoor.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_5c96fe6425c42ea4f87a082ff1ceeb3d_Sentinel_LeftThigh.asset
+Assets/Scenes/Bosses/ThemePalette/Sentinel_5c96fe6425c42ea4f87a082ff1ceeb3d_Sentinel_LeftThigh.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_7450da3ebaf426a4ba394c2daa1a1954.mat
+Assets/Scenes/Bosses/ThemePalette/Sentinel_7450da3ebaf426a4ba394c2daa1a1954.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_7f431e2c7aff0fb4fa8f0d48501eeb95_Sentinel_Head.asset
+Assets/Scenes/Bosses/ThemePalette/Sentinel_7f431e2c7aff0fb4fa8f0d48501eeb95_Sentinel_Head.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_8230805a607b1f64193f041f2ecb2730_Sentinel_LeftForearm.asset
+Assets/Scenes/Bosses/ThemePalette/Sentinel_8230805a607b1f64193f041f2ecb2730_Sentinel_LeftForearm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_879123d2807a5e44b85de9852c57425a_Sentinel_LeftShoulderDoor.asset
+Assets/Scenes/Bosses/ThemePalette/Sentinel_879123d2807a5e44b85de9852c57425a_Sentinel_LeftShoulderDoor.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_8f232cf8b8d41f9419f6edac74729119_Sentinel_LeftShin.asset
+Assets/Scenes/Bosses/ThemePalette/Sentinel_8f232cf8b8d41f9419f6edac74729119_Sentinel_LeftShin.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_972032d1a6f1ae14ea77fb78bbcd2dd1_Sentinel_RightShin.asset
+Assets/Scenes/Bosses/ThemePalette/Sentinel_972032d1a6f1ae14ea77fb78bbcd2dd1_Sentinel_RightShin.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_c8673a05357a26246875c45d3e6323b1_Sentinel_LeftArm.asset
+Assets/Scenes/Bosses/ThemePalette/Sentinel_c8673a05357a26246875c45d3e6323b1_Sentinel_LeftArm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Sentinel_f69384c0ae9a4104cad03bb2c08f8c7f_Sentinel_RightThigh.asset
+Assets/Scenes/Bosses/ThemePalette/Sentinel_f69384c0ae9a4104cad03bb2c08f8c7f_Sentinel_RightThigh.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Serpent_1ead386ba5fca124caf997b15529a784_VoidSerpentBounds.asset
+Assets/Scenes/Bosses/ThemePalette/Serpent_1ead386ba5fca124caf997b15529a784_VoidSerpentBounds.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Serpent_39adc4ef1de58df4abcc9e872ee23a4c_Serpent_TaperedTail.asset
+Assets/Scenes/Bosses/ThemePalette/Serpent_39adc4ef1de58df4abcc9e872ee23a4c_Serpent_TaperedTail.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Serpent_56f3ad18531c8d444b6ea4cc0d5800ec_Serpent_CoiledBody.asset
+Assets/Scenes/Bosses/ThemePalette/Serpent_56f3ad18531c8d444b6ea4cc0d5800ec_Serpent_CoiledBody.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Serpent_61e4a80c57c0d464bb113579cdc367e8_Serpent_LeftHorns.asset
+Assets/Scenes/Bosses/ThemePalette/Serpent_61e4a80c57c0d464bb113579cdc367e8_Serpent_LeftHorns.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Serpent_76d8fa73cb151e14d9230f26ec6d7d43_Serpent_Jaw.asset
+Assets/Scenes/Bosses/ThemePalette/Serpent_76d8fa73cb151e14d9230f26ec6d7d43_Serpent_Jaw.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Serpent_80e38844d4fcf5b4c8d57b76fe219f51_Serpent_RightHorns.asset
+Assets/Scenes/Bosses/ThemePalette/Serpent_80e38844d4fcf5b4c8d57b76fe219f51_Serpent_RightHorns.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Serpent_cc1b68d76ebb9134b94dae9605592809.mat
+Assets/Scenes/Bosses/ThemePalette/Serpent_cc1b68d76ebb9134b94dae9605592809.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Serpent_d95885564d1211b44bb47bc7251996d7_Serpent_Skull.asset
+Assets/Scenes/Bosses/ThemePalette/Serpent_d95885564d1211b44bb47bc7251996d7_Serpent_Skull.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Wraith_1d58798a6cf95714c907ff2560fa00c6_Wraith_Visage.asset
+Assets/Scenes/Bosses/ThemePalette/Wraith_1d58798a6cf95714c907ff2560fa00c6_Wraith_Visage.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Wraith_56fc26a46840aae40926dca35659220a_Wraith_Jaw.asset
+Assets/Scenes/Bosses/ThemePalette/Wraith_56fc26a46840aae40926dca35659220a_Wraith_Jaw.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Wraith_62ed8b48a867fe04184f995b9a62e3bd_Wraith_LeftClawArm.asset
+Assets/Scenes/Bosses/ThemePalette/Wraith_62ed8b48a867fe04184f995b9a62e3bd_Wraith_LeftClawArm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Wraith_633a7685e2379f94494781c4b1199293.mat
+Assets/Scenes/Bosses/ThemePalette/Wraith_633a7685e2379f94494781c4b1199293.mat.meta
+Assets/Scenes/Bosses/ThemePalette/Wraith_77e9eb8b29584394bbbb674e65a8a3e6_Wraith_RightClawArm.asset
+Assets/Scenes/Bosses/ThemePalette/Wraith_77e9eb8b29584394bbbb674e65a8a3e6_Wraith_RightClawArm.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Wraith_9b790f9a23397674c817f615915c7172_Wraith_SmokeTail.asset
+Assets/Scenes/Bosses/ThemePalette/Wraith_9b790f9a23397674c817f615915c7172_Wraith_SmokeTail.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Wraith_b8a43b297bc4c6a40b7b1d12377e0ae7_Wraith_Torso.asset
+Assets/Scenes/Bosses/ThemePalette/Wraith_b8a43b297bc4c6a40b7b1d12377e0ae7_Wraith_Torso.asset.meta
+Assets/Scenes/Bosses/ThemePalette/Wraith_cd35eb25c9f01e745915f93e290d8a1f_VoidWraithBounds.asset
+Assets/Scenes/Bosses/ThemePalette/Wraith_cd35eb25c9f01e745915f93e290d8a1f_VoidWraithBounds.asset.meta
+Assets/Scenes/Bosses/VoidWraithBoss.fbx
+Assets/Scenes/Bosses/VoidWraithBoss.fbx.meta
+Assets/Scenes/Materials.meta
+Assets/Scenes/Materials/
+Assets/Scenes/Materials/Attack.fbx
+Assets/Scenes/Materials/Attack.fbx.meta
+Assets/Scenes/Materials/Gemini_Generated_Image_keev3wkeev3wkeev.jpg
+Assets/Scenes/Materials/Gemini_Generated_Image_keev3wkeev3wkeev.jpg.meta
+Assets/Scenes/Materials/Heal.fbx
+Assets/Scenes/Materials/Heal.fbx.meta
+Assets/Scenes/Materials/Material_0.001 1.mat
+Assets/Scenes/Materials/Material_0.001 1.mat.meta
+Assets/Scenes/Materials/Material_0.002.mat
+Assets/Scenes/Materials/Material_0.002.mat.meta
+Assets/Scenes/Materials/Material_0.003.mat
+Assets/Scenes/Materials/Material_0.003.mat.meta
+Assets/Scenes/Materials/Material_0.004.mat
+Assets/Scenes/Materials/Material_0.004.mat.meta
+Assets/Scenes/Materials/Stun.fbx
+Assets/Scenes/Materials/Stun.fbx.meta
+Assets/Scenes/Materials/Ultimate.fbx
+Assets/Scenes/Materials/Ultimate.fbx.meta
+Assets/Settings/BossFightCinematic.meta
+Assets/Settings/BossFightCinematic/
+Assets/Settings/BossFightCinematic/BossFight Cinematic Wall.asset
+Assets/Settings/BossFightCinematic/BossFight Cinematic Wall.asset.meta
+Assets/Settings/BossFightCinematic/BossFight Gameplay.asset
+Assets/Settings/BossFightCinematic/BossFight Gameplay.asset.meta
+Assets/Settings/BossFightCinematic/BossFight Mixed GI.lighting
+Assets/Settings/BossFightCinematic/BossFight Mixed GI.lighting.meta
+Assets/Settings/BossFightCinematic/Material_0.002-25b5c8ad68515624eb0dc80c63ba1e94.mat
+Assets/Settings/BossFightCinematic/Material_0.002-25b5c8ad68515624eb0dc80c63ba1e94.mat.meta
+Assets/Settings/BossFightCinematic/Material_0.003-107262f11d80e1348825bb7328f067b6.mat
+Assets/Settings/BossFightCinematic/Material_0.003-107262f11d80e1348825bb7328f067b6.mat.meta
+Assets/Settings/BossFightCinematic/Material_0.004-99433ee4cef091040a636b49b95dbe5b.mat
+Assets/Settings/BossFightCinematic/Material_0.004-99433ee4cef091040a636b49b95dbe5b.mat.meta
+Assets/Settings/BossFightCinematic/Material_0.005-537038c4c8e4e9047a23e1b1baad22e7.mat
+Assets/Settings/BossFightCinematic/Material_0.005-537038c4c8e4e9047a23e1b1baad22e7.mat.meta
+Assets/Settings/BossFightCinematic/Material_0.006-248d54573c8d6c1409e9213120ee5ab7.mat
+Assets/Settings/BossFightCinematic/Material_0.006-248d54573c8d6c1409e9213120ee5ab7.mat.meta
+Assets/Shaders.meta
+Assets/Shaders/
+Assets/Shaders/BossCinematic.shader
+Assets/Shaders/BossCinematic.shader.meta
+Assets/Shaders/VertexColorLit.shader
+Assets/Shaders/VertexColorLit.shader.meta
+Assets/Sound.meta
+Assets/Sound/
+Assets/Sound/BGM.meta
+Assets/Sound/BGM/
+Assets/Sound/BGM/Deepspace Gameplay BGM.wav
+Assets/Sound/BGM/Deepspace Gameplay BGM.wav.meta
+Assets/Sound/BGM/End Session.wav
+Assets/Sound/BGM/End Session.wav.meta
+Assets/Sound/BGM/Neon Horizon_loop.wav
+Assets/Sound/BGM/Neon Horizon_loop.wav.meta
+Assets/StreamingAssets/BossBackgroundMovies.meta
+Assets/StreamingAssets/BossBackgroundMovies/
+Assets/StreamingAssets/BossBackgroundMovies/BGBlueSkyBoss.mp4
+Assets/StreamingAssets/BossBackgroundMovies/BGBlueSkyBoss.mp4.meta
+Assets/StreamingAssets/BossBackgroundMovies/BGFloorHellBoss.mp4
+Assets/StreamingAssets/BossBackgroundMovies/BGFloorHellBoss.mp4.meta
+Assets/StreamingAssets/BossBackgroundMovies/BGFloorWaterBoss.mp4
+Assets/StreamingAssets/BossBackgroundMovies/BGFloorWaterBoss.mp4.meta
+Assets/StreamingAssets/BossBackgroundMovies/BGGrassFloorBoss.mp4
+Assets/StreamingAssets/BossBackgroundMovies/BGGrassFloorBoss.mp4.meta
+Assets/StreamingAssets/BossBackgroundMovies/BGHellBoss.mp4
+Assets/StreamingAssets/BossBackgroundMovies/BGHellBoss.mp4.meta
+Assets/StreamingAssets/BossBackgroundMovies/BGWaterBoss.mp4
+Assets/StreamingAssets/BossBackgroundMovies/BGWaterBoss.mp4.meta
+Assets/StreamingAssets/BossSlayerFloorMagic.mp4
+Assets/StreamingAssets/BossSlayerFloorMagic.mp4.meta
+Assets/StreamingAssets/BossSlayerShatter.meta
+Assets/StreamingAssets/BossSlayerShatter/
+Assets/StreamingAssets/BossSlayerShatter/Demon.mp4
+Assets/StreamingAssets/BossSlayerShatter/Demon.mp4.meta
+Assets/StreamingAssets/BossSlayerShatter/Dragon.mp4
+Assets/StreamingAssets/BossSlayerShatter/Dragon.mp4.meta
+Assets/StreamingAssets/BossSlayerShatter/Fish.mp4
+Assets/StreamingAssets/BossSlayerShatter/Fish.mp4.meta
+Assets/StreamingAssets/BossSlayerShatter/Golem.mp4
+Assets/StreamingAssets/BossSlayerShatter/Golem.mp4.meta
+Assets/StreamingAssets/BossSlayerShatter/Hydra.mp4
+Assets/StreamingAssets/BossSlayerShatter/Hydra.mp4.meta
+Assets/StreamingAssets/BossSlayerShatter/Jellyfish.mp4
+Assets/StreamingAssets/BossSlayerShatter/Jellyfish.mp4.meta
+Assets/StreamingAssets/BossSlayerShatter/Sentinel.mp4
+Assets/StreamingAssets/BossSlayerShatter/Sentinel.mp4.meta
+Assets/StreamingAssets/BossSlayerShatter/Serpent.mp4
+Assets/StreamingAssets/BossSlayerShatter/Serpent.mp4.meta
+Assets/StreamingAssets/BossSlayerShatter/Wraith.mp4
+Assets/StreamingAssets/BossSlayerShatter/Wraith.mp4.meta
+Assets/Synty.meta
+Assets/Synty/
+Assets/Synty/PolygonGeneric.meta
+Assets/Synty/PolygonGeneric/
+Assets/Synty/PolygonGeneric/Shaders.meta
+Assets/Synty/PolygonGeneric/Shaders/
+Assets/Synty/PolygonGeneric/Shaders/Generic_Basic.shadergraph
+Assets/Synty/PolygonGeneric/Shaders/Generic_Basic.shadergraph.meta
+Assets/Synty/PolygonSciFiSpace.meta
+Assets/Synty/PolygonSciFiSpace/
+Assets/Synty/PolygonSciFiSpace/Materials.meta
+Assets/Synty/PolygonSciFiSpace/Materials/
+Assets/Synty/PolygonSciFiSpace/Materials/FX.meta
+Assets/Synty/PolygonSciFiSpace/Materials/FX/
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Explosion_01.mat
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Explosion_01.mat.meta
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Laser_01.mat
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Laser_01.mat.meta
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Laser_02.mat
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Laser_02.mat.meta
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Lighting_01.mat
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Lighting_01.mat.meta
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Lines_01.mat
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Lines_01.mat.meta
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_MissileCloud_01.mat
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_MissileCloud_01.mat.meta
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_MuzzleFlash_01.mat
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_MuzzleFlash_01.mat.meta
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Pebble_Debris_01.mat
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Pebble_Debris_01.mat.meta
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_SphereGlow_01.mat
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_SphereGlow_01.mat.meta
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Sphere_01.mat
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Sphere_01.mat.meta
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Trail_Streaks_01.mat
+Assets/Synty/PolygonSciFiSpace/Materials/FX/FX_Trail_Streaks_01.mat.meta
+Assets/Synty/PolygonSciFiSpace/Models.meta
+Assets/Synty/PolygonSciFiSpace/Models/
+Assets/Synty/PolygonSciFiSpace/Models/FX.meta
+Assets/Synty/PolygonSciFiSpace/Models/FX/
+Assets/Synty/PolygonSciFiSpace/Models/FX/SM_Flame_Mesh_New.fbx
+Assets/Synty/PolygonSciFiSpace/Models/FX/SM_Flame_Mesh_New.fbx.meta
+Assets/Synty/PolygonSciFiSpace/Models/FX/SM_Laser_Trail_01.fbx
+Assets/Synty/PolygonSciFiSpace/Models/FX/SM_Laser_Trail_01.fbx.meta
+Assets/Synty/PolygonSciFiSpace/Models/FX/SM_Pebble_Debris_03.fbx
+Assets/Synty/PolygonSciFiSpace/Models/FX/SM_Pebble_Debris_03.fbx.meta
+Assets/Synty/PolygonSciFiSpace/Textures.meta
+Assets/Synty/PolygonSciFiSpace/Textures/
+Assets/Synty/PolygonSciFiSpace/Textures/FX.meta
+Assets/Synty/PolygonSciFiSpace/Textures/FX/
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Explosion_01.png
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Explosion_01.png.meta
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Explosion_Cloud_01.png
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Explosion_Cloud_01.png.meta
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Gradient_Boost_01.png
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Gradient_Boost_01.png.meta
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Sphere_Glow_01.png
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Sphere_Glow_01.png.meta
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Tansparent_Line_Full_01.png
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Tansparent_Line_Full_01.png.meta
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Trail_Lines_01.png
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Trail_Lines_01.png.meta
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Transparent_Line_01.png
+Assets/Synty/PolygonSciFiSpace/Textures/FX/Transparent_Line_01.png.meta
+Assets/TextMesh Pro.meta
+Assets/TextMesh Pro/
+Assets/TextMesh Pro/Fonts.meta
+Assets/TextMesh Pro/Fonts/
+Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt
+Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta
+Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta
+Assets/TextMesh Pro/Resources.meta
+Assets/TextMesh Pro/Resources/
+Assets/TextMesh Pro/Resources/Fonts & Materials.meta
+Assets/TextMesh Pro/Resources/Fonts & Materials/
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat.meta
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset.meta
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat.meta
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset.meta
+Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt
+Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta
+Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt
+Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta
+Assets/TextMesh Pro/Resources/Sprite Assets.meta
+Assets/TextMesh Pro/Resources/Sprite Assets/
+Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset
+Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta
+Assets/TextMesh Pro/Resources/Style Sheets.meta
+Assets/TextMesh Pro/Resources/Style Sheets/
+Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset
+Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta
+Assets/TextMesh Pro/Resources/TMP Settings.asset
+Assets/TextMesh Pro/Resources/TMP Settings.asset.meta
+Assets/TextMesh Pro/Shaders.meta
+Assets/TextMesh Pro/Shaders/
+Assets/TextMesh Pro/Shaders/SDFFunctions.hlsl
+Assets/TextMesh Pro/Shaders/SDFFunctions.hlsl.meta
+Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader
+Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta
+Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader
+Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta
+Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader
+Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph
+Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP UNLIT.shadergraph
+Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP UNLIT.shadergraph.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF-URP Lit.shadergraph
+Assets/TextMesh Pro/Shaders/TMP_SDF-URP Lit.shadergraph.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF-URP Unlit.shadergraph
+Assets/TextMesh Pro/Shaders/TMP_SDF-URP Unlit.shadergraph.meta
+Assets/TextMesh Pro/Shaders/TMP_SDF.shader
+Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta
+Assets/TextMesh Pro/Shaders/TMP_Sprite.shader
+Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta
+Assets/TextMesh Pro/Shaders/TMPro.cginc
+Assets/TextMesh Pro/Shaders/TMPro.cginc.meta
+Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc
+Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta
+Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc
+Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta
+Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc
+Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta
+Assets/TextMesh Pro/Sprites.meta
+Assets/TextMesh Pro/Sprites/
+Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt
+Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta
+Assets/TextMesh Pro/Sprites/EmojiOne.json
+Assets/TextMesh Pro/Sprites/EmojiOne.json.meta
+Assets/TextMesh Pro/Sprites/EmojiOne.png
+Assets/TextMesh Pro/Sprites/EmojiOne.png.meta
+Assets/VolleyBall.meta
+Assets/VolleyBall/
+Assets/VolleyBall/Fonts.meta
+Assets/VolleyBall/Fonts/
+Assets/VolleyBall/Fonts/Volley Thai SDF.asset
+Assets/VolleyBall/Fonts/Volley Thai SDF.asset.meta
+Assets/DeepspacePresentation/Scripts.meta
+Assets/DeepspacePresentation/Scripts/
+Assets/DeepspacePresentation/Scripts/DeepspaceScorePulse.cs
+Assets/DeepspacePresentation/Scripts/DeepspaceScorePulse.cs.meta
+Assets/Scenes/BossFight.unity
+Assets/Scenes/BossFight.unity.meta
+Assets/Scripts/Deepspace.meta
+Assets/Scripts/Deepspace/
+Assets/Scripts/Deepspace/BossAbyssalKing.cs
+Assets/Scripts/Deepspace/BossAbyssalKing.cs.meta
+Assets/Scripts/Deepspace/BossAttackVfx.cs
+Assets/Scripts/Deepspace/BossAttackVfx.cs.meta
+Assets/Scripts/Deepspace/BossCardSparkle.cs
+Assets/Scripts/Deepspace/BossCardSparkle.cs.meta
+Assets/Scripts/Deepspace/BossChargeVfx.cs
+Assets/Scripts/Deepspace/BossChargeVfx.cs.meta
+Assets/Scripts/Deepspace/BossCountdownDrop.cs
+Assets/Scripts/Deepspace/BossCountdownDrop.cs.meta
+Assets/Scripts/Deepspace/BossCrystalBeamVfx.cs
+Assets/Scripts/Deepspace/BossCrystalBeamVfx.cs.meta
+Assets/Scripts/Deepspace/BossCrystalFloorGraphic.cs
+Assets/Scripts/Deepspace/BossCrystalFloorGraphic.cs.meta
+Assets/Scripts/Deepspace/BossDeathVfx.cs
+Assets/Scripts/Deepspace/BossDeathVfx.cs.meta
+Assets/Scripts/Deepspace/BossDemonAnimation.cs
+Assets/Scripts/Deepspace/BossDemonAnimation.cs.meta
+Assets/Scripts/Deepspace/BossDemonAnimation.Death.cs
+Assets/Scripts/Deepspace/BossDemonAnimation.Death.cs.meta
+Assets/Scripts/Deepspace/BossDemonAnimation.HumanMotion.cs
+Assets/Scripts/Deepspace/BossDemonAnimation.HumanMotion.cs.meta
+Assets/Scripts/Deepspace/BossDemonAnimation.Rage.cs
+Assets/Scripts/Deepspace/BossDemonAnimation.Rage.cs.meta
+Assets/Scripts/Deepspace/BossDemonUltimateGraphic.cs
+Assets/Scripts/Deepspace/BossDemonUltimateGraphic.cs.meta
+Assets/Scripts/Deepspace/BossDivineHalo.cs
+Assets/Scripts/Deepspace/BossDivineHalo.cs.meta
+Assets/Scripts/Deepspace/BossDragonAnimation.cs
+Assets/Scripts/Deepspace/BossDragonAnimation.cs.meta
+Assets/Scripts/Deepspace/BossDragonAnimation.Death.cs
+Assets/Scripts/Deepspace/BossDragonAnimation.Death.cs.meta
+Assets/Scripts/Deepspace/BossDragonAnimation.Fire.cs
+Assets/Scripts/Deepspace/BossDragonAnimation.Fire.cs.meta
+Assets/Scripts/Deepspace/BossDragonAnimation.Flight.cs
+Assets/Scripts/Deepspace/BossDragonAnimation.Flight.cs.meta
+Assets/Scripts/Deepspace/BossDragonAnimation.Heat.cs
+Assets/Scripts/Deepspace/BossDragonAnimation.Heat.cs.meta
+Assets/Scripts/Deepspace/BossDragonAnimation.Neck.cs
+Assets/Scripts/Deepspace/BossDragonAnimation.Neck.cs.meta
+Assets/Scripts/Deepspace/BossDragonAnimation.Wings.cs
+Assets/Scripts/Deepspace/BossDragonAnimation.Wings.cs.meta
+Assets/Scripts/Deepspace/BossEmblemGraphic.cs
+Assets/Scripts/Deepspace/BossEmblemGraphic.cs.meta
+Assets/Scripts/Deepspace/BossEnvironmentMotion.cs
+Assets/Scripts/Deepspace/BossEnvironmentMotion.cs.meta
+Assets/Scripts/Deepspace/BossFallingDebris.cs
+Assets/Scripts/Deepspace/BossFallingDebris.cs.meta
+Assets/Scripts/Deepspace/BossFantasyExplosion.cs
+Assets/Scripts/Deepspace/BossFantasyExplosion.cs.meta
+Assets/Scripts/Deepspace/BossFantasyTheme.cs
+Assets/Scripts/Deepspace/BossFantasyTheme.cs.meta
+Assets/Scripts/Deepspace/BossFightAudio.cs
+Assets/Scripts/Deepspace/BossFightAudio.cs.meta
+Assets/Scripts/Deepspace/BossFightAudioBank.cs
+Assets/Scripts/Deepspace/BossFightAudioBank.cs.meta
+Assets/Scripts/Deepspace/BossFightButtonAudio.cs
+Assets/Scripts/Deepspace/BossFightButtonAudio.cs.meta
+Assets/Scripts/Deepspace/BossFightDisplays.cs
+Assets/Scripts/Deepspace/BossFightDisplays.cs.meta
+Assets/Scripts/Deepspace/BossFightJuice.cs
+Assets/Scripts/Deepspace/BossFightJuice.cs.meta
+Assets/Scripts/Deepspace/BossFightReadyGate.cs
+Assets/Scripts/Deepspace/BossFightReadyGate.cs.meta
+Assets/Scripts/Deepspace/BossFightReadyScreen.cs
+Assets/Scripts/Deepspace/BossFightReadyScreen.cs.meta
+Assets/Scripts/Deepspace/BossFightScore.cs
+Assets/Scripts/Deepspace/BossFightScore.cs.meta
+Assets/Scripts/Deepspace/BossFightScoreBank.cs
+Assets/Scripts/Deepspace/BossFightScoreBank.cs.meta
+Assets/Scripts/Deepspace/BossFireFloor.cs
+Assets/Scripts/Deepspace/BossFireFloor.cs.meta
+Assets/Scripts/Deepspace/BossFireWall.cs
+Assets/Scripts/Deepspace/BossFireWall.cs.meta
+Assets/Scripts/Deepspace/BossFloorMagicVideo.cs
+Assets/Scripts/Deepspace/BossFloorMagicVideo.cs.meta
+Assets/Scripts/Deepspace/BossGemArt.cs
+Assets/Scripts/Deepspace/BossGemArt.cs.meta
+Assets/Scripts/Deepspace/BossGemFlight.cs
+Assets/Scripts/Deepspace/BossGemFlight.cs.meta
+Assets/Scripts/Deepspace/BossGemShine.cs
+Assets/Scripts/Deepspace/BossGemShine.cs.meta
+Assets/Scripts/Deepspace/BossGolemAnimation.cs
+Assets/Scripts/Deepspace/BossGolemAnimation.cs.meta
+Assets/Scripts/Deepspace/BossGolemUltimateShake.cs
+Assets/Scripts/Deepspace/BossGolemUltimateShake.cs.meta
+Assets/Scripts/Deepspace/BossHallSpace.cs
+Assets/Scripts/Deepspace/BossHallSpace.cs.meta
+Assets/Scripts/Deepspace/BossHoverVfx.cs
+Assets/Scripts/Deepspace/BossHoverVfx.cs.meta
+Assets/Scripts/Deepspace/BossHpDamageEcho.cs
+Assets/Scripts/Deepspace/BossHpDamageEcho.cs.meta
+Assets/Scripts/Deepspace/BossHydra.Attacks.cs
+Assets/Scripts/Deepspace/BossHydra.Attacks.cs.meta
+Assets/Scripts/Deepspace/BossHydra.BodyLife.cs
+Assets/Scripts/Deepspace/BossHydra.BodyLife.cs.meta
+Assets/Scripts/Deepspace/BossHydra.cs
+Assets/Scripts/Deepspace/BossHydra.cs.meta
+Assets/Scripts/Deepspace/BossHydra.ExtendedAttacks.cs
+Assets/Scripts/Deepspace/BossHydra.ExtendedAttacks.cs.meta
+Assets/Scripts/Deepspace/BossHydra.Reference.cs
+Assets/Scripts/Deepspace/BossHydra.Reference.cs.meta
+Assets/Scripts/Deepspace/BossHydra.Serpentine.cs
+Assets/Scripts/Deepspace/BossHydra.Serpentine.cs.meta
+Assets/Scripts/Deepspace/BossHydra.SevenHeadStrike.cs
+Assets/Scripts/Deepspace/BossHydra.SevenHeadStrike.cs.meta
+Assets/Scripts/Deepspace/BossHydraFloorStrike.cs
+Assets/Scripts/Deepspace/BossHydraFloorStrike.cs.meta
+Assets/Scripts/Deepspace/BossHydraFloorStrike.Effects.cs
+Assets/Scripts/Deepspace/BossHydraFloorStrike.Effects.cs.meta
+Assets/Scripts/Deepspace/BossJellyfishAnimation.cs
+Assets/Scripts/Deepspace/BossJellyfishAnimation.cs.meta
+Assets/Scripts/Deepspace/BossJellyfishAnimation.Death.cs
+Assets/Scripts/Deepspace/BossJellyfishAnimation.Death.cs.meta
+Assets/Scripts/Deepspace/BossJellyfishAnimation.ExtendedAttacks.cs
+Assets/Scripts/Deepspace/BossJellyfishAnimation.ExtendedAttacks.cs.meta
+Assets/Scripts/Deepspace/BossJellyfishAnimation.Fluid.cs
+Assets/Scripts/Deepspace/BossJellyfishAnimation.Fluid.cs.meta
+Assets/Scripts/Deepspace/BossMeteorGraphic.cs
+Assets/Scripts/Deepspace/BossMeteorGraphic.cs.meta
+Assets/Scripts/Deepspace/BossMeteorVfx.cs
+Assets/Scripts/Deepspace/BossMeteorVfx.cs.meta
+Assets/Scripts/Deepspace/BossModelAnimation.Attacks.cs
+Assets/Scripts/Deepspace/BossModelAnimation.Attacks.cs.meta
+Assets/Scripts/Deepspace/BossModelAnimation.cs
+Assets/Scripts/Deepspace/BossModelAnimation.cs.meta
+Assets/Scripts/Deepspace/BossModelAnimation.ExtendedAttacks.cs
+Assets/Scripts/Deepspace/BossModelAnimation.ExtendedAttacks.cs.meta
+Assets/Scripts/Deepspace/BossModelAnimation.Locomotion.cs
+Assets/Scripts/Deepspace/BossModelAnimation.Locomotion.cs.meta
+Assets/Scripts/Deepspace/BossModelAnimation.Stun.cs
+Assets/Scripts/Deepspace/BossModelAnimation.Stun.cs.meta
+Assets/Scripts/Deepspace/BossModelElementVfx.cs
+Assets/Scripts/Deepspace/BossModelElementVfx.cs.meta
+Assets/Scripts/Deepspace/BossModelElementVfx.DragonCone.cs
+Assets/Scripts/Deepspace/BossModelElementVfx.DragonCone.cs.meta
+Assets/Scripts/Deepspace/BossModelElementVfx.Sockets.cs
+Assets/Scripts/Deepspace/BossModelElementVfx.Sockets.cs.meta
+Assets/Scripts/Deepspace/BossNextBossCard.cs
+Assets/Scripts/Deepspace/BossNextBossCard.cs.meta
+Assets/Scripts/Deepspace/BossPassiveState.cs
+Assets/Scripts/Deepspace/BossPassiveState.cs.meta
+Assets/Scripts/Deepspace/BossPlayerCards.cs
+Assets/Scripts/Deepspace/BossPlayerCards.cs.meta
+Assets/Scripts/Deepspace/BossPlayerMarkers.cs
+Assets/Scripts/Deepspace/BossPlayerMarkers.cs.meta
+Assets/Scripts/Deepspace/BossPlesiothAnimation.cs
+Assets/Scripts/Deepspace/BossPlesiothAnimation.cs.meta
+Assets/Scripts/Deepspace/BossPlesiothAnimation.Death.cs
+Assets/Scripts/Deepspace/BossPlesiothAnimation.Death.cs.meta
+Assets/Scripts/Deepspace/BossPlesiothAnimation.Fins.cs
+Assets/Scripts/Deepspace/BossPlesiothAnimation.Fins.cs.meta
+Assets/Scripts/Deepspace/BossPlesiothAnimation.Swim.cs
+Assets/Scripts/Deepspace/BossPlesiothAnimation.Swim.cs.meta
+Assets/Scripts/Deepspace/BossRisingParticles.cs
+Assets/Scripts/Deepspace/BossRisingParticles.cs.meta
+Assets/Scripts/Deepspace/BossSafeZoneVfx.cs
+Assets/Scripts/Deepspace/BossSafeZoneVfx.cs.meta
+Assets/Scripts/Deepspace/BossSelectionPanel.Cards.cs
+Assets/Scripts/Deepspace/BossSelectionPanel.Cards.cs.meta
+Assets/Scripts/Deepspace/BossSelectionPanel.Countdown.cs
+Assets/Scripts/Deepspace/BossSelectionPanel.Countdown.cs.meta
+Assets/Scripts/Deepspace/BossSelectionPanel.cs
+Assets/Scripts/Deepspace/BossSelectionPanel.cs.meta
+Assets/Scripts/Deepspace/BossSelectionPanel.Reveal.cs
+Assets/Scripts/Deepspace/BossSelectionPanel.Reveal.cs.meta
+Assets/Scripts/Deepspace/BossSelectionPanel.WallZoom.cs
+Assets/Scripts/Deepspace/BossSelectionPanel.WallZoom.cs.meta
+Assets/Scripts/Deepspace/BossSentinelAnimation.cs
+Assets/Scripts/Deepspace/BossSentinelAnimation.cs.meta
+Assets/Scripts/Deepspace/BossSentinelMissileVfx.cs
+Assets/Scripts/Deepspace/BossSentinelMissileVfx.cs.meta
+Assets/Scripts/Deepspace/BossSerpentAnimation.cs
+Assets/Scripts/Deepspace/BossSerpentAnimation.cs.meta
+Assets/Scripts/Deepspace/BossSerpentAnimation.ExtendedAttacks.cs
+Assets/Scripts/Deepspace/BossSerpentAnimation.ExtendedAttacks.cs.meta
+Assets/Scripts/Deepspace/BossSerpentWaterVfx.cs
+Assets/Scripts/Deepspace/BossSerpentWaterVfx.cs.meta
+Assets/Scripts/Deepspace/BossSerpentWaveVfx.cs
+Assets/Scripts/Deepspace/BossSerpentWaveVfx.cs.meta
+Assets/Scripts/Deepspace/BossSlashStreak.cs
+Assets/Scripts/Deepspace/BossSlashStreak.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.AbyssalKing.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.AbyssalKing.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.DemonStage.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.DemonStage.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.DemonUltimate.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.DemonUltimate.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.DragonStage.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.DragonStage.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.ExtendedTechniques.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.ExtendedTechniques.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.FloorEffects.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.FloorEffects.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.GolemStage.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.GolemStage.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.HydraStrike.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.HydraStrike.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.MenuIntro.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.MenuIntro.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.Meteors.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.Meteors.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.PlayerSelect.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.PlayerSelect.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.PlayerSelectArt.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.PlayerSelectArt.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.Preload.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.Preload.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.Replay.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.Replay.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.Rush.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.Rush.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.RushBalance.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.RushBalance.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.RushResult.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.RushResult.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.Selection.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.Selection.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.Sentinel.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.Sentinel.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.Serpent.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.Serpent.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.Signatures.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.Signatures.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.Skins.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.Skins.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.Tutorial.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.Tutorial.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.UiTheme.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.UiTheme.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.UltimateFx.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.UltimateFx.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.Variety.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.Variety.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.Victory.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.Victory.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.WallBars.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.WallBars.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.WallCentering.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.WallCentering.cs.meta
+Assets/Scripts/Deepspace/BossSlayerGameManager.WallHud.cs
+Assets/Scripts/Deepspace/BossSlayerGameManager.WallHud.cs.meta
+Assets/Scripts/Deepspace/BossSmokeGraphic.cs
+Assets/Scripts/Deepspace/BossSmokeGraphic.cs.meta
+Assets/Scripts/Deepspace/BossStartWall.cs
+Assets/Scripts/Deepspace/BossStartWall.cs.meta
+Assets/Scripts/Deepspace/BossStatueAura.cs
+Assets/Scripts/Deepspace/BossStatueAura.cs.meta
+Assets/Scripts/Deepspace/BossStatueEyes.cs
+Assets/Scripts/Deepspace/BossStatueEyes.cs.meta
+Assets/Scripts/Deepspace/BossStatueShatter.cs
+Assets/Scripts/Deepspace/BossStatueShatter.cs.meta
+Assets/Scripts/Deepspace/BossThemePalette.cs
+Assets/Scripts/Deepspace/BossThemePalette.cs.meta
+Assets/Scripts/Deepspace/BossUiRect.cs
+Assets/Scripts/Deepspace/BossUiRect.cs.meta
+Assets/Scripts/Deepspace/BossUltimateAura.cs
+Assets/Scripts/Deepspace/BossUltimateAura.cs.meta
+Assets/Scripts/Deepspace/BossUltimateOverlayGraphic.cs
+Assets/Scripts/Deepspace/BossUltimateOverlayGraphic.cs.meta
+Assets/Scripts/Deepspace/BossVictoryGraphic.cs
+Assets/Scripts/Deepspace/BossVictoryGraphic.cs.meta
+Assets/Scripts/Deepspace/BossVictoryPanel.cs
+Assets/Scripts/Deepspace/BossVictoryPanel.cs.meta
+Assets/Scripts/Deepspace/BossVoxelSkin.Body.cs
+Assets/Scripts/Deepspace/BossVoxelSkin.Body.cs.meta
+Assets/Scripts/Deepspace/BossVoxelSkin.Bridge.cs
+Assets/Scripts/Deepspace/BossVoxelSkin.Bridge.cs.meta
+Assets/Scripts/Deepspace/BossVoxelSkin.cs
+Assets/Scripts/Deepspace/BossVoxelSkin.cs.meta
+Assets/Scripts/Deepspace/BossVoxelSkin.Fx.cs
+Assets/Scripts/Deepspace/BossVoxelSkin.Fx.cs.meta
+Assets/Scripts/Deepspace/BossWallCrumble.cs
+Assets/Scripts/Deepspace/BossWallCrumble.cs.meta
+Assets/Scripts/Deepspace/BossWallHud.cs
+Assets/Scripts/Deepspace/BossWallHud.cs.meta
+Assets/Scripts/Deepspace/BossWallSlash.cs
+Assets/Scripts/Deepspace/BossWallSlash.cs.meta
+Assets/Scripts/Deepspace/BossWraithAnimation.cs
+Assets/Scripts/Deepspace/BossWraithAnimation.cs.meta
+Assets/Scripts/Deepspace/ButtonPressFeedback.cs
+Assets/Scripts/Deepspace/ButtonPressFeedback.cs.meta
+Assets/Scripts/Deepspace/DeepspaceBossImpactFrame.cs
+Assets/Scripts/Deepspace/DeepspaceBossImpactFrame.cs.meta
+Assets/Scripts/Deepspace/DeepspaceImpactGraphic.cs
+Assets/Scripts/Deepspace/DeepspaceImpactGraphic.cs.meta
+Assets/Scripts/Deepspace/DeepspaceJuiceGraphic.cs
+Assets/Scripts/Deepspace/DeepspaceJuiceGraphic.cs.meta
+Assets/Scripts/Deepspace/FloorDisplaySettings.cs
+Assets/Scripts/Deepspace/FloorDisplaySettings.cs.meta
+Assets/Scripts/Deepspace/GameShowcase.cs
+Assets/Scripts/Deepspace/GameShowcase.cs.meta
+Assets/Scripts/Deepspace/Lang.cs
+Assets/Scripts/Deepspace/Lang.cs.meta
+Assets/Scripts/Deepspace/LangTable.cs
+Assets/Scripts/Deepspace/LangTable.cs.meta
+Assets/Scripts/Deepspace/MenuIntroVideo.cs
+Assets/Scripts/Deepspace/MenuIntroVideo.cs.meta
+Assets/Scripts/Deepspace/MultiDisplaySetup.cs
+Assets/Scripts/Deepspace/MultiDisplaySetup.cs.meta
+Assets/Scripts/Deepspace/PlayerDropoutGuard.cs
+Assets/Scripts/Deepspace/PlayerDropoutGuard.cs.meta
+Assets/Scripts/Deepspace/PlayerPadSelect.cs
+Assets/Scripts/Deepspace/PlayerPadSelect.cs.meta
+Assets/Scripts/Deepspace/ReplayLog.cs
+Assets/Scripts/Deepspace/ReplayLog.cs.meta
+Assets/Scripts/Deepspace/ResourcePreloader.cs
+Assets/Scripts/Deepspace/ResourcePreloader.cs.meta
+Assets/Scripts/Deepspace/ResultChoiceFlow.cs
+Assets/Scripts/Deepspace/ResultChoiceFlow.cs.meta
+Assets/Scripts/Deepspace/TutorialSlides.cs
+Assets/Scripts/Deepspace/TutorialSlides.cs.meta
+Assets/Scripts/Deepspace/UiPolygonGraphic.cs
+Assets/Scripts/Deepspace/UiPolygonGraphic.cs.meta
+Assets/Scripts/Deepspace/UiShardGraphic.cs
+Assets/Scripts/Deepspace/UiShardGraphic.cs.meta
+Assets/Scripts/Deepspace/UiThemeKit.cs
+Assets/Scripts/Deepspace/UiThemeKit.cs.meta
+Assets/Scripts/Deepspace/Visual3DBridge.cs
+Assets/Scripts/Deepspace/Visual3DBridge.cs.meta
+Assets/Scripts/Deepspace/BossPlayers.meta
+Assets/Scripts/Deepspace/BossPlayers/
+Assets/Scripts/Deepspace/BossPlayers/BossFloorPlayers.cs
+Assets/Scripts/Deepspace/BossPlayers/BossFloorPlayers.cs.meta
+Assets/Scripts/Deepspace/BossPlayers/BossPlayerMarkerHider.cs
+Assets/Scripts/Deepspace/BossPlayers/BossPlayerMarkerHider.cs.meta
+Assets/Scripts/Deepspace/BossPlayers/BossPlayerReadySelection.cs
+Assets/Scripts/Deepspace/BossPlayers/BossPlayerReadySelection.cs.meta
+Assets/Scripts/Deepspace/BossPlayers/IPlayerPadView.cs
+Assets/Scripts/Deepspace/BossPlayers/IPlayerPadView.cs.meta
+Assets/Scripts/Deepspace/BossPlayers/PlayerNumberSelection.cs
+Assets/Scripts/Deepspace/BossPlayers/PlayerNumberSelection.cs.meta
+Assets/Scripts/Deepspace/BossPlayers/ReadyTagCircle.cs
+Assets/Scripts/Deepspace/BossPlayers/ReadyTagCircle.cs.meta
+Assets/Scripts/Deepspace/BossArenaRemoteHooks.cs
+
+# 2026-11-20 later: the game was merged into Assets/Scenes/BossSlayer.unity. Assets/Scenes/BossFight.unity and
+# Assets/Scripts/Deepspace/BossFightDisplays.cs were removed again; MultiDisplaySetup.cs became a constant only.
+# Later on 2026-11-20: 3D lighting removed (Lighting group, light probes, volume profiles, BossFight Mixed GI.lighting,
+# Assets/Scenes/BossFight/LightingData.asset) and BossPlayerMarkerHider.cs deleted. DOTweenModule*.cs were added.

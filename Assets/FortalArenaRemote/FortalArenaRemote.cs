@@ -1,0 +1,272 @@
+using System;
+using System.Collections.Concurrent;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+namespace Fortal.Arena
+{
+    // Fortal Arena Remote: lets the arena's web launcher open / close this game's tutorial (and change its language).
+    //   web launcher -UDP-> game-launcher-gui -> 127.0.0.1:19790 -> this script -> the game
+    //   this script -> 127.0.0.1:19780 -> game-launcher-gui -> web launcher  (the game says what state it is in)
+    // It starts by itself with the game. Connect the game through FortalArenaRemoteBridge (no code), or set the Func / Action
+    // fields below from your own script. See README_TH.md.
+    public sealed class FortalArenaRemote : MonoBehaviour
+    {
+        public const int GamePort = 19790, LauncherPort = 19780;
+        const float ReportEverySeconds = 2f, CheckEverySeconds = .25f;
+        static readonly byte[] Header = Encoding.ASCII.GetBytes("RMOT");
+
+        // ---- connect these to the game (all run on Unity's main thread) ----
+        public static Func<bool> IsTutorialOpen;     // is the tutorial showing right now?
+        public static Func<bool> CanOpenTutorial;    // may it open right now? (normally: only at the menu)
+        public static Action OpenTutorial;
+        public static Action CloseTutorial;
+        // Optional (kit 3.1): a tutorial with pages. With these three set, the Launcher shows BACK / NEXT and turns the
+        // pages itself; without them the game turns its own pages, as before. Pages are numbered from 1.
+        public static Func<int> GetTutorialPage;       // the page showing now, 1..count
+        public static Func<int> GetTutorialPageCount;  // how many pages
+        public static Action<int> ShowTutorialPage;    // show this page (1..count) and stop turning pages by a timer
+        // Optional, for a game with Thai and English. Leave them null if the game has one language.
+        public static Func<string> GetLanguage;      // "th" or "en"
+        public static Action<string> SetLanguage;    // "th" or "en"
+        // false: do not listen on 19790, because something else in the game already does (see README_TH.md, "ชนพอร์ต").
+        // Set it before the first scene loads, then pass that listener's messages to HandleMessage.
+        public static bool ListenOnPort = true;
+
+        static FortalArenaRemote instance;
+        UdpClient listen, send;
+        Thread reader;
+        readonly ConcurrentQueue<KeyValuePair> inbox = new ConcurrentQueue<KeyValuePair>();
+        float reportIn, checkIn;
+        string lastReport;
+
+        struct KeyValuePair { public string action, payload; }
+        [Serializable] class TutorialMessage { public bool open; public int page; }   // page: 1-based, 0 = not given
+        [Serializable] class LanguageMessage { public string lang; }
+        [Serializable] class PressMessage { public string id, key, label; }
+        string pressId = "";
+        bool pressOk;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void ResetStatics()
+        {
+            instance = null;
+            IsTutorialOpen = CanOpenTutorial = null;
+            OpenTutorial = CloseTutorial = null;
+            GetLanguage = null;
+            SetLanguage = null;
+            ListenOnPort = true;
+        }
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        static void Install()
+        {
+            if (instance != null) return;
+            // The launcher's commands must work while the game window is not in front.
+            Application.runInBackground = true;
+            var go = new GameObject("Fortal Arena Remote");
+            DontDestroyOnLoad(go);
+            instance = go.AddComponent<FortalArenaRemote>();
+        }
+
+        // For a game that already listens on 19790: pass it what arrives there ("tutorial" + {"open":true}, ...). Main thread.
+        /// <summary>Send the report now instead of at the next 2 s tick (FortalArenaPlayers calls it after seats / scores).</summary>
+        public static void ReportNow() { if (instance != null) instance.lastReport = null; }
+
+        /// <summary>The arena's flow (kit 3.2): the game opens, its intro plays, then the tutorial comes up by itself and the
+        /// menu waits for START. Call this when the intro ends. Nothing happens if the tutorial may not open or is open.</summary>
+        public static void OpenTutorialAfterIntro()
+        {
+            if (Ask(IsTutorialOpen) || !Ask(CanOpenTutorial) || OpenTutorial == null) return;
+            try { OpenTutorial(); } catch (Exception e) { Debug.LogException(e); }
+            ReportNow();
+        }
+
+        public static void HandleMessage(string action, string payload)
+        {
+            if (instance != null) instance.Handle(action, payload);
+        }
+
+        void OnEnable()
+        {
+            send = new UdpClient(AddressFamily.InterNetwork);
+            IgnorePortUnreachable(send);
+            if (ListenOnPort)
+            {
+                try
+                {
+                    listen = new UdpClient(new IPEndPoint(IPAddress.Loopback, GamePort));
+                    IgnorePortUnreachable(listen);
+                    reader = new Thread(Read) { IsBackground = true, Name = "FortalArenaRemote" };
+                    reader.Start();
+                    Debug.Log("[FortalArenaRemote] listening on 127.0.0.1:" + GamePort);
+                }
+                catch (SocketException e)
+                {
+                    listen = null;
+                    Debug.LogWarning("[FortalArenaRemote] UDP " + GamePort + " is already taken (" + e.SocketErrorCode + "): the launcher cannot reach this game. See README_TH.md");
+                }
+            }
+            reportIn = 0;
+        }
+
+        void OnDisable()
+        {
+            if (listen != null) { listen.Close(); listen = null; }
+            if (send != null) { send.Close(); send = null; }
+            reader = null;
+        }
+
+        // Windows reports an earlier "port unreachable" as an error on the socket; UDP should not care.
+        static void IgnorePortUnreachable(UdpClient client)
+        {
+            try { client.Client.IOControl(unchecked((int)0x9800000C), new byte[] { 0 }, null); } catch (Exception) { }
+        }
+
+        void Read()
+        {
+            var socket = listen;
+            var from = new IPEndPoint(IPAddress.Any, 0);
+            while (socket != null && socket == listen)
+            {
+                byte[] data;
+                try { data = socket.Receive(ref from); }
+                catch (SocketException) { continue; }
+                catch (Exception) { return; }
+                string action, payload;
+                if (TryParse(data, out action, out payload)) inbox.Enqueue(new KeyValuePair { action = action, payload = payload });
+            }
+        }
+
+        public static bool TryParse(byte[] data, out string action, out string payload)
+        {
+            action = payload = "";
+            if (data == null || data.Length < 4) return false;
+            for (int i = 0; i < 4; i++) if (data[i] != Header[i]) return false;
+            var body = Encoding.UTF8.GetString(data, 4, data.Length - 4).TrimStart();
+            int space = body.IndexOf(' ');
+            action = space < 0 ? body : body.Substring(0, space);
+            payload = space < 0 ? "" : body.Substring(space + 1);
+            return action.Length > 0;
+        }
+
+        void Update()
+        {
+            KeyValuePair message;
+            while (inbox.TryDequeue(out message)) Handle(message.action, message.payload);
+            CheckWiring();
+            reportIn -= Time.unscaledDeltaTime;
+            checkIn -= Time.unscaledDeltaTime;
+            if (checkIn > 0f && lastReport != null && reportIn > 0f) return;
+            checkIn = CheckEverySeconds;
+            var report = Report();
+            if (report != lastReport || reportIn <= 0f) Send(report);
+        }
+
+        // A state, not a toggle: the launcher repeats a command until the report confirms it, so a repeat must change nothing.
+        void Handle(string action, string payload)
+        {
+            try
+            {
+                switch (action)
+                {
+                    case "tutorial":
+                        var tutorial = JsonUtility.FromJson<TutorialMessage>(payload);
+                        bool open = tutorial.open;
+                        bool isOpen = IsTutorialOpen != null && IsTutorialOpen();
+                        if (open != isOpen)
+                        {
+                            if (!open) { if (CloseTutorial != null) CloseTutorial(); }
+                            else if (CanOpenTutorial != null && CanOpenTutorial() && OpenTutorial != null) OpenTutorial();
+                        }
+                        // BACK / NEXT from the Launcher (kit 3.1): the page is a state too, a resend changes nothing
+                        if (open && tutorial.page > 0 && ShowTutorialPage != null && IsTutorialOpen != null && IsTutorialOpen()
+                            && (GetTutorialPage == null || GetTutorialPage() != tutorial.page)) ShowTutorialPage(tutorial.page);
+                        break;
+                    case "press":   // a game button pressed on the Launcher (FortalArenaButtons, kit 3.2)
+                        var press = JsonUtility.FromJson<PressMessage>(payload);
+                        if (press == null || string.IsNullOrEmpty(press.id) || string.IsNullOrEmpty(press.key)) break;
+                        if (press.id == pressId) break;   // a resend of a press already done
+                        pressId = press.id;
+                        pressOk = FortalArenaButtons.Press(press.key, press.label);
+                        break;
+                    case "arena_players":   // who paid and which UWB tag each carries (FortalArenaPlayers, kit 3.1)
+                        FortalArenaPlayers.Set(JsonUtility.FromJson<FortalArenaPlayers.Message>(payload));
+                        break;
+                    case "language":
+                        var lang = JsonUtility.FromJson<LanguageMessage>(payload).lang;
+                        if (SetLanguage != null && (lang == "th" || lang == "en")) SetLanguage(lang);
+                        break;
+                    case "settings":   // sound / brightness / quality (FortalArenaSettings, kit 3.0)
+                        FortalArenaSettings.Set(JsonUtility.FromJson<FortalArenaSettings.Message>(payload));
+                        break;
+                    case "arena_status":
+                        break;
+                    default:
+                        return;   // other systems' messages (dual lane, players...)
+                }
+            }
+            catch (Exception e) { Debug.LogException(e); }
+            lastReport = null;    // report right away
+        }
+
+        static bool Ask(Func<bool> question)
+        {
+            try { return question != null && question(); }
+            catch (Exception e) { Debug.LogException(e); return false; }
+        }
+
+        // Nothing connected = the launcher can never open the tutorial, and nothing else in the game would show it. So it is said loudly,
+        // once, in the Console and the log, and the report tells the launcher page.
+        static bool Wired() { return IsTutorialOpen != null && CanOpenTutorial != null && OpenTutorial != null && CloseTutorial != null; }
+        bool wiringChecked;
+        void CheckWiring()
+        {
+            if (wiringChecked || Time.unscaledTime < 5f) return;
+            wiringChecked = true;
+            if (!Wired()) Debug.LogError("[FortalArenaRemote] The tutorial is NOT connected: the launcher's TUTORIAL button cannot work. Add FortalArenaRemoteBridge to an active object in the scene and set it up (README_TH.md), or set the Func / Action fields from your own script.");
+        }
+
+        string Report()
+        {
+            bool tutorial = Ask(IsTutorialOpen);
+            bool allowed = !tutorial && Ask(CanOpenTutorial);
+            var sb = new StringBuilder("{\"type\":\"arena\",\"data\":{\"scene\":\"");
+            sb.Append(SceneManager.GetActiveScene().name.Replace("\"", ""));
+            sb.Append("\",\"tutorial\":").Append(tutorial ? "true" : "false");
+            if (tutorial && GetTutorialPage != null && GetTutorialPageCount != null && ShowTutorialPage != null)
+            {
+                int page = 0, count = 0;
+                try { page = GetTutorialPage(); count = GetTutorialPageCount(); } catch (Exception e) { Debug.LogException(e); }
+                if (count > 0) sb.Append(",\"tutorialPage\":").Append(Mathf.Clamp(page, 1, count)).Append(",\"tutorialPages\":").Append(count);
+            }
+            sb.Append(",\"tutorialAllowed\":").Append(allowed ? "true" : "false");
+            sb.Append(",\"tutorialWired\":").Append(Wired() ? "true" : "false");
+            if (GetLanguage != null)
+            {
+                string lang = null;
+                try { lang = GetLanguage(); } catch (Exception e) { Debug.LogException(e); }
+                if (lang == "th" || lang == "en") sb.Append(",\"lang\":\"").Append(lang).Append('"');
+            }
+            sb.Append(",\"settings\":").Append(FortalArenaSettings.ReportJson());
+            sb.Append(",\"players\":").Append(FortalArenaPlayers.ReportJson());
+            sb.Append(",\"buttons\":").Append(FortalArenaButtons.ReportJson());
+            if (pressId.Length > 0) sb.Append(",\"press\":{\"id\":\"").Append(FortalArenaButtons.Escape(pressId)).Append("\",\"ok\":").Append(pressOk ? "true" : "false").Append('}');
+            return sb.Append("}}").ToString();
+        }
+
+        void Send(string report)
+        {
+            lastReport = report;
+            reportIn = ReportEverySeconds;
+            if (send == null) return;
+            var bytes = Encoding.UTF8.GetBytes("RMOTgame_data " + report);
+            try { send.Send(bytes, bytes.Length, new IPEndPoint(IPAddress.Loopback, LauncherPort)); }
+            catch (Exception) { /* no launcher on this PC: fine */ }
+        }
+    }
+}
