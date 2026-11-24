@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -202,13 +203,27 @@ namespace Deepspace
         public void ConfirmBossSelection()
         {
             if (!selectingBoss || queuedNextBoss == null || sessionBossesPlayed.Contains(queuedNextBoss)) return;
-            selectingBoss = false; bossCountdownRunning = false;
+            selectingBoss = false; bossCountdownRunning = false;   // no more picks or countdown while the fade runs
+            // 2026-11-24 "ตอนเปลี่ยนฉากจาก select boss ไปสู้บอส ให้มี fade": both displays fade to black, the boss select
+            // closes and the fight is set up behind the black, then the fight fades in. Same fade as between bosses.
+            StartCoroutine(FadeIntoBossFight());
+        }
+
+        IEnumerator FadeIntoBossFight()
+        {
+            sfx?.Play("transition", 0.45f, 0, 0.2f, 3);
+            yield return TweenSessionTransitionAlpha(1f, sessionTransitionFadeSeconds);
             floorBossSelection.gameObject.SetActive(false);
             if (wallBossSelection != null) wallBossSelection.gameObject.SetActive(false);
             // บาส 2026-11-18: no READY screen any more ("รอผู้เล่น" / P1 รอ). The 5-4-3-2-1 on the wall is the only wait:
             // at zero the picked boss starts straight away.
             awaitingPlayers = false;
             StartSelectedBossAfterReady();
+            // The first boss of a session goes through BeginBossSession, which calls StopAllCoroutines (this one stops at
+            // its next yield) and clears the fade to 0. So: back to black at once, and fade in from a fresh coroutine.
+            KillSessionTransitionTween();
+            SetSessionTransitionAlpha(1f);
+            StartCoroutine(TweenSessionTransitionAlpha(0f, sessionTransitionFadeSeconds));
         }
         void StartSelectedBossAfterReady()
         {

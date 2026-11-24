@@ -21,7 +21,8 @@ namespace Deepspace
         // row hangs under it; the ULTIMATE plate and bar are centred together at the bottom.
         const float HpWidth = 3444f, HpLeft = (DesignW - HpWidth) / 2f, PlateTop = 56f, HpTop = PlateTop + 127f - 6f;
         const float StunTop = HpTop + 121f + 14f, StunPlateLeft = HpLeft + 30f, StunBarLeft = StunPlateLeft + 274f - 18f;
-        const float UltimateWidth = 448f + 2074f - 10f, UltimateLeft = (DesignW - UltimateWidth) / 2f, UltimateTop = DesignH - 70f - 111f;
+        // The ULTIMATE bar sits just above the player HP row (70 from the bottom, 94 tall: BossSlayerGameManager.WallHud).
+        const float UltimateWidth = 448f + 2074f - 10f, UltimateLeft = (DesignW - UltimateWidth) / 2f, UltimateTop = DesignH - 70f - 94f - 50f - 111f;
 
         // After a hit the white "damage taken" part waits this long, then drains at this many bar-widths per second.
         const float EchoDelay = .35f, EchoSpeed = .9f;
@@ -110,6 +111,10 @@ namespace Deepspace
         {
             var root = Picture(panel, name, back, left, top);
             var bar = new Bar { Left = fillLeft, Right = fillRight, Width = root.GetComponent<RawImage>().texture is Texture t && t != null ? t.width : 1f };
+            // The layout uses the art's own pixels, so the picture must import at full size (Non Power of 2 = None,
+            // Max Size 4096). A shrunken import made the HP bar as short as the STUN bar and its fill run past the frame.
+            if (bar.Width < fillRight)
+                Debug.LogWarning($"[Boss wall HUD] Resources/{Folder}{back}.png imported at {bar.Width}px wide, smaller than its art ({fillRight}px+): set Non Power of 2 = None and Max Size = 4096.");
             if (echo) { bar.Echo = Overlay(root, "Damage Echo", fill); bar.Echo.color = EchoTint; }
             bar.Fill = Overlay(root, "Fill", fill);
             SetRatio(bar, 1f);
@@ -128,7 +133,7 @@ namespace Deepspace
         // Shows the fill picture from its left edge up to ratio of the way to its right edge.
         static void Crop(Bar bar, RawImage image, float ratio)
         {
-            float shown = ratio <= 0f ? 0f : (bar.Left + ratio * (bar.Right - bar.Left)) / bar.Width;
+            float shown = ratio <= 0f ? 0f : Mathf.Min(1f, (bar.Left + ratio * (bar.Right - bar.Left)) / bar.Width);
             var rect = image.rectTransform;
             rect.anchorMax = new Vector2(shown, 1f);
             image.uvRect = new Rect(0f, 0f, shown, 1f);

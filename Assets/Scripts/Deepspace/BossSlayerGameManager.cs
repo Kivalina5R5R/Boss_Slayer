@@ -1361,14 +1361,15 @@ namespace Deepspace
                         bossModelCandidates.Add(transform);
                         bossModelCandidateWeights.Add(i < bossModelWeights.Length ? Mathf.Max(0f, bossModelWeights[i]) : 1f);
                         if (i < bossGlowColors.Length) bossGlowColorByModel[transform] = bossGlowColors[i];
-                        if (i < bossFloorBackgroundNames.Length)
+                        bool fireBoss = IsFireElementBoss(transform.name);
+                        if (fireBoss || i < bossFloorBackgroundNames.Length)
                         {
-                            var floorTexture = LoadBackgroundTexture(bossFloorBackgroundNames[i]);
+                            var floorTexture = LoadBackgroundTexture(fireBoss ? FireFloorArt : bossFloorBackgroundNames[i]);
                             if (floorTexture != null) bossFloorBackgroundByModel[transform] = floorTexture;
                         }
-                        if (i < bossWallBackgroundNames.Length)
+                        if (fireBoss || i < bossWallBackgroundNames.Length)
                         {
-                            var wallTexture = LoadBackgroundTexture(bossWallBackgroundNames[i]);
+                            var wallTexture = LoadBackgroundTexture(fireBoss ? FireWallArt : bossWallBackgroundNames[i]);
                             if (wallTexture != null) bossWallBackgroundByModel[transform] = wallTexture;
                         }
                         if (i < attackChargeVfxNames.Length)
@@ -1529,6 +1530,8 @@ namespace Deepspace
             bossDisplayCamera = bossDisplayCamera != null ? bossDisplayCamera : EnsureBossDisplayCamera();
             if (bossDisplayCamera != null) bossDisplayCamera.cullingMask = bossMask;
             else if (wallDisplayCamera != null) wallDisplayCamera.cullingMask |= bossMask;
+            EnsureBossKeyLight(bossDisplayCamera != null ? bossDisplayCamera : wallDisplayCamera, bossMask);
+            EnsureWallHudInFrontOfBoss();   // the wall HUD draws after the boss (WallHudLayer.cs)
 
             // Gem pickups render on FloorLayer, and every camera in this scene
             // defaults to culling mask "Everything" (unlike DeepspaceGameManager's
@@ -1538,6 +1541,27 @@ namespace Deepspace
             // would render doubled on both displays the same way the boss
             // explosion VFX did before BossLayer got this same treatment.
             if (wallDisplayCamera != null) wallDisplayCamera.cullingMask &= ~(1 << Visual3DFollower.FloorLayer);
+        }
+
+        // The scene has no Light, so the boss skins (URP/Lit, textured) were lit only by the dim navy
+        // ambient and showed up almost black. Add one directional light that touches only BossLayer,
+        // so every other object in the scene looks exactly as before. Skipped if a light already does it.
+        static void EnsureBossKeyLight(Camera view, int bossMask)
+        {
+            foreach (var existing in FindObjectsByType<Light>(FindObjectsInactive.Exclude, FindObjectsSortMode.None))
+                if (existing.type == LightType.Directional && existing.enabled && (existing.cullingMask & bossMask) != 0) return;
+
+            var light = new GameObject("Boss Key Light").AddComponent<Light>();
+            light.type = LightType.Directional;
+            light.color = new Color(1f, .96f, .9f);
+            light.intensity = 1.3f;
+            light.shadows = LightShadows.None;
+            light.cullingMask = bossMask;
+            // From above and slightly to the side of the viewer, so the boss's front faces are lit.
+            var forward = view != null ? view.transform.forward : Vector3.forward;
+            var flat = Vector3.ProjectOnPlane(forward, Vector3.up);
+            if (flat.sqrMagnitude < .001f) flat = Vector3.forward;
+            light.transform.rotation = Quaternion.LookRotation(flat.normalized, Vector3.up) * Quaternion.Euler(40f, -25f, 0f);
         }
 
         Camera EnsureBossDisplayCamera()
@@ -1600,8 +1624,8 @@ namespace Deepspace
             foreach (var renderer in model.GetComponentsInChildren<Renderer>(true))
                 renderer.SetPropertyBlock(block);
             foreach (var skin in model.GetComponentsInChildren<BossVoxelSkin>(true)) if (skin.body != null) skin.body.SetPropertyBlock(null); // the new models carry their own emission
-            if (bossDivineHalo == null) bossDivineHalo = gameObject.AddComponent<BossDivineHalo>();
-            bossDivineHalo.Bind(model, bossDisplayCamera != null ? bossDisplayCamera : wallDisplayCamera, color);
+            // 2026-11-24 "เอาออร่าวงๆรอบตัวบอสออก ทุกตัว": the divine halo ring is no longer shown behind any boss.
+            if (bossDivineHalo != null) bossDivineHalo.Hide();
             if (bossDisplayCamera != null && wallDisplayCamera != null)
                 bossDisplayCamera.orthographicSize = wallDisplayCamera.orthographicSize / (bossPresentationScale * bossWallSizeMultiplier * BossWallFramingMultiplier(model));
             FitBossHaloFraming();
@@ -1646,6 +1670,16 @@ namespace Deepspace
         BossFireWall fireWall;
         BossFireFloor fireFloor;
 
+        // 2026-11-24 "เอาฉากไฟไปใส่แทนอันเดิม": every FIRE-element boss (the boss select's red row: Demon, Void Wraith,
+        // Dragon) fights on the art team's BG Fire set, with its Red Alpha glow and rising Particle (BossFireWall) and the
+        // floor flames (BossFireFloor). Chosen by boss here, not by the background name lists, because the scene keeps its
+        // own copy of those lists and Dragon shared the sky picture with Golem and Sentinel.
+        static bool IsFireElementBoss(string modelName)
+        {
+            var kind = BossPassiveState.Identify(modelName);
+            return kind == BossPassiveState.Kind.Demon || kind == BossPassiveState.Kind.Wraith || kind == BossPassiveState.Kind.Dragon;
+        }
+
         static bool IsFireArt(Texture texture) => texture != null && (texture.name == "BGFireWall" || texture.name == "BGFloorFire");
 
         // The Fire set's extras (BossFireWall: red glow and rising particles; BossFireFloor: flickering flames) show
@@ -1653,9 +1687,10 @@ namespace Deepspace
         void RefreshFireArena()
         {
             if (fireWall == null) fireWall = BossFireWall.Attach(bossWallBackgroundImage);
-            if (fireFloor == null) fireFloor = BossFireFloor.Attach(bossFloorBackgroundImage);
             if (fireWall != null) fireWall.Show(IsFireArt(bossWallBackgroundImage.texture));
-            if (fireFloor != null) fireFloor.Show(IsFireArt(bossFloorBackgroundImage.texture));
+            // 2026-11-24 "ฉากพื้นเหมือนเดิม เอารูปที่ให้ไปใส่แทน": the floor shows the art team's Floor_Fire-BG exactly as
+            // drawn. The animated flames (BossFireFloor, cut from the older "EXFloor Fire" example) are no longer added.
+            if (fireFloor != null) fireFloor.Show(false);
         }
 
         void PlayBossBackgroundMovie(RawImage target, ref VideoBackgroundRuntime runtime, Texture2D fallbackTexture)
@@ -1666,6 +1701,12 @@ namespace Deepspace
             if (IsFireArt(fallbackTexture))
             {
                 if (target.TryGetComponent(out BossEnvironmentMotion motion)) motion.enabled = false;
+                // 2026-11-24 bug fix ("ยังเหมือนเดิม"): disabling the motion only restores the plain material in its
+                // OnDisable, and Unity skips OnDisable when the image is already inactive (the wall is hidden during the
+                // boss select, when the background is picked). The wall then kept the motion shader - the old sky theme's
+                // swirls and grain drawn over the Fire art. Take the material off here, active or not.
+                if (target.material != null && target.material.shader != null && target.material.shader.name.Contains("BossEnvironmentMotion"))
+                    target.material = null;
                 runtime?.Suspend();
                 target.texture = fallbackTexture;
                 target.uvRect = new Rect(0, 0, 1, 1);
@@ -2063,7 +2104,7 @@ namespace Deepspace
                 else if (spot.Life <= 0f)
                 {
                     sfx?.Play("gem_expire", 0.16f, SfxPan(spot.WorldPosition.x), 0.2f, 0);
-                    if (spot.View != null) Destroy(spot.View.gameObject);
+                    PopOutSpot(spot);
                     spots.RemoveAt(i);
                 }
             }
@@ -2147,13 +2188,54 @@ namespace Deepspace
             if (charge != null)
             {
                 if (view.TryGetComponent(out Image disc)) disc.enabled = false;
-                return new SpotState(def, pos, view, charge.rectTransform, null, null, life, null);
+                return PopInSpot(new SpotState(def, pos, view, charge.rectTransform, null, null, life, null));
             }
             var edgeGlow = CreateGemEdgeGlow(view, def.Color);
             var contrastGlow = CreateGemContrastGlow(view);
             var progressRing = CreateProgressRing("Hold Progress Ring", view, Color.white);
             var gemFollower = AttachGemModel(def, view);
-            return new SpotState(def, pos, view, progressRing, contrastGlow, edgeGlow, life, gemFollower);
+            return PopInSpot(new SpotState(def, pos, view, progressRing, contrastGlow, edgeGlow, life, gemFollower));
+        }
+
+        // 2026-11-24 "gems ตอนโผล่มาให้มี animation ขยายเกินขนาดแล้วกลับมาปกติ ตอนจะหายให้ขยายแล้วหดลง":
+        // a new gem grows from nothing past its size and settles back; a gem that goes away (runs out, or the floor is
+        // cleared) swells a little and then shrinks to nothing before it is removed. Collected gems keep their flight.
+        // 2026-11-24 "animation ไวไป ช้ากว่านี้หน่อย": about 1.6x slower than the first version (.2/.16 and .12/.22).
+        const float GemPopOvershoot = 1.25f, GemPopGrowSeconds = .32f, GemPopSettleSeconds = .26f;
+        const float GemOutSwell = 1.18f, GemOutSwellSeconds = .2f, GemOutShrinkSeconds = .36f;
+
+        SpotState PopInSpot(SpotState s)
+        {
+            foreach (var t in GemPopTargets(s))
+            {
+                var rest = t.localScale;
+                t.localScale = Vector3.zero;
+                DOTween.Sequence().SetTarget(t).SetLink(t.gameObject).SetUpdate(true)   // real time: also runs while the game is paused
+                    .Append(t.DOScale(rest * GemPopOvershoot, GemPopGrowSeconds).SetEase(Ease.OutQuad))
+                    .Append(t.DOScale(rest, GemPopSettleSeconds).SetEase(Ease.InOutQuad));
+            }
+            return s;
+        }
+
+        // Swells, shrinks away, then destroys the gem's view and 3D model.
+        void PopOutSpot(SpotState s)
+        {
+            foreach (var t in GemPopTargets(s))
+            {
+                DOTween.Kill(t);
+                var go = t.gameObject;
+                var now = t.localScale;
+                DOTween.Sequence().SetTarget(t).SetLink(go).SetUpdate(true)
+                    .Append(t.DOScale(now * GemOutSwell, GemOutSwellSeconds).SetEase(Ease.OutQuad))
+                    .Append(t.DOScale(Vector3.zero, GemOutShrinkSeconds).SetEase(Ease.InBack))
+                    .OnComplete(() => { if (go != null) Destroy(go); });
+            }
+        }
+
+        static IEnumerable<Transform> GemPopTargets(SpotState s)
+        {
+            if (s.View != null) yield return s.View;
+            if (s.GemFollower != null && (s.View == null || !s.GemFollower.transform.IsChildOf(s.View))) yield return s.GemFollower.transform;
         }
 
         // 2026-11-19: "ตอนเล่นให้ตัว player อยู่บน gems" - a new gem is made last under the player panel, which drew it over
@@ -4244,7 +4326,7 @@ namespace Deepspace
 
         void ClearSpots()
         {
-            foreach (var s in spots) if (s.View != null) Destroy(s.View.gameObject);
+            foreach (var s in spots) PopOutSpot(s);
             spots.Clear();
         }
 

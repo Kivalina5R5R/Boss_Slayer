@@ -302,9 +302,10 @@ namespace Deepspace
             ordered.Sort((left, right) => PadOrder(left).CompareTo(PadOrder(right)));
             var ids = new int[ordered.Count];
             for (int i = 0; i < ordered.Count; i++) ids[i] = ordered[i].PlayerId;
-            view.Cancel();
             Debug.Log($"[BossPlayerReadySelection] All {ids.Length} player(s) ready: spawner players {string.Join(", ", ids)}");
-            onAllPlayersReady?.Invoke(ids);
+            // 2026-11-24: the pads pop away (grow, then shrink) before the boss select opens.
+            var ready = onAllPlayersReady;
+            view.PlayExit(() => ready?.Invoke(ids));
         }
 
         private int PadOrder(UWBPlayerController player)

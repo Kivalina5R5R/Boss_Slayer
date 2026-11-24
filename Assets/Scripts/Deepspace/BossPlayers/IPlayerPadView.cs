@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Deepspace
@@ -17,6 +18,10 @@ namespace Deepspace
 
         // Hides the screen.
         void Cancel();
+
+        // Everyone is in: the pads pop (grow, then shrink away), the screen hides, then `done` runs. A Cancel first
+        // stops it without running `done`.
+        void PlayExit(Action done);
 
         // The pad (0-based) under a 0..1 floor position, or -1.
         int PadAtNormalized(Vector2 normalized);

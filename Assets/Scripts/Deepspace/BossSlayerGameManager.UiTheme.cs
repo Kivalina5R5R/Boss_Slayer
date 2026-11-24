@@ -225,7 +225,8 @@ namespace Deepspace
             if (!uiThemeBuilt) return;
             float k = UiThemeWeight;
             bool fightUi = cutsceneUiPanel == null || cutsceneUiPanel.gameObject.activeInHierarchy;
-            SetEdgeActive(uiFloorEdge, fightUi && k > 0f); SetEdgeActive(uiWallEdge, fightUi && k > 0f);
+            // 2026-11-24 "ลบขอบจอที่เป็นสีต่างๆตอนสู้บอสออก ทุกตัว": the coloured screen-edge frames stay off for every boss.
+            SetEdgeActive(uiFloorEdge, false); SetEdgeActive(uiWallEdge, false);
             if (passiveFeedback != null) { passiveFeedback.ThemePanel = uiTheme.panelDark; passiveFeedback.ThemeEdge = uiTheme.secondary; passiveFeedback.ThemeWeight = k; }
             if (!fightUi || dt <= 0f) return; // timeScale 0: hold the current frame
             // Phase 2 (Demon/Dragon/Golem): same flags that fire the "PHASE 2: ..." notice, so the UI turns with it.

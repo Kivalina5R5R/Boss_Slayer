@@ -10,8 +10,11 @@ namespace Deepspace
     public sealed class BossFireWall : MonoBehaviour
     {
         const string Folder = "BossBackgrounds/Fire/";
-        // The glow picture is 8181x1757 on the 8192x2160 wall: it covers the bottom 81%.
-        const float GlowHeight = 1757f / 2160f, GlowBreatheSeconds = 4f, GlowBreatheDepth = .15f;
+        // 2026-11-24 "alpha ไม่ควรเต็มจอ ควรครึ่งหนึ่ง" + "เริ่มลดตั้งแต่ 30% ก่อนจะถึงตรงกลาง ค่อยๆ fade ไป": the glow covers the
+        // bottom half of the wall (was 81%, the picture's own 1757/2160). Its alpha starts easing down FadeSpan of the wall
+        // height below the middle and is gone at the middle (50%). 2026-11-24 "red alpha ปรับเป็น 1 จาก 0.6": the fade now
+        // runs the glow's whole height (Fade 1), from full at the bottom edge to clear at the middle.
+        const float GlowHeight = .5f, FadeSpan = .5f, GlowFade = FadeSpan / GlowHeight, GlowBreatheSeconds = 4f, GlowBreatheDepth = .15f;
         // Particles: how many, their height (wall pixels of 2160), how high they climb and how fast.
         const int ParticleCount = 36;
         const float SizeMin = 45f, SizeMax = 120f, RiseMin = 900f, RiseMax = 1900f, SpeedMin = 90f, SpeedMax = 180f;
@@ -50,6 +53,10 @@ namespace Deepspace
             var g = glow.rectTransform;
             g.anchorMin = Vector2.zero; g.anchorMax = new Vector2(1f, GlowHeight);
             g.offsetMin = g.offsetMax = Vector2.zero;
+            // Its bottom part at the art's own size (the picture is 1757 of the wall's 2160 tall), not squashed.
+            glow.uvRect = new Rect(0f, 0f, 1f, Mathf.Min(1f, GlowHeight * 2160f / 1757f));
+            if (!glow.TryGetComponent(out BossVerticalFade fadeOut)) fadeOut = glow.gameObject.AddComponent<BossVerticalFade>();
+            fadeOut.SetFade(GlowFade);
 
             var particle = Resources.Load<Texture2D>(Folder + "Particle");
             if (particle != null) aspect = (float)particle.width / particle.height;

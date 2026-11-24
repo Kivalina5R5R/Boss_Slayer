@@ -17,7 +17,16 @@ namespace Deepspace
     {
         const string CardFolder = "BossSlayer/SelectBoss/";
         static readonly string[] RowCards = { "CardRed", "CardBlue", "CardBrown" };
-        static readonly string[] RowWords = { "INFERNO", "UNDERWATER", "STONE" };
+        static readonly string[] RowWords = { "FIRE", "WATER", "LAND" };
+
+        // 2026-11-24 "ย้ายแต่ละตัวให้ตรงกับธาตุของมัน": each boss sits in its element's row (was boss-number order, which
+        // mixed the elements). Slot i is still boss kind i + 1 (Demon, Fish, Dragon, Jellyfish, Golem, Wraith, Sentinel,
+        // Serpent, Hydra); this is the grid cell (row * 3 + column) it is drawn in:
+        //   FIRE  (red):   Demon,      Void Wraith, Dragon
+        //   WATER (blue):  Jellyfish,  Giant Fish,  Sea Serpent
+        //   LAND  (brown): Crystal Golem, Sentinel, Hydra
+        static readonly int[] CellOfSlot = { 0, 4, 2, 3, 6, 1, 7, 5, 8 };
+        static int CellOf(int slot) => slot >= 0 && slot < CellOfSlot.Length ? CellOfSlot[slot] : slot;
         static readonly Color[] RowWordInk = { new Color32(255, 178, 31, 255), new Color32(207, 225, 255, 255), new Color32(253, 235, 214, 255) };
         static readonly Color[] RowNameInk = { new Color32(255, 158, 154, 255), new Color32(141, 203, 247, 255), new Color32(247, 210, 176, 255) };
 
@@ -112,7 +121,8 @@ namespace Deepspace
 
         void BuildCard(int index, float height, TMP_FontAsset font)
         {
-            int row = Mathf.Min(index / 3, RowCards.Length - 1), column = index % 3;
+            int cell = CellOf(index);
+            int row = Mathf.Min(cell / 3, RowCards.Length - 1), column = cell % 3;
             var frame = (RectTransform)slots[index].transform;
             float x = ColumnX[column], y = 1f - RowY[Mathf.Min(row, RowY.Length - 1)];
             SetAnchors(frame, new Vector2(x - CardWidth / 2, y - height / 2), new Vector2(x + CardWidth / 2, y + height / 2));

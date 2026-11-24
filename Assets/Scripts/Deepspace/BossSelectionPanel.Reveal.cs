@@ -21,8 +21,13 @@ namespace Deepspace
         {
             reveal?.Kill(true);
             if (!cardLayout) return;
+            // 2026-11-24: in the order they stand on the floor (CellOfSlot: FIRE row, then WATER, then LAND, each left to
+            // right), not slot order - the slots were moved into their element rows.
             var order = new List<Transform>();
-            foreach (var slot in slots) if (slot != null) order.Add(slot.transform);
+            var bySlot = new List<int>();
+            for (int i = 0; i < slots.Length; i++) if (slots[i] != null) bySlot.Add(i);
+            bySlot.Sort((a, b) => CellOf(a).CompareTo(CellOf(b)));
+            foreach (int i in bySlot) order.Add(slots[i].transform);
             bool select = confirm != null && confirm.gameObject.activeSelf;
             if (select) order.Add(confirm.transform);
 

@@ -17,7 +17,7 @@ namespace Deepspace
             new Color32(238, 121, 17, 255),   // P2 orange
             new Color32(238, 17, 170, 255),   // P3 pink
             new Color32(17, 238, 235, 255),   // P4 cyan
-            new Color32(161, 17, 238, 255),   // P5 purple
+            new Color32(34, 181, 22, 255),    // P5 green (2026-11-24: art team's new P5 marker and HP plate, was purple)
             new Color32(238, 17, 23, 255),    // P6 red
         };
 

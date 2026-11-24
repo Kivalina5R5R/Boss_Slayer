@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -99,7 +100,38 @@ namespace Deepspace
             Refresh();
         }
 
-        public void Cancel() { Active = false; external = false; done = null; Hide(); }
+        public void Cancel() { KillExit(); Active = false; external = false; done = null; Hide(); }
+
+        // 2026-11-24 "ปุ่มเลือก player ตอนเปลี่ยน transition ให้ทำ animation ขยายแล้วหดไป": when everyone is in, each pad
+        // grows a little then shrinks to nothing, left to right, before the screen hides and the boss select opens (on
+        // the same rune floor, so only the cards move).
+        const float ExitGrow = .15f, ExitGrowSeconds = .16f, ExitShrinkSeconds = .26f, ExitStagger = .06f;
+        Sequence exit;
+
+        public void PlayExit(Action then)
+        {
+            KillExit();
+            Active = false; external = false; done = null;
+            foreach (var cursor in cursors) if (cursor != null) cursor.gameObject.SetActive(false);
+            exit = DOTween.Sequence().SetUpdate(true);
+            for (int k = 0; k < Count; k++)
+                foreach (var item in new[] { pads[k], cards[k] })
+                {
+                    if (item == null || !item.gameObject.activeInHierarchy) continue;
+                    var rest = item.localScale;
+                    float at = k * ExitStagger;
+                    exit.Insert(at, item.DOScale(rest * (1f + ExitGrow), ExitGrowSeconds).SetEase(Ease.OutQuad));
+                    exit.Insert(at + ExitGrowSeconds, item.DOScale(Vector3.zero, ExitShrinkSeconds).SetEase(Ease.InBack));
+                }
+            exit.AppendInterval(.05f);
+            exit.OnComplete(() => { exit = null; Hide(); then?.Invoke(); });
+        }
+
+        void KillExit()
+        {
+            if (exit != null && exit.IsActive()) exit.Kill();   // killed, not completed: `then` does not run
+            exit = null;
+        }
 
         void Hide()
         {
@@ -115,6 +147,7 @@ namespace Deepspace
         // Shows `count` pads with nobody on them yet.
         public void ShowExternal(int count)
         {
+            KillExit();
             Count = Mathf.Clamp(count, 1, 6);
             external = true; Active = true; editorMouse = false; done = null;
             for (int i = 0; i < 6; i++) { padOwner[i] = playerPad[i] = holdPad[i] = -1; hold[i] = 0; punch[i] = 9; seen[i] = false; }
@@ -128,6 +161,7 @@ namespace Deepspace
         // the launcher's START. ShowExternal brings the pads in later.
         public void ShowBackdrop()
         {
+            KillExit();
             Build();
             Layout(0);
             foreach (var cursor in cursors) if (cursor != null) cursor.gameObject.SetActive(false);

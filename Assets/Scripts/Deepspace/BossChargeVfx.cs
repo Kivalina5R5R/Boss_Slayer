@@ -46,7 +46,10 @@ namespace Deepspace
             scale = Mathf.Clamp(size, 0.5f, 2f);
             playing = true;
             surface.enabled = true;
-            burstSurface.enabled = true;
+            // 2026-11-24 "มันบังฉากหลัง": the wide energy surge was stretched over almost the whole wall and drew its
+            // elemental grain and swirls over the background on every cast. It stays off for every boss; the gathering
+            // seal around the boss (surface) and the converging motes still show the cast.
+            burstSurface.enabled = false;
             motes.Play();
             LateUpdate();
             return true;

@@ -14,17 +14,21 @@ namespace Deepspace
     // HP semantics are unchanged: fill = HP ratio, green -> red as it drops, grey while down.
     public sealed partial class BossSlayerGameManager
     {
-        // บาส 2026-10-22: bottom-left corner, columns of three (P1-P3, P4-P6 beside them); was P1-P3 top-left and P4-P6
-        // top-right. CardMarginTop is now the margin from the bottom edge. The wall BOSS ULTIMATE banner moved up above
-        // them (Signatures.cs) so the corner stays theirs.
-        const float CardWidth = 900f, CardHeight = 200f, CardGap = 36f, CardMarginX = 110f, CardMarginTop = 120f;
-        static readonly Color CardBack = new Color(.02f, .035f, .07f, .92f), CardBackDown = new Color(.05f, .05f, .06f, .7f),
-            CardBarBack = new Color(.07f, .08f, .11f, 1f), CardDownGrey = new Color(.42f, .44f, .48f, 1f);
+        // 2026-11-24 "Game Play" mockup (art team, HP Player): one row along the bottom edge of the wall, centred, each
+        // player a coloured "PLAYER n" plate (Hud/PlayerPlate1-6) on the left end of a cream-framed bar (Hud/PlayerHpBack)
+        // with "HP/MAX" at its right end. The ULTIMATE bar sits just above the row (BossWallHud.UltimateTop).
+        // Sizes are the art's own pixels on the 8192x2160 wall canvas; a full row of six shrinks a little to fit.
+        const float WallW = 8192f, PlateW = 375f, PlateH = 94f, BarW = 971f, BarH = 83f, BarOverlap = 22f;
+        const float SlotW = PlateW - BarOverlap + BarW, SlotGap = 60f, RowSideMargin = 100f, RowBottom = 70f;
+        // The fill's own edges inside PlayerHpBack.png (971x83): x 21..949, y 17..64.
+        const float FillLeft = 21f, FillRight = 949f, FillBottom = 83f - 64f, FillTop = 83f - 17f;
+        static readonly Color CardDownGrey = new Color(.42f, .44f, .48f, 1f), CardHpGreen = new Color32(35, 189, 38, 255),
+            CardInk = Color.white, CardDownInk = new Color(1f, .5f, .45f), CardPlateDown = new Color(.5f, .5f, .55f, 1f);
 
         sealed class PlayerHudCard
         {
-            public RawImage Back; public Outline Edge; public Image Stripe; public TextMeshProUGUI Label, Down;
-            public Color Accent; public int ShownDown = -2; public float ShownRatio = -1f;
+            public RawImage Back, Plate; public TextMeshProUGUI Label, Numbers, Down;
+            public int ShownDown = -2, ShownHp = int.MinValue, ShownMax = -1;
         }
         readonly PlayerHudCard[] hudCards = new PlayerHudCard[6];
 
@@ -34,9 +38,15 @@ namespace Deepspace
             if (playerHpPanel == null) return;
             foreach (var group in playerHpPanel.GetComponentsInChildren<LayoutGroup>(true)) group.enabled = false;
             foreach (var fitter in playerHpPanel.GetComponentsInChildren<ContentSizeFitter>(true)) fitter.enabled = false;
-            var font = BossUiFont;
-            foreach (var p in players)
+            var font = BossPlayerCards.Jersey() ?? BossUiFont;
+
+            int n = Mathf.Max(1, players.Count);
+            float rowWidth = n * SlotW + (n - 1) * SlotGap;
+            float fit = Mathf.Min(1f, (WallW - 2f * RowSideMargin) / rowWidth);
+
+            for (int k = 0; k < players.Count; k++)
             {
+                var p = players[k];
                 var back = FindRawImageIn(playerHpPanel, $"RawImage == Player {p.Index + 1}");
                 if (back == null) continue;
                 if (back.transform.parent is RectTransform column && column != playerHpPanel)
@@ -44,35 +54,62 @@ namespace Deepspace
                     column.anchorMin = Vector2.zero; column.anchorMax = Vector2.one; column.pivot = new Vector2(.5f, .5f);
                     column.offsetMin = column.offsetMax = Vector2.zero; column.localScale = Vector3.one;
                 }
-                // บาส 2026-10-22: the cards moved to the bottom-left corner (columns of three: P1-P3, then P4-P6 beside
-                // them), P1 at the top of its column, the column sitting on the bottom margin.
-                int col = p.Index / 3, row = p.Index % 3, inColumn = Mathf.Min(3, players.Count - col * 3);
+                // Centred row: slot k of n, measured from the middle of the wall.
                 var rect = back.rectTransform;
-                rect.anchorMin = rect.anchorMax = rect.pivot = Vector2.zero;
-                rect.sizeDelta = new Vector2(CardWidth, CardHeight); rect.localScale = Vector3.one;
-                rect.anchoredPosition = new Vector2(CardMarginX + col * (CardWidth + CardGap * 2), CardMarginTop + (inColumn - 1 - row) * (CardHeight + CardGap));
-                back.texture = null; back.color = CardBack; back.raycastTarget = false;
+                rect.anchorMin = rect.anchorMax = new Vector2(.5f, 0f); rect.pivot = new Vector2(.5f, 0f);
+                rect.sizeDelta = new Vector2(SlotW, PlateH); rect.localScale = Vector3.one * fit;
+                rect.anchoredPosition = new Vector2((k - (n - 1) / 2f) * (SlotW + SlotGap) * fit, RowBottom);
+                back.texture = null; back.color = Color.clear; back.raycastTarget = false;
+                if (back.TryGetComponent(out Outline oldEdge)) oldEdge.enabled = false;
+                foreach (var old in new[] { "Card Stripe", "Card Label" })
+                {
+                    var leftover = FindDirectRectIn(rect, old);
+                    if (leftover != null) leftover.gameObject.SetActive(false);
+                }
 
                 var card = hudCards[p.Index] ?? (hudCards[p.Index] = new PlayerHudCard());
-                card.Back = back; card.Accent = PlayerColor(p.Index); card.ShownDown = -2; card.ShownRatio = -1f;
-                if (!back.TryGetComponent(out card.Edge)) card.Edge = back.gameObject.AddComponent<Outline>();
-                card.Edge.effectDistance = new Vector2(6f, -6f);
+                card.Back = back; card.ShownDown = -2; card.ShownHp = int.MinValue; card.ShownMax = -1;
 
-                card.Stripe = CardChild<Image>(rect, "Card Stripe", new Vector2(0, 0), new Vector2(0, 1), new Vector2(0, 0), new Vector2(18, 0));
-                card.Label = CardText(rect, "Card Label", font, new Vector2(0, 0), new Vector2(0, 1), new Vector2(46, 0), new Vector2(250, 0), 140f, TextAlignmentOptions.Left);
-                card.Label.text = "P" + (p.Index + 1);
+                float barLeft = PlateW - BarOverlap, barBottom = (PlateH - BarH) / 2f;
+                var barBack = CardChild<RawImage>(rect, "Card Bar Back", Vector2.zero, Vector2.zero,
+                    new Vector2(barLeft, barBottom), new Vector2(barLeft + BarW, barBottom + BarH));
+                barBack.texture = Resources.Load<Texture2D>("BossSlayer/Hud/PlayerHpBack"); barBack.color = Color.white;
+                barBack.transform.SetAsFirstSibling();
 
+                // The scene's HP bar becomes the fill area of the art; only our runtime fill shows inside it.
                 var bar = p.HpFill != null ? p.HpFill.rectTransform.parent as RectTransform : null;
                 if (bar != null && bar.parent == rect)
                 {
-                    bar.anchorMin = new Vector2(0, .5f); bar.anchorMax = new Vector2(1, .5f); bar.pivot = new Vector2(.5f, .5f);
-                    bar.offsetMin = new Vector2(270f, -42f); bar.offsetMax = new Vector2(-44f, 42f); bar.localScale = Vector3.one;
-                    if (bar.TryGetComponent(out Image barBack)) barBack.color = CardBarBack;
+                    bar.anchorMin = bar.anchorMax = Vector2.zero; bar.pivot = new Vector2(.5f, .5f); bar.localScale = Vector3.one;
+                    bar.offsetMin = new Vector2(barLeft + FillLeft, barBottom + FillBottom);
+                    bar.offsetMax = new Vector2(barLeft + FillRight, barBottom + FillTop);
+                    foreach (var g in bar.GetComponentsInChildren<Graphic>(true)) if (g != p.HpFill) g.enabled = false;
+                    bar.SetSiblingIndex(1);
                 }
-                card.Down = CardText(rect, "Card Down", font, new Vector2(0, 0), new Vector2(1, 1), new Vector2(270, 0), new Vector2(-44, 0), 92f, TextAlignmentOptions.Center);
-                card.Down.characterSpacing = 12f; card.Down.color = new Color(1f, .5f, .45f); card.Down.gameObject.SetActive(false);
+
+                card.Plate = CardChild<RawImage>(rect, "Card Plate", Vector2.zero, Vector2.zero, Vector2.zero, new Vector2(PlateW, PlateH));
+                card.Plate.texture = Resources.Load<Texture2D>("BossSlayer/Hud/PlayerPlate" + (p.Index + 1)); card.Plate.color = Color.white;
+                card.Plate.transform.SetAsLastSibling();   // the plate covers the bar's left cap
+                card.Label = HudText(card.Plate.rectTransform, "Card Label", font, Vector2.zero, Vector2.one, new Vector2(22f, 14f), new Vector2(-22f, -14f), TextAlignmentOptions.Center);
+                card.Label.text = "PLAYER " + (p.Index + 1);
+
+                card.Numbers = HudText(rect, "Card Numbers", font, Vector2.zero, Vector2.zero,
+                    new Vector2(barLeft + FillLeft + 300f, barBottom + FillBottom - 2f), new Vector2(barLeft + FillRight - 18f, barBottom + FillTop + 2f), TextAlignmentOptions.Right);
+                card.Down = HudText(rect, "Card Down", font, Vector2.zero, Vector2.zero,
+                    new Vector2(barLeft + FillLeft, barBottom + FillBottom - 2f), new Vector2(barLeft + FillRight, barBottom + FillTop + 2f), TextAlignmentOptions.Center);
+                card.Down.characterSpacing = 8f; card.Down.color = CardDownInk; card.Down.gameObject.SetActive(false);
+                StylePlayerCard(p);
             }
-            ThemePlayerCards(uiTheme, UiThemeWeight);
+        }
+
+        // Pixel-font text sized to its box (Jersey 15, like the boss HUD), with the black card outline for the LED wall.
+        static TextMeshProUGUI HudText(RectTransform parent, string name, TMP_FontAsset font, Vector2 min, Vector2 max, Vector2 offMin, Vector2 offMax, TextAlignmentOptions align)
+        {
+            var label = CardText(parent, name, font, min, max, offMin, offMax, 60f, align);
+            label.fontStyle = FontStyles.Normal; label.color = CardInk;
+            label.enableAutoSizing = true; label.fontSizeMin = 8f; label.fontSizeMax = 400f;
+            label.transform.SetAsLastSibling();
+            return label;
         }
         static T CardChild<T>(RectTransform parent, string name, Vector2 min, Vector2 max, Vector2 offMin, Vector2 offMax) where T : Graphic
         {
@@ -115,28 +152,27 @@ namespace Deepspace
         void StylePlayerCard(PlayerState p)
         {
             var card = p.Index >= 0 && p.Index < hudCards.Length ? hudCards[p.Index] : null;
-            if (card == null || card.Back == null) return;
-            float ratio = Mathf.Clamp01(p.Hp / (float)Mathf.Max(1, playerMaxHp));
+            if (card == null || card.Back == null || card.Numbers == null) return;
+            int hp = Mathf.Max(0, p.Hp), max = Mathf.Max(1, playerMaxHp);
+            float ratio = Mathf.Clamp01(hp / (float)max);
             int downSeconds = p.DownTimer > 0f ? Mathf.CeilToInt(p.DownTimer) : -1;
-            if (downSeconds == card.ShownDown && Mathf.Abs(ratio - card.ShownRatio) < .001f) return;
+            if (downSeconds == card.ShownDown && hp == card.ShownHp && max == card.ShownMax) return;
             bool down = downSeconds >= 0;
-            card.ShownDown = downSeconds; card.ShownRatio = ratio;
+            card.ShownDown = downSeconds; card.ShownHp = hp; card.ShownMax = max;
             if (p.HpFill != null) p.HpFill.color = down ? CardDownGrey : PlayerHpColor(ratio);
-            card.Back.color = down ? CardBackDown : CardBack;
-            card.Label.color = down ? CardDownGrey : card.Accent;
-            card.Stripe.color = down ? CardDownGrey : card.Accent;
+            card.Plate.color = down ? CardPlateDown : Color.white;
+            card.Label.color = down ? CardDownGrey : CardInk;
+            card.Numbers.text = hp + "/" + max;
+            if (card.Numbers.gameObject.activeSelf == down) card.Numbers.gameObject.SetActive(!down);
             if (card.Down.gameObject.activeSelf != down) card.Down.gameObject.SetActive(down);
             if (down) card.Down.text = "DOWN  " + downSeconds;
         }
-        // Full = green, ~40% = yellow, <=15% = red (hue sweep keeps the middle bright instead of a muddy olive lerp).
-        static Color PlayerHpColor(float ratio) => Color.HSVToRGB(Mathf.Lerp(0f, .34f, Mathf.InverseLerp(.15f, .65f, ratio)), .82f, 1f);
+        // The art's green while healthy, then yellow around 40% and red at 15% or less (hue sweep keeps the middle bright).
+        static Color PlayerHpColor(float ratio) => ratio >= .65f ? CardHpGreen
+            : Color.HSVToRGB(Mathf.Lerp(0f, .33f, Mathf.InverseLerp(.15f, .65f, ratio)), .82f, .9f);
 
-        // Themed chrome only: the card edge wears the boss's secondary colour; fills/labels stay semantic.
-        void ThemePlayerCards(BossThemePalette.BossUiTheme t, float k)
-        {
-            foreach (var card in hudCards)
-                if (card != null && card.Edge != null) card.Edge.effectColor = Color.Lerp(new Color(.35f, .55f, .75f, .55f), Alpha(t.secondary, .8f), k);
-        }
+        // The plates and bar frame are the art team's fixed colours (one per player), so the boss theme leaves them alone.
+        void ThemePlayerCards(BossThemePalette.BossUiTheme t, float k) { }
 
         // ---------------------------------------------------------------- final session result (wall)
         // Neutral gold/teal (the session result isn't about one boss). Title/MVP centred, player plates in ranked order

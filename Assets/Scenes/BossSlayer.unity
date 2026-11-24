@@ -29181,7 +29181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: ad3e33d31646b7c4bb483b01e024ac38, type: 3}
+  m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -40782,7 +40782,7 @@ MonoBehaviour:
   - {x: 3.3, y: -1.65}
   - {x: -4.4, y: -1.65}
   - {x: 4.4, y: -1.65}
-  simulationPlayerCount: 1
+  simulationPlayerCount: 4
   onlyLauncherPlayers: 1
   disableOfflinePlayersInSerial: 1
 --- !u!4 &1545000161
