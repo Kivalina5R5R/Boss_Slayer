@@ -26,6 +26,7 @@ namespace Deepspace
         void UpdateBossAutoConfirm()
         {
             FollowPlayersOutsideFight();   // บาส 2026-11-18: the players' characters walk on the boss select too
+            BossFightAudio.PlayUi("debris_ambience", .25f, 4.9f, 0);   // 2026-11-25: pebbles trickling in the hall, every 5 s clip
             PickBossUnderPlayers();
             FocusWallOnStoodBoss();
             if (!bossCountdownRunning || selectedBossKind <= 0 || queuedNextBoss == null) return;
@@ -42,6 +43,10 @@ namespace Deepspace
             if (!selectingBoss || bossCountdownRunning || queuedNextBoss == null || selectedBossKind <= 0) return;
             bossCountdownRunning = true;
             bossAutoConfirmTimer = bossSelectCountdownSeconds;
+            // 2026-11-25 "เสียงนับ 3 2 1 แบบ BountyHunter": one clip timed like Bounty Hunter's race start - the same short
+            // bell + war drum on 3, 2 and 1 (0, 1, 2 s); no GO, the boss's roar takes that beat (made for the default
+            // bossSelectCountdownSeconds of 3).
+            BossFightAudio.PlayUi("select_countdown", .6f, .5f, 4);
         }
 
         void ApplySessionDifficulty(int round)
@@ -136,8 +141,12 @@ namespace Deepspace
                 if (card == bossCardUnderPlayer[player.Index]) continue;
                 bossCardUnderPlayer[player.Index] = card;
                 if (card == 0) continue;
+                // 2026-11-25: SELECT already pressed (the 3-2-1 is running): stepping on it again does nothing - no sound, no bounce.
+                if (card == SelectButtonCard && bossCountdownRunning) continue;
                 var button = BossButton(card);
                 Bounce(button);
+                // 2026-11-25: a player stepping on a boss card or on SELECT gets its own sound (a locked card too).
+                BossFightAudio.PlayUi(card == SelectButtonCard ? "select_press" : button.interactable ? "boss_card_touch" : "card_locked", .5f, .05f);
                 if (!button.interactable) continue;
                 if (card == SelectButtonCard) StartBossCountdown();
                 else SelectBossKind(card);
@@ -197,6 +206,7 @@ namespace Deepspace
             foreach (var candidate in bossModelCandidates)
                 if (candidate != null && (int)BossPassiveState.Identify(candidate.name) == kind && !sessionBossesPlayed.Contains(candidate))
                 {
+                    if (kind != selectedBossKind) BossFightAudio.PlayUi("statue_awaken", .55f, .3f, 3);   // 2026-11-25: the statue wakes
                     queuedNextBoss = candidate; selectedBossKind = kind; RefreshBossSelection(); return;
                 }
         }
@@ -209,9 +219,20 @@ namespace Deepspace
             StartCoroutine(FadeIntoBossFight());
         }
 
+        // 2026-11-25 "เสียงคำรามตอนข้ามฉากเล่นต่อ ไม่ใช่เริ่มเล่นใหม่": every scene change uses this. On a UI voice (the
+        // fight's StopCombat leaves it alone) and never restarted while it is still sounding - a second fade right after
+        // the first (e.g. the rush starting behind the boss select's) lets the first one run on.
+        void PlayTransitionSound()
+        {
+            if (sfx == null || sfx.IsPlaying("transition")) return;
+            sfx.Play("transition", .55f, 0, .2f, 4, true);
+        }
+
         IEnumerator FadeIntoBossFight()
         {
-            sfx?.Play("transition", 0.45f, 0, 0.2f, 3);
+            // 2026-11-25 "ให้เสียงคำรามหลัง 321 ติดมาอีกฉากด้วย เล่นให้จบ": on a UI voice, which the fight's set-up
+            // (StopCombat when the boss starts) leaves alone, so it plays to its end over the new scene.
+            PlayTransitionSound();
             yield return TweenSessionTransitionAlpha(1f, sessionTransitionFadeSeconds);
             floorBossSelection.gameObject.SetActive(false);
             if (wallBossSelection != null) wallBossSelection.gameObject.SetActive(false);

@@ -14,101 +14,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Deepspace.BossFightAudioBank
   output: {fileID: 2060251416485090535, guid: f2fbe0f34b55a714a9205ba943e2a46e, type: 2}
   clips:
-  - id: battle_start
-    clip: {fileID: 8300000, guid: b6edfd091f8a5ca498012b122feb3535, type: 3}
-  - id: boss_defeat
-    clip: {fileID: 8300000, guid: 5455eb5814b2096428938faf29f82cd5, type: 3}
-  - id: boss_enter
-    clip: {fileID: 8300000, guid: c2a08c968ea4a934695f3077551067f2, type: 3}
-  - id: charge_0
-    clip: {fileID: 8300000, guid: ba065535b26719e4f9a1b51979bc0fbb, type: 3}
-  - id: charge_1
-    clip: {fileID: 8300000, guid: 89985ba284cd32444bea603466ed5011, type: 3}
-  - id: charge_2
-    clip: {fileID: 8300000, guid: bf342fa1893eb9240840995ed0f0d6b8, type: 3}
-  - id: charge_3
-    clip: {fileID: 8300000, guid: 9400e2f4ccefef540a674d36937ce920, type: 3}
-  - id: charge_4
-    clip: {fileID: 8300000, guid: b0f3d164d48dbc3418af0cde5e520cd0, type: 3}
-  - id: charge_5
-    clip: {fileID: 8300000, guid: b1f152f3cf7d9e148aa8ae3b21990aed, type: 3}
-  - id: charge_6
-    clip: {fileID: 8300000, guid: 6cb64c6f302828b4db7fa7137127f93b, type: 3}
-  - id: charge_7
-    clip: {fileID: 8300000, guid: a382d7df646473e4e9165fb68768613a, type: 3}
-  - id: charge_8
-    clip: {fileID: 8300000, guid: 933217febe9048a6af329ad86c0adf51, type: 3}
-  - id: countdown
-    clip: {fileID: 8300000, guid: 5115d63a2bcfccb478a62844c4b5047c, type: 3}
-  - id: death_final
-    clip: {fileID: 8300000, guid: 2dcf7c715656ebc46bfa98635afd5e25, type: 3}
-  - id: gem_attack
-    clip: {fileID: 8300000, guid: 7edff668220912e4e9f9835961c53591, type: 3}
-  - id: gem_expire
-    clip: {fileID: 8300000, guid: ee748890840450f439c24718030d2015, type: 3}
-  - id: gem_heal
-    clip: {fileID: 8300000, guid: af7eb028e22a61145b4b2d3e44667412, type: 3}
-  - id: gem_hold
-    clip: {fileID: 8300000, guid: bac2d58fa1f84424289bca1264b7d560, type: 3}
-  - id: gem_impact
-    clip: {fileID: 8300000, guid: 373852e6e53ebb545b5e4c70a027b810, type: 3}
-  - id: gem_spawn
-    clip: {fileID: 8300000, guid: e20525d4b8701c04194b3178a5a17a35, type: 3}
-  - id: gem_stun
-    clip: {fileID: 8300000, guid: 07715ea91dd8d004c957895dd505fca3, type: 3}
-  - id: gem_ultimate
-    clip: {fileID: 8300000, guid: d97811aaddec72b45a878e30f5e61c5d, type: 3}
-  - id: heal
-    clip: {fileID: 8300000, guid: 1856c87feff2547438fb46ab2df00b42, type: 3}
-  - id: low_health
-    clip: {fileID: 8300000, guid: ae173ca422cf4994ca78c83e26292a1e, type: 3}
-  - id: phase
-    clip: {fileID: 8300000, guid: 52a43898318575645897a275bf8e85bb, type: 3}
-  - id: player_down
-    clip: {fileID: 8300000, guid: 8cc0902f76880ef4e952508068045085, type: 3}
-  - id: player_hit
-    clip: {fileID: 8300000, guid: 6260cf610bc5c24429e50ee203f0ace3, type: 3}
-  - id: portal_open
-    clip: {fileID: 8300000, guid: 2f5eb6dedf073c5458580daf9012d5bc, type: 3}
-  - id: release_0
-    clip: {fileID: 8300000, guid: 25bc7562c9d6e824682e54a8478468a6, type: 3}
-  - id: release_1
-    clip: {fileID: 8300000, guid: cf6f8ef589196b4479d545d0b7513a3a, type: 3}
-  - id: release_2
-    clip: {fileID: 8300000, guid: 4367bee48e8abc94ea4c70a4c354246c, type: 3}
-  - id: release_3
-    clip: {fileID: 8300000, guid: 0b213e39a06c7514084da5895715bf6e, type: 3}
-  - id: release_4
-    clip: {fileID: 8300000, guid: 8d943868d74798d4fb6d3f5f6c4fb973, type: 3}
-  - id: release_5
-    clip: {fileID: 8300000, guid: b31c30467da1ece44bd4db6572ba350d, type: 3}
-  - id: release_6
-    clip: {fileID: 8300000, guid: f38bd5e9e997a9b4d84ef219821390fa, type: 3}
-  - id: release_7
-    clip: {fileID: 8300000, guid: 46b2f641408383f4fb78a49bed61091e, type: 3}
-  - id: release_8
-    clip: {fileID: 8300000, guid: 5c18f36a00c9454fbba8046e3fb6f72b, type: 3}
-  - id: revive
-    clip: {fileID: 8300000, guid: afb0c81d56041b64bb451260a43599ce, type: 3}
-  - id: round_clear
-    clip: {fileID: 8300000, guid: 9d886c6fa8da9204e89b74556757bf5d, type: 3}
-  - id: session_start
-    clip: {fileID: 8300000, guid: e5cc5e4894d15014a8593ea74d06a2e6, type: 3}
-  - id: stun
-    clip: {fileID: 8300000, guid: 40bc22daca123c946bb4d2c2f359afd6, type: 3}
-  - id: stun_end
-    clip: {fileID: 8300000, guid: 5426486c2aac74840a8ff8f8c087ad67, type: 3}
+  - id: boss_card_appear
+    clip: {fileID: 8300000, guid: b7a94740ae9e40488955d1a0b5d0656f, type: 3}
+  - id: boss_card_touch
+    clip: {fileID: 8300000, guid: 51c225cfba1e46d9aca9faef8041151d, type: 3}
+  - id: card_locked
+    clip: {fileID: 8300000, guid: a4d6682a6e4b4aeeb2c9a2ab527eee3c, type: 3}
+  - id: debris_ambience
+    clip: {fileID: 8300000, guid: 75f0b9a855794659a07f03134bacd8d8, type: 3}
+  - id: pad_appear
+    clip: {fileID: 8300000, guid: 46a0c54179a7496fb91b67cea1350ea7, type: 3}
+  - id: pad_cancel
+    clip: {fileID: 8300000, guid: 35697ce8f6c3488d891006d46005c803, type: 3}
+  - id: pad_hold
+    clip: {fileID: 8300000, guid: 13aa8cda7c8e4c7fbf00e622825c2214, type: 3}
+  - id: pad_hold_2
+    clip: {fileID: 8300000, guid: 05be361be4eb4b4d89c99b9e7e49c5d9, type: 3}
+  - id: pad_hold_3
+    clip: {fileID: 8300000, guid: 01267e47d65b4d0986261b0c95dc0269, type: 3}
+  - id: pad_ready
+    clip: {fileID: 8300000, guid: 1ee8ce209b444bffbf0b777a66645a0b, type: 3}
+  - id: pad_touch
+    clip: {fileID: 8300000, guid: c0e6bc05e2234f8cba96ebdb0a3fe2b0, type: 3}
+  - id: pad_vanish
+    clip: {fileID: 8300000, guid: fc5d0a378aa64052899d0c2053eac202, type: 3}
+  - id: ready_countdown
+    clip: {fileID: 8300000, guid: eb89ae36b7a24471ade8447ab1f2b45c, type: 3}
+  - id: select_countdown
+    clip: {fileID: 8300000, guid: e541bf63711d42e983ceedd0546a84d1, type: 3}
+  - id: select_press
+    clip: {fileID: 8300000, guid: fba9ad060fac44228663c2e2e2492ca8, type: 3}
+  - id: statue_awaken
+    clip: {fileID: 8300000, guid: 10565dad212b4f5da053c3823ae54c85, type: 3}
+  - id: statue_crumble
+    clip: {fileID: 8300000, guid: 63c3076009e94a6bbfad879a0a660ba1, type: 3}
   - id: transition
-    clip: {fileID: 8300000, guid: 796dc2baaf1dfa244b16ee02e220c742, type: 3}
-  - id: ui_back
-    clip: {fileID: 8300000, guid: a35d2af4d195292418d1d730c32c1056, type: 3}
-  - id: ui_click
-    clip: {fileID: 8300000, guid: 9a0364c4ea4964e46a0911e0ff6b411e, type: 3}
-  - id: ui_hover
-    clip: {fileID: 8300000, guid: a245573d2d6d98c4bb07d3522f9391f2, type: 3}
-  - id: ultimate_end
-    clip: {fileID: 8300000, guid: 37839ee10ad3efe44a21a4d71fd76863, type: 3}
-  - id: ultimate_ready
-    clip: {fileID: 8300000, guid: dbcec5ca2e6d92c468a94f9b63338229, type: 3}
-  - id: victory
-    clip: {fileID: 8300000, guid: 93d4b928d2d9848478bc83f8c32fced6, type: 3}
+    clip: {fileID: 8300000, guid: 2495adbe75dd4371b433d347e3b50e53, type: 3}
+  - id: wall_crumble
+    clip: {fileID: 8300000, guid: 43850e4b036a4add997d1b33182e58ed, type: 3}
+  - id: wall_zoom
+    clip: {fileID: 8300000, guid: e328671b2710412d83fe9b7b21a7e949, type: 3}
+  - id: wall_rocks_fall
+    clip: {fileID: 8300000, guid: 76cad61aecd845f88a9d6a388b08f56c, type: 3}
+  - id: wall_boulder_fall
+    clip: {fileID: 8300000, guid: 49ceb23a277f4a31a07e8c8c7682ab34, type: 3}
+  - id: statue_collapse
+    clip: {fileID: 8300000, guid: 25a059d89f59424a9239179ff40e6519, type: 3}
+  - id: statue_slam
+    clip: {fileID: 8300000, guid: 99ad6fc022f14bae96acf7dcf687a05c, type: 3}
+  - id: gem_flight
+    clip: {fileID: 8300000, guid: 9d8be927afcd4d63bb61989b3ef8ef69, type: 3}
+  - id: gem_impact
+    clip: {fileID: 8300000, guid: de742d0672624264879c97fee548f285, type: 3}
+  - id: gem_pickup
+    clip: {fileID: 8300000, guid: b04c6ae33b7640c384e7acd1a73f6ccf, type: 3}

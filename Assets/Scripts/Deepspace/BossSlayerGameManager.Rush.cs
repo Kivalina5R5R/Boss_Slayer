@@ -4,6 +4,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using FortalReplay;
 
 namespace Deepspace
 {
@@ -95,7 +96,7 @@ namespace Deepspace
 
         IEnumerator RushFade(System.Action middle, string milestone = null)
         {
-            sfx?.Play("transition", 0.45f, 0, 0.2f, 3);
+            PlayTransitionSound();
             yield return TweenSessionTransitionAlpha(1f, sessionTransitionFadeSeconds);
             middle();
             if (!string.IsNullOrEmpty(milestone)) JuiceMilestone(milestone, new Color(.75f, .4f, 1f));

@@ -107,6 +107,7 @@ namespace Deepspace
 
         void MoveWallTo(int kind, float seconds)
         {
+            BossFightAudio.PlayUi("wall_zoom", .35f, .4f);   // 2026-11-25
             wallFocusKind = kind;
             var target = kind >= 1 && kind <= StatueCentres.Length ? StatueView(StatueCentres[kind - 1], WallZoom) : wallHallFull;
             wallZoomTween?.Kill();

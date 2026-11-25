@@ -1,3 +1,4 @@
+using FortalReplay;
 ﻿using UnityEngine;
 
 namespace Deepspace
@@ -161,7 +162,8 @@ namespace Deepspace
             {
                 // 2026-11-24 "ลบ UI Skill จากจอพื้นออก": the ultimate's name is shown on the wall only; the floor keeps
                 // its view clear (floorSignatureBanner stays null, every user of it checks for that).
-                if (wallSignatureBanner == null) wallSignatureBanner = CreateSignatureBanner(cutsceneArea, true);
+                // 2026-11-25 "ลบอันเก่าทิ้ง": the wall's old "BOSS ULTIMATE / <name>" card is no longer made; the art team's
+                // ULTIMATE SKILL banner (BossUltimateBanner) announces the ultimate instead.
             }
             foreach (var label in new[] { floorSignatureBanner, wallSignatureBanner })
             {

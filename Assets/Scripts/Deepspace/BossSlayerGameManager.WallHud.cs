@@ -91,7 +91,7 @@ namespace Deepspace
                 card.Plate.texture = Resources.Load<Texture2D>("BossSlayer/Hud/PlayerPlate" + (p.Index + 1)); card.Plate.color = Color.white;
                 card.Plate.transform.SetAsLastSibling();   // the plate covers the bar's left cap
                 card.Label = HudText(card.Plate.rectTransform, "Card Label", font, Vector2.zero, Vector2.one, new Vector2(22f, 14f), new Vector2(-22f, -14f), TextAlignmentOptions.Center);
-                card.Label.text = "PLAYER " + (p.Index + 1);
+                card.Label.text = ArenaPlayerLabel(p.Index);
 
                 card.Numbers = HudText(rect, "Card Numbers", font, Vector2.zero, Vector2.zero,
                     new Vector2(barLeft + FillLeft + 300f, barBottom + FillBottom - 2f), new Vector2(barLeft + FillRight - 18f, barBottom + FillTop + 2f), TextAlignmentOptions.Right);

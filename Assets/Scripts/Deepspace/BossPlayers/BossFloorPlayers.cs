@@ -91,6 +91,13 @@ namespace Deepspace
             }
         }
 
+        // 2026-11-25: one player's prefab marker (the white oval) on or off, e.g. hidden on the pad select once that
+        // player has locked a card, so only their coloured P marker shows. ClearRoster brings every one back.
+        public void ShowPrefabMarker(UWBPlayerController player, bool visible)
+        {
+            if (player != null) SetPrefabMarkerVisible(player, visible);
+        }
+
         // The spawner's player who plays as game player slot (0-based).
         public bool TryGetSlotPlayer(int slot, out UWBPlayerController player)
         {

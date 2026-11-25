@@ -28,6 +28,12 @@ namespace Deepspace
 
         RawImage glow;
         Shard[] shards;
+        // 2026-11-25 "ฉากดินกับน้ำ ... เอา Alpha Light ไปใส่ด้วยเป็นสีของตัวเอง ค่าและตำแหน่งทุกอย่างเหมือน red alpha": the
+        // Water and Land walls get the art team's white "Alpha Light" in their own colour, laid out exactly like the
+        // Red Alpha (same height, fade and breathing). The rising particles stay Fire's only.
+        Texture redAlpha, fireParticle;
+        Color glowTint = Color.white;
+        bool particlesOn = true;
         float aspect = 190f / 242f;   // the particle picture's width / height
 
         public static BossFireWall Attach(RawImage wall)
@@ -49,16 +55,16 @@ namespace Deepspace
         void Build(RectTransform layer)
         {
             glow = BossHallSpace.Sprite(layer, "Red Alpha");
-            glow.texture = Resources.Load<Texture2D>(Folder + "RedAlpha");
+            redAlpha = Resources.Load<Texture2D>(Folder + "RedAlpha");
             var g = glow.rectTransform;
             g.anchorMin = Vector2.zero; g.anchorMax = new Vector2(1f, GlowHeight);
             g.offsetMin = g.offsetMax = Vector2.zero;
-            // Its bottom part at the art's own size (the picture is 1757 of the wall's 2160 tall), not squashed.
-            glow.uvRect = new Rect(0f, 0f, 1f, Mathf.Min(1f, GlowHeight * 2160f / 1757f));
+            SetGlowTexture(redAlpha);
             if (!glow.TryGetComponent(out BossVerticalFade fadeOut)) fadeOut = glow.gameObject.AddComponent<BossVerticalFade>();
             fadeOut.SetFade(GlowFade);
 
             var particle = Resources.Load<Texture2D>(Folder + "Particle");
+            fireParticle = particle;
             if (particle != null) aspect = (float)particle.width / particle.height;
             shards = new Shard[ParticleCount];
             for (int i = 0; i < ParticleCount; i++)
@@ -69,6 +75,34 @@ namespace Deepspace
             }
             Scatter();
         }
+
+        // Its bottom part at the art's own size (Red Alpha is 1757 of the wall's 2160 tall), not squashed.
+        void SetGlowTexture(Texture texture)
+        {
+            glow.texture = texture;
+            float artHeight = texture != null ? texture.height : 1757f;
+            glow.uvRect = new Rect(0f, 0f, 1f, Mathf.Min(1f, GlowHeight * 2160f / artHeight));
+        }
+
+        // Fire: Red Alpha as painted plus its particles. Other elements: glowTexture (white) in tint, and their own
+        // particle picture rising the same way (2026-11-25: Water's ice shard, Land's rock; null = no particles).
+        public void SetElement(Texture glowTexture, Color tint, Texture particle)
+        {
+            if (glow == null) return;
+            SetGlowTexture(glowTexture != null ? glowTexture : redAlpha);
+            glowTint = tint;
+            particlesOn = particle != null;
+            if (particle != null) aspect = (float)particle.width / particle.height;
+            if (shards == null) return;
+            foreach (var s in shards)
+            {
+                if (s.Rect == null) continue;
+                s.Rect.gameObject.SetActive(particlesOn);
+                if (particlesOn) s.Image.texture = particle;
+            }
+        }
+
+        public void SetFire() => SetElement(redAlpha, Color.white, fireParticle);
 
         // Spreads the particles over their whole climb, so the wall starts full.
         void Scatter()
@@ -97,7 +131,12 @@ namespace Deepspace
             if (shards == null) return;
             float dt = Time.unscaledDeltaTime, time = Time.unscaledTime;
             if (glow != null)
-                glow.color = new Color(1f, 1f, 1f, 1f - GlowBreatheDepth * (.5f + .5f * Mathf.Sin(time * 2f * Mathf.PI / GlowBreatheSeconds)));
+            {
+                var c = glowTint;
+                c.a *= 1f - GlowBreatheDepth * (.5f + .5f * Mathf.Sin(time * 2f * Mathf.PI / GlowBreatheSeconds));
+                glow.color = c;
+            }
+            if (!particlesOn) return;
 
             var area = ((RectTransform)transform).rect;
             float unit = area.height / BossHallSpace.DesignH;

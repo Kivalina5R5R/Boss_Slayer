@@ -40,8 +40,34 @@ namespace Deepspace
             demonFxActive = false;
         }
 
+        BossUltimateBanner ultimateBanner;
+        bool bossUltimateShowing;
+
+        // 2026-11-25: the "ULTIMATE SKILL" banner on the wall each time a boss starts an ultimate (BossUltimateBanner),
+        // in its stage colour: fire 1, water 2, land 3, the Abyssal King 4.
+        void TickUltimateBanner()
+        {
+            bool now = false;
+            foreach (var a in attacks) if (a.IsBossUltimate) { now = true; break; }
+            if (now && !bossUltimateShowing)
+            {
+                if (ultimateBanner == null) ultimateBanner = BossUltimateBanner.Create(cutsceneArea, transform);
+                ultimateBanner?.Play(UltimateBannerStage(BossPassiveState.Identify(bossModel != null ? bossModel.name : "")));
+            }
+            bossUltimateShowing = now;
+        }
+
+        static int UltimateBannerStage(BossPassiveState.Kind kind) => kind switch
+        {
+            BossPassiveState.Kind.Fish or BossPassiveState.Kind.Jellyfish or BossPassiveState.Kind.Serpent => 2,
+            BossPassiveState.Kind.Golem or BossPassiveState.Kind.Sentinel or BossPassiveState.Kind.Hydra => 3,
+            BossPassiveState.Kind.AbyssalKing => 4,
+            _ => 1,
+        };
+
         void AdvanceUltimateFx(float dt)
         {
+            TickUltimateBanner();
             bool any = ultimateGhosts.Count > 0;
             foreach (var a in attacks) if (a.IsBossUltimate && !a.DemonCut) { any = true; break; }
             if (!any)

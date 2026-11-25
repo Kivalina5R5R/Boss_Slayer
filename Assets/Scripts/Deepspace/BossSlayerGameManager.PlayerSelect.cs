@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Fortal.Arena;
 using UnityEngine;
+using FortalReplay;
 
 namespace Deepspace
 {
@@ -122,7 +123,7 @@ namespace Deepspace
         void UpdatePlayerSelect(float dt)
         {
             if (!pickingPlayers) return;
-            if (IsWaitingForArenaStart && StartKeyPressed())
+            if (IsWaitingForArenaStart && StartKeyPressed(FloorPlayers() is BossFloorPlayers source && source.IsSimulation))
                 PressArenaStart();
             if (readySelection == null && !TryStartReadySelection()) return;
             readySelection.Tick(Time.unscaledDeltaTime);
@@ -130,10 +131,12 @@ namespace Deepspace
 
         // Enter, keypad Enter or Space stands in for the launcher's START button. This project reads input only through
         // the Input System package, so the legacy Input class would throw here.
-        static bool StartKeyPressed()
+        // The staff's START: P in Simulation mode, Enter / Space otherwise.
+        static bool StartKeyPressed(bool simulation)
         {
             var keyboard = UnityEngine.InputSystem.Keyboard.current;
             if (keyboard == null) return false;
+            if (simulation) return keyboard.pKey.wasPressedThisFrame;
             return keyboard.enterKey.wasPressedThisFrame || keyboard.numpadEnterKey.wasPressedThisFrame || keyboard.spaceKey.wasPressedThisFrame;
         }
 
@@ -150,8 +153,8 @@ namespace Deepspace
             waitingForUwbStart = false;
             readySelection = new BossPlayerReadySelection(source, pads, () => FloorRect, padHoldSeconds, simulate ? 0f : rosterSettleSeconds,
                 dropOfflinePlayerSeconds, allPickedStartDelay, OnAllPlayersPicked);
-            // Simulation plays as if the launcher's START was already pressed.
-            if (simulate && IsWaitingForArenaStart) PressArenaStart();
+            // 2026-11-25 "ไม่ต้องขึ้นปุ่มเลือก player จนกว่าจะกด start ที่ launcher ใน mode simulation ให้การกด start เป็นปุ่ม P":
+            // Simulation waits for START too (it used to press it by itself); P is START there (StartKeyPressed).
             if (waitForArenaStart && !arenaStartPressed) readySelection.WaitForStartPress();
             return true;
         }

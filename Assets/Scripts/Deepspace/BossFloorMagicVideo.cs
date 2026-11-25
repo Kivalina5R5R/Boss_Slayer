@@ -49,6 +49,16 @@ namespace Deepspace
 
         void OnEnable() { if (image != null) Begin(); }
 
+        // 2026-11-25 "หลังเลือกตัวละคร 1 ตัว animation ฉากหลังค้าง": a screen that is showing keeps its glow alive. If the
+        // shared player was paused (another screen hid in between) or this backdrop got its still picture put back
+        // (the pad screen re-dresses its floor when it rebuilds), it is set right again on the next frame.
+        void Update()
+        {
+            if (image == null || shared == null || !shared.isPrepared || !showing.Contains(this)) return;
+            if (!shared.isPlaying) shared.Play();
+            if (image.texture != shared.texture) ShowVideo();
+        }
+
         void OnDisable()
         {
             showing.Remove(this);
@@ -82,6 +92,8 @@ namespace Deepspace
             video.url = url;
             video.audioOutputMode = VideoAudioOutputMode.None;
             video.skipOnDrop = true;
+            // 2026-11-25: on real time, so nothing that slows or stops game time (Time.timeScale) can freeze the floor.
+            video.timeUpdateMode = VideoTimeUpdateMode.UnscaledGameTime;
             video.prepareCompleted += OnPrepared;
             video.errorReceived += (_, message) =>
             {

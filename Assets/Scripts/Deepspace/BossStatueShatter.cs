@@ -41,12 +41,29 @@ namespace Deepspace
             new Rect(.6436f, .2217f, .0709f, .5234f), new Rect(.7036f, .2080f, .0867f, .6387f), new Rect(.7873f, .3281f, .0912f, .6719f),
         };
 
+        // 2026-11-25 "ตัวของปลา ยังเห็นจุดที่โผล่ออกมาอยู่": a statue that reaches past its crop (the Fish's lure and
+        // antenna) left that part standing beside the rubble. A cleaned patch of the hall (<Name>_Patch.png, the
+        // statue's leftovers painted out from the pillar and haze above and below) covers it, fading in during the
+        // collapse shake. Box as 0..1 of the picture (bottom = 0); an empty box means no patch.
+        static readonly Rect[] PatchBoxes =
+        {
+            Rect.zero, new Rect(.2774f, .4082f, .01858f, .24805f), Rect.zero, Rect.zero, Rect.zero,
+            Rect.zero, Rect.zero, Rect.zero, Rect.zero,
+        };
+        const float PatchFadeFrom = .3f, PatchFadeSeconds = .8f;   // seconds after CollapseAt
+
         RectTransform layer;
         Func<Rect> view;
         readonly RawImage[] pieces = new RawImage[Names.Length];
+        readonly RawImage[] patches = new RawImage[Names.Length];
         readonly VideoPlayer[] players = new VideoPlayer[Names.Length];
         readonly float[] breakAt = new float[Names.Length];
         readonly bool[] preparing = new bool[Names.Length];
+        // 2026-11-25 "ใส่เสียงตอนหุ่นถล่มด้วย": whether statue i's collapse sound has played in this break.
+        readonly bool[] collapseHeard = new bool[Names.Length];
+        readonly bool[] slamHeard = new bool[Names.Length];
+        // statue_collapse is 1.6 s long: started this early it has finished when the shake (and the slam) begins.
+        const float CollapseLeadIn = 1.5f;
         readonly HashSet<int> broken = new HashSet<int>();   // kinds whose statue has broken (or is breaking) this session
 
         // The statue's box in SelectBossBG_v7 (0..1, bottom = 0) for boss kind 1..9 (BossStatueAura uses it too).
@@ -65,6 +82,15 @@ namespace Deepspace
             {
                 if (shatter.pieces[i] == null) shatter.pieces[i] = BossHallSpace.Sprite(layer, "Statue " + Names[i]);
                 if (shatter.players[i] == null && !shatter.broken.Contains(i + 1)) shatter.pieces[i].enabled = false;
+            }
+            // after every piece, so a patch draws over its neighbour's crop too
+            for (int i = 0; i < Names.Length; i++)
+            {
+                if (PatchBoxes[i].width <= 0f || shatter.patches[i] != null) continue;
+                var patch = BossHallSpace.Sprite(layer, "Statue " + Names[i] + " Patch");
+                patch.texture = Resources.Load<Texture2D>(RubbleFolder + Names[i] + "_Patch");
+                patch.enabled = false;
+                shatter.patches[i] = patch;
             }
             return shatter;
         }
@@ -125,9 +151,16 @@ namespace Deepspace
                     pieces[i].color = Color.white;
                     pieces[i].enabled = true;
                     player.Play();
+                    collapseHeard[i] = false; slamHeard[i] = false;
+                    BossFightAudio.PlayUi("statue_crumble", .65f, .3f, 3);   // 2026-11-25: a beaten boss's statue cracking
                 }
                 if (!player.isPlaying) continue;
                 float sinceCollapse = (float)player.time - CollapseAt;
+                // 2026-11-25 "ตอนกล้องสั่นรอบที่หินร่วงมาหมดแล้วต้องมีเสียงตึงเหมือนอะไรถล่มดังๆ": the three crashes of the
+                // pieces coming down lead in so they end as the shake starts, and the shake itself lands with one big slam.
+                if (sinceCollapse >= -CollapseLeadIn && !collapseHeard[i]) { collapseHeard[i] = true; BossFightAudio.PlayUi("statue_collapse", .7f, .3f, 3); }
+                if (sinceCollapse >= 0f && !slamHeard[i]) { slamHeard[i] = true; BossFightAudio.PlayUi("statue_slam", .95f, .3f, 4); }
+                SetPatch(i, (sinceCollapse - PatchFadeFrom) / PatchFadeSeconds);
                 if (sinceCollapse >= 0f && sinceCollapse < CollapseShakeSeconds) shake = Mathf.Max(shake, 1f - sinceCollapse / CollapseShakeSeconds);
             }
             ShakeStrength = shake;
@@ -138,7 +171,26 @@ namespace Deepspace
         void LateUpdate()
         {
             var shown = view != null ? view() : new Rect(0, 0, 1, 1);
-            for (int i = 0; i < Names.Length; i++) if (pieces[i].enabled) Place(pieces[i].rectTransform, Crops[i], shown);
+            for (int i = 0; i < Names.Length; i++)
+            {
+                if (!pieces[i].enabled) continue;
+                ClampEdges(pieces[i].texture);
+                Place(pieces[i].rectTransform, Crops[i], shown);
+            }
+            for (int i = 0; i < Names.Length; i++)
+            {
+                if (patches[i] == null || !patches[i].enabled) continue;
+                ClampEdges(patches[i].texture);
+                Place(patches[i].rectTransform, PatchBoxes[i], shown);
+            }
+        }
+
+        // 2026-11-25 "ตอนกล้องสั่นภาพมันเห็นเส้นขาวๆ": a Repeat-wrapped texture drawn at sub-pixel spots during the shake
+        // blends its edge with the opposite edge, which showed as thin light lines round the crop. The video's texture
+        // is made at runtime (and may be remade), so it is clamped here; the rubble PNGs are Clamp in their import settings.
+        static void ClampEdges(Texture texture)
+        {
+            if (texture != null && texture.wrapMode != TextureWrapMode.Clamp) texture.wrapMode = TextureWrapMode.Clamp;
         }
 
         // The clip ended (or failed): its last frame stays as the rubble picture.
@@ -154,12 +206,24 @@ namespace Deepspace
             pieces[i].texture = rubble;
             pieces[i].color = Color.white;
             pieces[i].enabled = rubble != null;
+            SetPatch(i, 1f);
+        }
+
+        // Shows statue i's patch (if it has one) at this opacity, 0 hiding it.
+        void SetPatch(int i, float alpha)
+        {
+            var patch = patches[i];
+            if (patch == null || patch.texture == null) return;
+            alpha = Mathf.Clamp01(alpha);
+            patch.color = new Color(1f, 1f, 1f, alpha);
+            patch.enabled = alpha > 0f;
         }
 
         void Restore(int i)
         {
             if (players[i] != null) { Destroy(players[i]); players[i] = null; }
             pieces[i].enabled = false;
+            SetPatch(i, 0f);
         }
 
         // A picture crop (0..1 of the picture) on screen through the hall view.

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using FortalReplay;
 
 namespace Deepspace
 {
@@ -36,7 +37,12 @@ namespace Deepspace
 
         bool ReplayPlayerUp(PlayerState p) => p.DownTimer <= 0f && p.Cursor != null && p.Cursor.gameObject.activeSelf;
 
-        static void ReplayEnd(string reason) { if (ReplayLog.CurrentGame == "BossFight") ReplayLog.EndSession(reason); }
+        // The whole boss session is one replay round ("BossFight"), opened at the first fight's start (BeginBossSession
+        // sets this; the fight start opens it) and closed at the session's result. Logged through the Fortal Replay
+        // Signal package (Assets/FortalReplay), the same ReplayLog the Main Arena recorder reads.
+        bool replaySessionPending;
+
+        void ReplayEnd(string reason) { replaySessionPending = false; if (ReplayLog.CurrentGame == "BossFight") ReplayLog.EndSession(reason); }
 
         void ReplayBeginSession(int bossCount)
         {

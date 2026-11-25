@@ -71,7 +71,7 @@ namespace Deepspace
                 {
                     CodexPlate(rushResultWall, "MVP Plate", Sub(area, new Rect(.07f, .09f, .26f, .25f)), area, u, PlayerColor(mvp.Index), true);
                     CodexGold(Txt(rushResultWall, area, "MVP Label", new Rect(.08f, .24f, .24f, .08f), "MVP", Color.white, FontStyles.Normal), true, 14);
-                    CodexLetter(Txt(rushResultWall, area, "MVP", new Rect(.08f, .11f, .24f, .13f), "PLAYER " + (mvp.Index + 1), Color.white, FontStyles.Normal),
+                    CodexLetter(Txt(rushResultWall, area, "MVP", new Rect(.08f, .11f, .24f, .13f), ArenaPlayerLabel(mvp.Index), Color.white, FontStyles.Normal),
                         Color.Lerp(PlayerColor(mvp.Index), Color.white, .25f), 6);
                 }
                 if (owned.Count > 0)
@@ -95,7 +95,7 @@ namespace Deepspace
                     gem.rectTransform.sizeDelta = Vector2.one * local.height * .36f; gem.rectTransform.anchoredPosition = new Vector2(local.height * .45f, 0);
                     gem.rectTransform.localRotation = Quaternion.Euler(0, 0, 45);
                     CodexGold(RowTxt(row, local, new Rect(.08f, .12f, .12f, .76f), "#" + (rank + 1)), true, 2);
-                    CodexLetter(RowTxt(row, local, new Rect(.22f, .12f, .38f, .76f), "PLAYER " + (p.Index + 1), TextAlignmentOptions.Left), Color.Lerp(PlayerColor(p.Index), Color.white, .3f), 4);
+                    CodexLetter(RowTxt(row, local, new Rect(.22f, .12f, .38f, .76f), ArenaPlayerLabel(p.Index), TextAlignmentOptions.Left), Color.Lerp(PlayerColor(p.Index), Color.white, .3f), 4);
                     var score = RowTxt(row, local, new Rect(.58f, .12f, .38f, .76f), "0", TextAlignmentOptions.Right);
                     if (rank == 0) CodexGold(score, true, 2); else CodexLetter(score, BossFantasyTheme.Parchment, 2);
                     // slide in from the left one by one, then count the damage up
@@ -134,7 +134,7 @@ namespace Deepspace
                 CodexGold(Txt(rushResultFloor, area, "Bosses", new Rect(.25f, .54f, .5f, .15f), $"BOSSES DEFEATED {bosses}/{RushTotalBosses}", Color.white, FontStyles.Normal), false, 2);
                 CodexLetter(Txt(rushResultFloor, area, "Fate", new Rect(.25f, .46f, .5f, .07f), fate, Color.white, FontStyles.Normal), rushKingDefeated ? BossFantasyTheme.GoldLight : new Color(1f, .5f, .82f));
                 if (mvp != null)
-                    CodexLetter(Txt(rushResultFloor, area, "MVP", new Rect(.25f, .37f, .5f, .08f), $"MVP  PLAYER {mvp.Index + 1}  •  {mvp.Damage:n0}", Color.white, FontStyles.Normal),
+                    CodexLetter(Txt(rushResultFloor, area, "MVP", new Rect(.25f, .37f, .5f, .08f), $"MVP  {ArenaPlayerLabel(mvp.Index)}  •  {mvp.Damage:n0}", Color.white, FontStyles.Normal),
                         Color.Lerp(PlayerColor(mvp.Index), Color.white, .25f), 4);
             }
         }

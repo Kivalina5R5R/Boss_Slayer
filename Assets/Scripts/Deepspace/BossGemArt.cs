@@ -27,6 +27,8 @@ namespace Deepspace
         // Sparks: how many, how long each takes to rise, how far it rises and how big it is (all in spot diameters).
         const int SparkCount = 8;
         const float SparkSeconds = 1.6f, SparkRise = .75f, SparkSpread = .45f, SparkSize = .07f;
+        // The sparkle picture is a small diamond inside a soft glow, so it is drawn larger than the old plain square.
+        const float SparkleSize = .2f;
 
         static Sprite diamondOutline;
 
@@ -50,17 +52,15 @@ namespace Deepspace
             if (view == null || picture == null) return null;
             var gem = Resources.Load<Texture2D>(Folder + picture);
             if (gem == null) return null;
-            var particles = Resources.Load<Texture2D>(Folder + picture + "Particles");
             color.a = 1f;
-
-            if (particles != null)
-            {
-                float width = diameter * ParticleScale;
-                Raw(view, ParticlesName, particles, new Vector2(width, width * particles.height / particles.width), Color.white);
-            }
+            // 2026-11-25 "gems เอา particle พื้นหลังออก เอาออกไปเลย": no particle cloud behind the gem any more.
+            // 2026-11-25 (later) "particle เป็นของ gems": the art team's white diamond sparkle (GemSparkle), in the gem's
+            // colour, rises and fades around every gem (the spark motion below), in place of the old square sparks.
+            var sparkle = Resources.Load<Texture2D>(Folder + "GemSparkle");
             var sparks = Rect(view, SparksName, Vector2.zero);
+            float sparkSize = diameter * (sparkle != null ? SparkleSize : SparkSize);
             for (int i = 0; i < SparkCount; i++)
-                Raw(sparks, "Spark " + (i + 1), null, Vector2.one * diameter * SparkSize, color);
+                Raw(sparks, "Spark " + (i + 1), sparkle, new Vector2(sparkSize * (sparkle != null ? (float)sparkle.width / sparkle.height : 1f), sparkSize), color);
 
             float diamond = diameter * DiamondScale;
             var outline = new Vector2(diamond * DiamondAspect, diamond) * ChargeScale;

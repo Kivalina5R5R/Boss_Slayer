@@ -29,6 +29,8 @@ namespace Deepspace
         private readonly Dictionary<int, float> offlineSeconds = new Dictionary<int, float>();
         // The card each player (by PlayerId) stood on last frame, so a step onto a card bounces it once.
         private readonly Dictionary<int, int> lastPadOfPlayer = new Dictionary<int, int>();
+        // Whether each player's (by PlayerId) prefab oval is showing, so it is only switched when that changes.
+        private readonly Dictionary<int, bool> prefabMarkerShown = new Dictionary<int, bool>();
         private PlayerNumberSelection selection;
         private float rosterChangedAt;
         private float allPickedFor;
@@ -80,6 +82,9 @@ namespace Deepspace
             TickPads(Mathf.Min(deltaSeconds, .1f));
             Draw();
             if (!selection.IsComplete) { allPickedFor = 0f; return; }
+            // 2026-11-25: a tick on each second of "ALL READY • STARTING IN", the first one included.
+            if (allPickedFor <= 0f || Mathf.FloorToInt(allPickedFor) != Mathf.FloorToInt(allPickedFor + deltaSeconds))
+                BossFightAudio.PlayUi("ready_countdown", .5f, .3f);
             allPickedFor += deltaSeconds;
             if (allPickedFor >= startDelaySeconds) Finish();
         }
@@ -275,6 +280,7 @@ namespace Deepspace
                 int number = selection.GetAssignedNumber(player.PlayerId);
                 cursorPad[p] = number - 1;
                 holdPadOf[p] = -1;
+                ShowPrefabMarker(player, number <= 0);   // picked: the oval goes, the player's coloured marker takes over
                 if (number > 0)
                 {
                     picked++;
@@ -291,6 +297,14 @@ namespace Deepspace
 
             string status = picked == count ? "ALL READY" : $"{picked} / {count} READY";
             view.DrawExternal(cursorAt, cursorPad, holdPadOf, holdProgress, padOwners, status);
+        }
+
+        private void ShowPrefabMarker(UWBPlayerController player, bool visible)
+        {
+            if (player == null) return;
+            if (prefabMarkerShown.TryGetValue(player.PlayerId, out bool shown) && shown == visible) return;
+            prefabMarkerShown[player.PlayerId] = visible;
+            floorPlayers.ShowPrefabMarker(player, visible);
         }
 
         // The pads decide the order: picked players by pad number, then anyone unpicked (ForceFinish) in join order.

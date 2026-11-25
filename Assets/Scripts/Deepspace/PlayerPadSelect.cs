@@ -41,6 +41,7 @@ namespace Deepspace
             public Action<RectTransform> DecorateFloor;          // the floor panel, after the pads and cursors are built
             public Action<RectTransform, int> DecoratePad;       // pad k's root
             public Action<RectTransform, int, bool, float> AnimatePad;   // every frame: pad k's root, owned, hold 0..1
+            public Action<string> Sound;                         // 2026-11-25: pad_appear, pad_touch, pad_hold, pad_vanish
             public Sprite CursorRing;                            // replaces the code-drawn ring (and hides the dot)
             // 2026-11-18 (Boss Slayer, Food Isekai's player look): a player with no pad yet shows Food Isekai's filled
             // ready circle in this colour (null = the ring for everyone), and on picking it crossfades into the ring
@@ -67,6 +68,22 @@ namespace Deepspace
         float time, allIn;
         readonly int[] padOwner = new int[6], playerPad = new int[6], holdPad = new int[6];
         readonly float[] hold = new float[6], punch = new float[6];
+        // 2026-11-25 "ให้ปุ่มเลือก player มี animation เด้งออกมาตอนโผล่มาด้วย": seconds since pad k came up (negative =
+        // still waiting its turn). Pads pop in left to right with a small overshoot, the reverse of PlayExit.
+        readonly float[] appear = { 9, 9, 9, 9, 9, 9 };
+        const float AppearSeconds = .38f, AppearStagger = .08f;
+
+        static float AppearScale(float t)
+        {
+            if (t <= 0f) return 0f;
+            if (t >= AppearSeconds) return 1f;
+            return DOVirtual.EasedValue(0f, 1f, t / AppearSeconds, Ease.OutBack, 2.2f);
+        }
+
+        void PopIn(int from, int to)
+        {
+            for (int k = from; k < to && k < appear.Length; k++) appear[k] = -(k - from) * AppearStagger;
+        }
         readonly bool[] seen = new bool[6];
         readonly RectTransform[] pads = new RectTransform[6], cards = new RectTransform[6], cursors = new RectTransform[6];
         readonly Image[] padFills = new Image[6], padBars = new Image[6], cardFills = new Image[6], cursorRings = new Image[6], cursorDots = new Image[6];
@@ -113,6 +130,7 @@ namespace Deepspace
             KillExit();
             Active = false; external = false; done = null;
             foreach (var cursor in cursors) if (cursor != null) cursor.gameObject.SetActive(false);
+            style.Sound?.Invoke("pad_vanish");
             exit = DOTween.Sequence().SetUpdate(true);
             for (int k = 0; k < Count; k++)
                 foreach (var item in new[] { pads[k], cards[k] })
@@ -153,6 +171,7 @@ namespace Deepspace
             for (int i = 0; i < 6; i++) { padOwner[i] = playerPad[i] = holdPad[i] = -1; hold[i] = 0; punch[i] = 9; seen[i] = false; }
             Build();
             Layout(Count);
+            PopIn(0, Count);
             floor.gameObject.SetActive(true); floor.SetAsLastSibling();
             if (wall != null) { wall.gameObject.SetActive(true); wall.SetAsLastSibling(); }
         }
@@ -175,8 +194,10 @@ namespace Deepspace
         public void ResizeExternal(int count)
         {
             if (!external) return;
+            int before = Count;
             Count = Mathf.Clamp(count, 1, 6);
             Layout(Count);
+            if (Count > before) PopIn(before, Count);   // a pad added for a new player pops in too
         }
 
         // One frame of the screen. cursorAt[z] is cursor z's 0..1 floor position (null = hidden), cursorPad[z] the pad it
@@ -189,8 +210,10 @@ namespace Deepspace
             for (int k = 0; k < 6; k++)
             {
                 punch[k] += dt;
+                if (k < Count && appear[k] <= 0f && appear[k] + dt > 0f) style.Sound?.Invoke("pad_appear");   // each pad as it pops in
+                appear[k] += dt;
                 int owner = k < padOwners.Length ? padOwners[k] : -1;
-                if (owner >= 0 && padOwner[k] < 0) punch[k] = 0;
+                if (owner >= 0 && padOwner[k] < 0) { punch[k] = 0; style.Sound?.Invoke("pad_ready"); }   // a player locked this pad
                 padOwner[k] = owner;
             }
             for (int z = 0; z < 6; z++)
@@ -200,8 +223,22 @@ namespace Deepspace
                 if (pad >= 0 && playerPad[z] < 0) pickAge[z] = 0;
                 pickAge[z] += dt;
                 playerPad[z] = pad;
+                int wasHolding = holdPad[z];
                 holdPad[z] = listed ? holdPadOf[z] : -1;
+                float wasHold = hold[z];
                 hold[z] = listed ? Mathf.Clamp01(holdProgress[z]) * HoldSeconds : 0;
+                // A player stepping onto a free pad: the touch, then the hold rising once the hold has begun.
+                if (holdPad[z] >= 0 && holdPad[z] != wasHolding) style.Sound?.Invoke("pad_touch");
+                // Stepped off before the hold finished (not because the pad was just claimed).
+                if (wasHolding >= 0 && holdPad[z] < 0 && pad < 0 && wasHold > 0f) style.Sound?.Invoke("pad_cancel");
+                if (holdPad[z] >= 0 && wasHold <= 0f && hold[z] > 0f) style.Sound?.Invoke("pad_hold");
+                // 2026-11-25 "ไปดูเสียงของ FoodIsekai เป็นตัวอย่าง": like FoodIsekai's ReadyHoldTick, the hold steps up
+                // in ticks (pad_hold at the start, pad_hold_2 at a third, pad_hold_3 at two thirds), each one higher, so
+                // they stop the moment the player steps off.
+                if (holdPad[z] >= 0 && holdPad[z] == wasHolding)
+                    for (int step = 1; step <= 2; step++)
+                        if (wasHold < HoldSeconds * step / 3f && hold[z] >= HoldSeconds * step / 3f)
+                            style.Sound?.Invoke("pad_hold_" + (step + 1));
                 ShowCursor(z, listed ? cursorAt[z] : null);
             }
             Refresh(status);
@@ -225,7 +262,7 @@ namespace Deepspace
             if (!Active || external) return;
             float dt = Time.unscaledDeltaTime;
             time += dt;
-            for (int k = 0; k < Count; k++) punch[k] += dt;
+            for (int k = 0; k < Count; k++) { punch[k] += dt; appear[k] += dt; }
             for (int z = 0; z < Count; z++)
             {
                 var at = Position(z);
@@ -352,11 +389,11 @@ namespace Deepspace
                 if (padFills[k] != null) padFills[k].color = owned ? Color.Lerp(style.Plate, col, .45f) : style.Plate;
                 if (padBars[k] != null) { padBars[k].fillAmount = owned ? 1 : progress; padBars[k].color = col; }
                 if (padStates[k] != null) padStates[k].text = owned ? "READY" : progress > 0 ? "HOLD..." : "STAND HERE";
-                if (pads[k] != null) pads[k].localScale = Vector3.one * UiThemeKit.Punch(punch[k], .12f);
+                if (pads[k] != null) pads[k].localScale = Vector3.one * UiThemeKit.Punch(punch[k], .12f) * AppearScale(appear[k]);
                 if (pads[k] != null) style.AnimatePad?.Invoke(pads[k], k, owned, progress);
                 if (cardFills[k] != null) cardFills[k].color = owned ? Color.Lerp(style.Plate, col, .45f) : style.Plate;
                 if (cardStates[k] != null) cardStates[k].text = owned ? "READY" : "...";
-                if (cards[k] != null) cards[k].localScale = Vector3.one * UiThemeKit.Punch(punch[k], .12f);
+                if (cards[k] != null) cards[k].localScale = Vector3.one * UiThemeKit.Punch(punch[k], .12f) * AppearScale(appear[k]);
             }
             string line = taken == Count ? $"ALL READY  •  STARTING IN {Mathf.Max(1, Mathf.CeilToInt(AllInSeconds - allIn))}"
                 : $"{taken} / {Count} READY  •  AUTO IN {Mathf.Max(1, Mathf.CeilToInt(TimeoutSeconds - time))}";

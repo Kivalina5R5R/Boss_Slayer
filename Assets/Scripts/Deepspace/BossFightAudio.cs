@@ -30,8 +30,26 @@ namespace Deepspace
         public int ClipCount => clips.Count;
         public bool ChargePlaying => charge != null && charge.isPlaying;
 
+        // 2026-11-25: the one live player, for screens that have no game manager reference (statues, wall crumble).
+        public static BossFightAudio Current { get; private set; }
+
+        // UI-side one-shots (they play while the game is paused too); a missing id is silent.
+        public static void PlayUi(string id, float gain = 0.5f, float cooldown = 0.05f, int priority = 2)
+        {
+            if (Current != null) Current.Play(id, gain, 0, cooldown, priority, true);
+        }
+
+        // True while any voice is still playing the clip registered as id.
+        public bool IsPlaying(string id)
+        {
+            if (voices == null || !clips.TryGetValue(id, out var clip)) return false;
+            foreach (var voice in voices) if (voice != null && voice.isPlaying && voice.clip == clip) return true;
+            return false;
+        }
+
         public void Initialize()
         {
+            Current = this;
             if (voices != null) return;
             bank = Resources.Load<BossFightAudioBank>("BossFightAudio");
             if (bank == null) { Debug.LogError("BossFightAudio bank is missing.", this); return; }

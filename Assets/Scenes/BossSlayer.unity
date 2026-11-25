@@ -38880,7 +38880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a5cbe7cedcdad94b8cdf8ee83b84661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fortal.UWB.UWBManager
-  transportMode: 2
+  transportMode: 0
   connectOnStart: 1
   autoReconnect: 1
   reconnectDelaySeconds: 2
@@ -40782,7 +40782,7 @@ MonoBehaviour:
   - {x: 3.3, y: -1.65}
   - {x: -4.4, y: -1.65}
   - {x: 4.4, y: -1.65}
-  simulationPlayerCount: 1
+  simulationPlayerCount: 2
   onlyLauncherPlayers: 1
   disableOfflinePlayersInSerial: 1
 --- !u!4 &1545000161

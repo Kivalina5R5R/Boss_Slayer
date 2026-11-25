@@ -51,6 +51,7 @@ namespace Deepspace
         public static void Apply(PlayerPadSelect.Style style, Func<RectTransform> floor)
         {
             style.PlainPads = true;
+            style.Sound = id => BossFightAudio.PlayUi(id, .5f, .03f);
             style.CursorRing = null;
             style.PadLabel = k => (k + 1).ToString();
             style.PadRect = (k, n) => CardRect(floor?.Invoke(), k, n);

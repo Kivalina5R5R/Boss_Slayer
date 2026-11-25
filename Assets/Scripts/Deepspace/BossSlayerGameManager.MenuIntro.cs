@@ -38,6 +38,11 @@ namespace Deepspace
         {
             if (startWall == null || !startWall.gameObject.activeInHierarchy) return;
             BossWallCrumble.Play(cutsceneArea, wallDisplayCamera);
+            BossFightAudio.PlayUi("wall_crumble", .7f, .5f, 4);   // 2026-11-25: the Start wall breaking apart
+            // ...and the pieces raining down onto the floor once the cracks have spread (BossWallCrumble: falling from .85 s).
+            DG.Tweening.DOVirtual.DelayedCall(.85f, () => BossFightAudio.PlayUi("wall_rocks_fall", .7f, .5f, 4), true);
+            // ...then one big block slamming down in the thick of the fall (2026-11-25 "หินก้อนใหญ่ร่วง").
+            DG.Tweening.DOVirtual.DelayedCall(2.3f, () => BossFightAudio.PlayUi("wall_boulder_fall", .8f, .5f, 4), true);
             startWall.Show(false);
             bossRevealDelay = BossWallCrumble.Duration;   // the floor's boss cards come in once the pieces are gone
         }

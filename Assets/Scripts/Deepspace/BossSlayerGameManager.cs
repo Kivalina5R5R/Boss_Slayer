@@ -8,6 +8,7 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using UnityEngine.VFX;
+using FortalReplay;
 
 namespace Deepspace
 {
@@ -616,8 +617,13 @@ namespace Deepspace
             EnsureCombatJuice();
             sfx.WireButtons();
             BindInput();
-            // บาส 2026-10-02: result screen holds 10 s, then SKIP -> Restart / Exit (lower) - see ResultChoiceFlow.
-            ResultChoiceFlow.Install(gameplayResultPanel, 220f);
+            // 2026-11-25: the floor result shows the results only - no SKIP / Restart / Exit (ResultButtonsOff).
+            // (Was บาส 2026-10-02: hold 10 s, then SKIP -> Restart / Exit, ResultChoiceFlow.)
+            ResultButtonsOff.Install(gameplayResultPanel);
+            // With no Restart on the floor, the staff start the next group from the web launcher's NEW ROUND button
+            // (shown only while the final result is up), which does what the floor's Restart did.
+            Fortal.Arena.FortalArenaButtons.Add("New Round", () => "NEW ROUND", RestartToMenu,
+                () => gameplayResultPanel != null && gameplayResultPanel.gameObject.activeInHierarchy, true);
             WireResultExit();
             // บาส 2026-10-02: freeze the game when a player's tag drops out, resume when they are back - PlayerDropoutGuard.
             PlayerDropoutGuard.Install(this, cutsceneArea, playArea, FindFirstObjectByType<TMPro.TMP_Text>(FindObjectsInactive.Include)?.font, () => gameStarted && !resultShown, () => playerCount,
@@ -632,6 +638,7 @@ namespace Deepspace
             UpdateMenuIntro();   // menu video while the lobby waits / players pick their pads (.MenuIntro.cs); before the early outs so it never stays up
             if (Time.timeScale <= 0f) return;
             if (InputArea == null) return;
+            TickArenaPlayers();   // launcher seats and customer names (.Arena.cs)
             if (IsRushActive) TickRush(Time.deltaTime); // บาส 2026-10-20: boss rush perk breaks + perk effects (Rush.cs)
             if (pickingPlayers) { UpdatePlayerSelect(Time.deltaTime); return; }   // player pads before the boss select (.PlayerSelect.cs)
             if (selectingBoss) { UpdateBossAutoConfirm(); return; }
@@ -885,6 +892,12 @@ namespace Deepspace
             yield return new WaitForSeconds(bossEntranceRevealSeconds);
 
             gameStarted = true;
+            if (replaySessionPending)
+            {
+                replaySessionPending = false;
+                ReplayBeginSession(sessionBossTargetCount);
+                ReplayRoundStart();   // its first call (in the entrance) came before the round was open
+            }
             for (int i = 0; i < openingSpots; i++) SpawnSpot();   // now collectable (moved from ResetFight)
             spotTimer = spotGapSeconds;
             replayFightStart = ReplayLog.SessionTime;
@@ -1054,7 +1067,10 @@ namespace Deepspace
             sessionBossIndex = 0;
             sessionBossesPlayed.Clear();
             sessionActive = true;
-            ReplayBeginSession(sessionBossTargetCount);
+            // 2026-11-25 (Fortal Replay Signal README: "GameStarted ... after the menus and the countdown"): the replay
+            // round now opens when the first boss fight really starts (below, at gameStarted), not here before the boss
+            // select, so the highlight recording has no picking or waiting in it.
+            replaySessionPending = true;
             StartNextSessionBoss(true);
             sfx?.Play("session_start", 0.5f, 0, 0.2f, 4);
         }
@@ -1673,6 +1689,11 @@ namespace Deepspace
         const string WaterFloorArt = "BossBackgrounds/BGFloorWater", WaterWallArt = "BossBackgrounds/BGWaterWall";
         const string LandFloorArt = "BossBackgrounds/BGFloorLand", LandWallArt = "BossBackgrounds/BGLandWall";
         BossFireWall fireWall;
+        BossWallCentreVideo wallCentreVideo;
+        BossPortalSpin portalSpin;
+        static readonly Color WaterGlow = new Color(.2f, .62f, 1f), LandGlow = new Color(1f, .58f, .16f);
+        Texture2D alphaLight, waterParticle, landParticle;
+        Texture2D AlphaLight() => alphaLight != null ? alphaLight : alphaLight = Resources.Load<Texture2D>("BossBackgrounds/AlphaLight");
         BossFireFloor fireFloor;
 
         // 2026-11-24 "เอาฉากไฟไปใส่แทนอันเดิม": every FIRE-element boss (the boss select's red row: Demon, Void Wraith,
@@ -1717,7 +1738,26 @@ namespace Deepspace
         void RefreshFireArena()
         {
             if (fireWall == null) fireWall = BossFireWall.Attach(bossWallBackgroundImage);
-            if (fireWall != null) fireWall.Show(IsFireArt(bossWallBackgroundImage.texture));
+            // 2026-11-25: the element walls' portal band loops (BossWallCentreVideo); other walls show no video.
+            if (wallCentreVideo == null) wallCentreVideo = BossWallCentreVideo.Attach(bossWallBackgroundImage);
+            if (wallCentreVideo != null) wallCentreVideo.Show(bossWallBackgroundImage.texture);
+            // 2026-11-25: Land's portal turns clockwise on top of its video (BossPortalSpin), under the glow.
+            if (portalSpin == null) portalSpin = BossPortalSpin.Attach(bossWallBackgroundImage);
+            if (portalSpin != null)
+            {
+                if (wallCentreVideo != null) portalSpin.transform.SetSiblingIndex(wallCentreVideo.transform.GetSiblingIndex() + 1);
+                portalSpin.Show(bossWallBackgroundImage.texture);
+            }
+            if (fireWall != null)
+            {
+                // 2026-11-25: the Water and Land walls get the same glow as Fire's Red Alpha, in their own colour.
+                var wallArt = bossWallBackgroundImage.texture;
+                string wallName = wallArt != null ? wallArt.name : "";
+                if (wallName == "BGWaterWall") fireWall.SetElement(AlphaLight(), WaterGlow, waterParticle != null ? waterParticle : waterParticle = Resources.Load<Texture2D>("BossBackgrounds/Water/Particle"));
+                else if (wallName == "BGLandWall") fireWall.SetElement(AlphaLight(), LandGlow, landParticle != null ? landParticle : landParticle = Resources.Load<Texture2D>("BossBackgrounds/Land/Particle"));
+                else fireWall.SetFire();
+                fireWall.Show(IsFireArt(wallArt) || wallName == "BGWaterWall" || wallName == "BGLandWall");
+            }
             // 2026-11-24 "ฉากพื้นเหมือนเดิม เอารูปที่ให้ไปใส่แทน": the floor shows the art team's Floor_Fire-BG exactly as
             // drawn. The animated flames (BossFireFloor, cut from the older "EXFloor Fire" example) are no longer added.
             if (fireFloor != null) fireFloor.Show(false);
@@ -2144,6 +2184,10 @@ namespace Deepspace
                 var contributors = PlayersInside(spot.WorldPosition, 0.7f, playersInsideScratch);
                 spot.Load = contributors.Count > 0 ? spot.Load + dt * RushChargeRate(contributors) : Mathf.Max(0f, spot.Load - dt * 0.8f);
                 UpdateSpotView(spot);
+                // 2026-11-25 "ดังเมื่อเหยียบ gem เลย ไม่ต้องโหลดเสร็จ": each gem's own sound the moment a player steps on it.
+                bool stepped = contributors.Count > 0;
+                if (stepped && !spot.Stepped) PlayGemSound(spot);
+                spot.Stepped = stepped;
                 if (contributors.Count > 0) sfx?.Hold(spot.Load / Mathf.Max(0.01f, spotHoldSeconds), SfxPan(spot.WorldPosition.x));
 
                 if (spot.Load >= spotHoldSeconds)
@@ -2675,9 +2719,15 @@ namespace Deepspace
             };
         }
 
+        // 2026-11-25 "ใช้เสียงเมื่อชน gem เป็นอันเดียวกันหมด": one pickup sound for every gem colour.
+        void PlayGemSound(SpotState spot)
+        {
+            sfx?.Play("gem_pickup", 0.5f, SfxPan(spot.WorldPosition.x), 0.075f, 3);
+        }
+
         IEnumerator CollectSpotRoutine(SpotState spot, List<PlayerState> contributors, bool ultimate = false)
         {
-            sfx?.Play("gem_" + spot.Def.GemModelName.ToLowerInvariant(), 0.5f, SfxPan(spot.WorldPosition.x), 0.075f, 2);
+            if (ultimate) PlayGemSound(spot);   // ultimate burst gems are taken by touch, with no step before
             JuiceFloor(SpaceJuice.Pickup, WorldToLocal(spot.WorldPosition), spot.Def.Color, ultimate ? 165 : 125);
             int generation = gemFlightGeneration;
             var target = bossModel;
@@ -2689,6 +2739,8 @@ namespace Deepspace
             bool ready = flight.Initialize(floorDisplayCamera,
                 bossDisplayCamera != null ? bossDisplayCamera : wallDisplayCamera, origin, target, spot.Def.Color);
             activeGemFlights.Add(go);
+            // 2026-11-25: the gem's whoosh as it flies from the floor up to the boss (gem_impact plays when it lands).
+            if (ready) sfx?.Play("gem_flight", .4f, SfxPan(spot.WorldPosition.x), .06f, 2);
             if (spot.View != null) Destroy(spot.View.gameObject);
             if (spot.GemFollower != null) Destroy(spot.GemFollower.gameObject);
             if (ultimate) replayUltPending++;
@@ -3121,6 +3173,7 @@ namespace Deepspace
             StyleResultScreen(mvp); // บาส 2026-09-29: themed result layout (WallHud.cs)
             if (IsRushActive) ShowRushResultLayout(mvp); // บาส 2026-10-20: prototype layout for the 15-minute rush (RushResult.cs)
             ReplaySessionCompleted(mvp);
+            ReportArenaScores(mvp);   // scores to the Fortal launcher (.Arena.cs)
         }
 
         bool HasNextSessionBoss()
@@ -3130,7 +3183,7 @@ namespace Deepspace
 
         IEnumerator PlayNextBossTransition()
         {
-            sfx?.Play("transition", 0.45f, 0, 0.2f, 3);
+            PlayTransitionSound();
             yield return TweenSessionTransitionAlpha(1f, sessionTransitionFadeSeconds);
             HideNextBossCards();
             ShowBossSelection();
@@ -4755,6 +4808,8 @@ namespace Deepspace
             public readonly MaterialPropertyBlock GemGlowBlock;
             public float Life;
             public float Load;
+            // 2026-11-25: someone was standing on this gem last frame (its pickup sound plays on the first step).
+            public bool Stepped;
 
             public SpotState(SpotDef def, Vector2 worldPosition, RectTransform view, RectTransform progressRing, RectTransform contrastGlow, RectTransform edgeGlow, float life, Visual3DFollower gemFollower)
             {

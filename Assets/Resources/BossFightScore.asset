@@ -19,28 +19,28 @@ MonoBehaviour:
   bosses:
   - bossName: DemonBoss
     music: {fileID: 8300000, guid: 3098b439b65f44f381d0ba2b8661543b, type: 3}
-    roar: {fileID: 8300000, guid: 5d14c4a8e27edc74281a2f2dac001eac, type: 3}
+    roar: {fileID: 0}
   - bossName: GiantFish
     music: {fileID: 8300000, guid: f85e934907df461cbdeb6ed722b17856, type: 3}
-    roar: {fileID: 8300000, guid: 67112d15b9c6c02488b18c04fb646eb7, type: 3}
+    roar: {fileID: 0}
   - bossName: JeelyFishBoss
     music: {fileID: 8300000, guid: f85e934907df461cbdeb6ed722b17856, type: 3}
-    roar: {fileID: 8300000, guid: cc3df67bc3185064783fcc335d128ebd, type: 3}
+    roar: {fileID: 0}
   - bossName: DragonBoss
     music: {fileID: 8300000, guid: 3098b439b65f44f381d0ba2b8661543b, type: 3}
-    roar: {fileID: 8300000, guid: bde6d163d84bc7c498898ee33a938c4b, type: 3}
+    roar: {fileID: 0}
   - bossName: CrystalGolem
     music: {fileID: 8300000, guid: 8dba9c6a71424f36b83fd5757fdd1b4a, type: 3}
-    roar: {fileID: 8300000, guid: e9e4fc560d8182f4da88a0c6a42eaf5f, type: 3}
+    roar: {fileID: 0}
   - bossName: SeaSerpentBoss
     music: {fileID: 8300000, guid: f85e934907df461cbdeb6ed722b17856, type: 3}
-    roar: {fileID: 8300000, guid: 875054b90f0473441bf224c08c6e609e, type: 3}
+    roar: {fileID: 0}
   - bossName: SentinelBoss
     music: {fileID: 8300000, guid: 8dba9c6a71424f36b83fd5757fdd1b4a, type: 3}
-    roar: {fileID: 8300000, guid: bff267fac13fe674b8521fe439515a6f, type: 3}
+    roar: {fileID: 0}
   - bossName: VoidWraithBoss
     music: {fileID: 8300000, guid: 3098b439b65f44f381d0ba2b8661543b, type: 3}
-    roar: {fileID: 8300000, guid: ee448ba636083c5429dcf510bbf268d4, type: 3}
+    roar: {fileID: 0}
   - bossName: HydraBoss
     music: {fileID: 8300000, guid: 8dba9c6a71424f36b83fd5757fdd1b4a, type: 3}
-    roar: {fileID: 8300000, guid: 1eade9868d8f419e937466fa8dc3533b, type: 3}
+    roar: {fileID: 0}

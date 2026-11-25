@@ -4,6 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VFX;
+using FortalReplay;
 
 namespace Deepspace
 {

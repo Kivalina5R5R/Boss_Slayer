@@ -40,6 +40,7 @@ namespace Deepspace
                 group.alpha = 0f;
                 float start = delay + i * RevealStep + (select && i == order.Count - 1 ? SelectGap : 0f);
                 reveal.Insert(start, item.DOScale(1f, RevealPop).SetEase(Ease.OutBack));
+                reveal.InsertCallback(start, () => BossFightAudio.PlayUi("boss_card_appear", .45f, .03f));   // 2026-11-25
                 reveal.Insert(start, group.DOFade(1f, RevealPop * .5f));
             }
             reveal.OnComplete(() => reveal = null);

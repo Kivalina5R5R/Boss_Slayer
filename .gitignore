@@ -136,3 +136,6 @@ crashlytics-build.properties
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Fortal Replay Signal: local replay logs (README: add to .gitignore)
+/ReplayLogs/

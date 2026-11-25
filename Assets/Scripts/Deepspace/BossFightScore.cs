@@ -5,7 +5,9 @@ namespace Deepspace
     // Two reusable BGM voices. Creature calls use the existing priority-limited SFX pool.
     public sealed class BossFightScore : MonoBehaviour
     {
-        [SerializeField, Range(0, 1)] float volume = 0.24f;
+        // 2026-11-25 balance pass: the BGM files sit near -15 LUFS; 0.3 puts them about -25.5, under the menu sounds
+        // (levelled to about -23 for the small UI ones and -17 for the big collapses after the 0.72 SFX volume).
+        [SerializeField, Range(0, 1)] float volume = 0.3f;
         BossFightScoreBank bank;
         BossFightAudio sfx;
         AudioSource[] music;
