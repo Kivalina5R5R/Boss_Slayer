@@ -370,6 +370,9 @@ namespace Deepspace
                 shards[i].delay = burst + crumble * (1f - Mathf.InverseLerp(bottom, top, shards[i].pos.y));
 
             var host = new GameObject(name + " shatter");
+            // 2026-11-25 "สะเก็ดที่บอสระเบิดตรงจอกำแพง ตรงจอพื้นต้องมองไม่เห็น": the shards were on the Default layer, which
+            // the floor camera draws too. On the boss's own layer only the wall's boss camera sees them.
+            host.layer = gameObject.layer;
             var system = host.AddComponent<ParticleSystem>();
             system.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             var main = system.main; main.playOnAwake = false; main.loop = false; main.simulationSpace = ParticleSystemSimulationSpace.World; main.maxParticles = shards.Length; main.startLifetime = length + 2f; main.simulationSpeed = 0f;

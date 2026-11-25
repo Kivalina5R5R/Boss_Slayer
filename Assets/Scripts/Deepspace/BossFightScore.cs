@@ -41,12 +41,14 @@ namespace Deepspace
 
         public void Menu() { theme = -1; Switch(bank != null ? bank.menu : null, "menu"); }
         public void Result() { theme = -1; Switch(bank != null ? bank.result : null, "result"); }
-        public void Boss(int value)
+        // abyssalKing plays the king's own track (when the bank has one) over theme value's; roars stay theme value's.
+        public void Boss(int value, bool abyssalKing = false)
         {
             if (bank == null || bank.bosses == null || value < 0 || value >= bank.bosses.Length) return;
             theme = value;
             nextRoar = 0;
-            Switch(bank.bosses[value].music, bank.bosses[value].bossName);
+            if (abyssalKing && bank.abyssalKing != null) Switch(bank.abyssalKing, "AbyssalKing");
+            else Switch(bank.bosses[value].music, bank.bosses[value].bossName);
         }
         public bool Roar()
         {

@@ -486,11 +486,33 @@ namespace Deepspace
             if (perkWallRoot == null) perkWallRoot = BuildPerkScreen(cutsceneArea, false, perkWallCards, out perkWallTitle);
         }
 
+        // 2026-11-25 "หน้าเลือก perk ให้เป็นพื้นหลัง select boss ทั้งจอกำแพงและจอพื้น": the perk vote sits on the boss
+        // select's own backgrounds instead of the arena - the boss hall picture on the wall (cropped to fill, like
+        // BossSelectionPanel does) and the looping rune floor (BossFloorMagicVideo, the same player the selects share).
+        static void AddPerkBackdrop(RectTransform root, bool floor, Vector2 size)
+        {
+            var image = new GameObject("Perk Backdrop", typeof(RectTransform), typeof(RawImage)).GetComponent<RawImage>();
+            var rect = image.rectTransform;
+            rect.SetParent(root, false); rect.anchorMin = Vector2.zero; rect.anchorMax = Vector2.one; rect.offsetMin = rect.offsetMax = Vector2.zero;
+            rect.SetAsFirstSibling();
+            image.raycastTarget = false;
+            if (floor) { BossFloorMagicVideo.Attach(image); return; }
+            var hall = Resources.Load<Texture2D>("BossSlayer/SelectBoss/SelectBossBG_v7");
+            image.texture = hall;
+            image.color = hall != null ? Color.white : Color.black;
+            if (hall == null || size.x <= 0 || size.y <= 0) return;
+            float picture = (float)hall.width / hall.height, screen = size.x / size.y;
+            image.uvRect = picture > screen
+                ? new Rect((1 - screen / picture) / 2, 0, screen / picture, 1)
+                : new Rect(0, (1 - picture / screen) / 2, 1, picture / screen);
+        }
+
         RectTransform BuildPerkScreen(RectTransform parent, bool floor, List<(Image, TextMeshProUGUI, TextMeshProUGUI, TextMeshProUGUI, TextMeshProUGUI, TextMeshProUGUI)> cards, out TextMeshProUGUI title)
         {
             var root = new GameObject(floor ? "Rush Perk Vote (floor)" : "Rush Perk Vote (wall)", typeof(RectTransform)).GetComponent<RectTransform>();
             root.SetParent(parent, false); root.anchorMin = Vector2.zero; root.anchorMax = Vector2.one; root.offsetMin = root.offsetMax = Vector2.zero;
             var area = parent.rect;
+            AddPerkBackdrop(root, floor, area.size);
             // The wall canvas is several times taller than the floor's: scale the text so it reads at the same size.
             perkFontScale = floor ? 1f : Mathf.Max(1f, area.height * .06f / 56f);
             float u = floor ? area.height / FloorDisplaySettings.Height : area.height / 2160f;

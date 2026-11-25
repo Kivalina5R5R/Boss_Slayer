@@ -812,7 +812,7 @@ namespace Deepspace
             jellyfishTentaclePivots = null;
             UpdateBossThemeBackground();
             BeginBossUiTheme();
-            sfx?.Score?.Boss(SoundTheme);
+            sfx?.Score?.Boss(SoundTheme, BossPassiveState.Identify(bossModel != null ? bossModel.name : null) == BossPassiveState.Kind.AbyssalKing);
             UpdateBossImage(); // positions the (still-hidden) boss before it's revealed
             attackTimer = attackGapSeconds;
             bossSignatureCastCount = 0;
@@ -1361,15 +1361,15 @@ namespace Deepspace
                         bossModelCandidates.Add(transform);
                         bossModelCandidateWeights.Add(i < bossModelWeights.Length ? Mathf.Max(0f, bossModelWeights[i]) : 1f);
                         if (i < bossGlowColors.Length) bossGlowColorByModel[transform] = bossGlowColors[i];
-                        bool fireBoss = IsFireElementBoss(transform.name);
-                        if (fireBoss || i < bossFloorBackgroundNames.Length)
+                        var elementArt = ElementArt(transform.name);
+                        if (elementArt.HasValue || i < bossFloorBackgroundNames.Length)
                         {
-                            var floorTexture = LoadBackgroundTexture(fireBoss ? FireFloorArt : bossFloorBackgroundNames[i]);
+                            var floorTexture = LoadBackgroundTexture(elementArt.HasValue ? elementArt.Value.floor : bossFloorBackgroundNames[i]);
                             if (floorTexture != null) bossFloorBackgroundByModel[transform] = floorTexture;
                         }
-                        if (fireBoss || i < bossWallBackgroundNames.Length)
+                        if (elementArt.HasValue || i < bossWallBackgroundNames.Length)
                         {
-                            var wallTexture = LoadBackgroundTexture(fireBoss ? FireWallArt : bossWallBackgroundNames[i]);
+                            var wallTexture = LoadBackgroundTexture(elementArt.HasValue ? elementArt.Value.wall : bossWallBackgroundNames[i]);
                             if (wallTexture != null) bossWallBackgroundByModel[transform] = wallTexture;
                         }
                         if (i < attackChargeVfxNames.Length)
@@ -1394,8 +1394,8 @@ namespace Deepspace
                 bossModelCandidates.Add(hydraModel);
                 bossModelCandidateWeights.Add(Mathf.Max(0f, bossModelWeights[System.Array.IndexOf(bossModelNamePatterns, "HydraBoss")]));
                 bossGlowColorByModel[hydraModel] = BossThemePalette.Accent("HydraBoss");
-                var floor = LoadBackgroundTexture("BossBackgrounds/BGFloorWaterBoss");
-                var wall = LoadBackgroundTexture("BossBackgrounds/BGWaterBoss");
+                var floor = LoadBackgroundTexture(LandFloorArt);
+                var wall = LoadBackgroundTexture(LandWallArt);
                 if (floor != null) bossFloorBackgroundByModel[hydraModel] = floor;
                 if (wall != null) bossWallBackgroundByModel[hydraModel] = wall;
             }
@@ -1638,6 +1638,9 @@ namespace Deepspace
             // team's "BG Fire" set. Swapped here because BossFight.unity keeps its own copy of the name lists above.
             if (resourceName == "BossBackgrounds/BGHellBoss") resourceName = FireWallArt;
             else if (resourceName == "BossBackgrounds/BGFloorHellBoss") resourceName = FireFloorArt;
+            // 2026-11-25 "พื้นของน้ำมีละ เอาไปใส่ให้หน่อย": the water bosses' floor is now the art team's water version of
+            // the Fire floor, swapped the same way.
+            else if (resourceName == "BossBackgrounds/BGFloorWaterBoss") resourceName = WaterFloorArt;
             if (backgroundTextureCache.TryGetValue(resourceName, out var cached)) return cached;
             var texture = Resources.Load<Texture2D>(resourceName);
             if (texture == null)
@@ -1667,6 +1670,8 @@ namespace Deepspace
         }
 
         const string FireWallArt = "BossBackgrounds/BGFireWall", FireFloorArt = "BossBackgrounds/BGFloorFire";
+        const string WaterFloorArt = "BossBackgrounds/BGFloorWater", WaterWallArt = "BossBackgrounds/BGWaterWall";
+        const string LandFloorArt = "BossBackgrounds/BGFloorLand", LandWallArt = "BossBackgrounds/BGLandWall";
         BossFireWall fireWall;
         BossFireFloor fireFloor;
 
@@ -1680,7 +1685,32 @@ namespace Deepspace
             return kind == BossPassiveState.Kind.Demon || kind == BossPassiveState.Kind.Wraith || kind == BossPassiveState.Kind.Dragon;
         }
 
+        // 2026-11-25 "สร้างแมพทั้งจอกำแพงแล้วก็จอพื้นให้หน่อย จะเป็นของน้ำและดินที่เหลือ": each row of the boss select
+        // (FIRE, WATER, LAND) fights on its own set made from the Fire set (Higgsfield Nano Banana, references BGFireWall /
+        // BGFloorFire / BGFloorWater). Null for a boss outside the three rows, which keeps the scene's name lists.
+        static (string floor, string wall)? ElementArt(string modelName)
+        {
+            if (IsFireElementBoss(modelName)) return (FireFloorArt, FireWallArt);
+            switch (BossPassiveState.Identify(modelName))
+            {
+                case BossPassiveState.Kind.Fish:
+                case BossPassiveState.Kind.Jellyfish:
+                case BossPassiveState.Kind.Serpent:
+                    return (WaterFloorArt, WaterWallArt);
+                case BossPassiveState.Kind.Golem:
+                case BossPassiveState.Kind.Sentinel:
+                case BossPassiveState.Kind.Hydra:
+                    return (LandFloorArt, LandWallArt);
+                default:
+                    return null;
+            }
+        }
+
         static bool IsFireArt(Texture texture) => texture != null && (texture.name == "BGFireWall" || texture.name == "BGFloorFire");
+
+        // Art from the element sets (Fire, Water, Land) is shown exactly as painted.
+        static bool IsPaintedArt(Texture texture) => IsFireArt(texture) || (texture != null && System.Array.IndexOf(PaintedArtNames, texture.name) >= 0);
+        static readonly string[] PaintedArtNames = { "BGFloorWater", "BGWaterWall", "BGFloorLand", "BGLandWall" };
 
         // The Fire set's extras (BossFireWall: red glow and rising particles; BossFireFloor: flickering flames) show
         // while the wall / floor show the Fire art.
@@ -1693,12 +1723,27 @@ namespace Deepspace
             if (fireFloor != null) fireFloor.Show(false);
         }
 
+        Material floorGlowMaterial;
+
+        // One shared material for every element floor; the RawImage supplies the texture.
+        Material FloorGlowMaterial(Texture artwork)
+        {
+            if (floorGlowMaterial == null)
+            {
+                var shader = Resources.Load<Shader>("BossFloorGlow");
+                if (shader == null || !shader.isSupported) return null;
+                floorGlowMaterial = new Material(shader) { name = "Boss Floor Glow", hideFlags = HideFlags.HideAndDontSave };
+            }
+            floorGlowMaterial.SetFloat("_Aspect", (float)artwork.width / Mathf.Max(1, artwork.height));
+            return floorGlowMaterial;
+        }
+
         void PlayBossBackgroundMovie(RawImage target, ref VideoBackgroundRuntime runtime, Texture2D fallbackTexture)
         {
             if (target == null || fallbackTexture == null) return;
             // The Fire art is shown as painted: no lava-motion shader or movie over it (BossFireWall / BossFireFloor
             // bring its own glow, particles and flames).
-            if (IsFireArt(fallbackTexture))
+            if (IsPaintedArt(fallbackTexture))
             {
                 if (target.TryGetComponent(out BossEnvironmentMotion motion)) motion.enabled = false;
                 // 2026-11-24 bug fix ("ยังเหมือนเดิม"): disabling the motion only restores the plain material in its
@@ -1707,10 +1752,23 @@ namespace Deepspace
                 // swirls and grain drawn over the Fire art. Take the material off here, active or not.
                 if (target.material != null && target.material.shader != null && target.material.shader.name.Contains("BossEnvironmentMotion"))
                     target.material = null;
-                runtime?.Suspend();
-                target.texture = fallbackTexture;
+                if (target.material == floorGlowMaterial) target.material = null;
                 target.uvRect = new Rect(0, 0, 1, 1);
                 RefreshFireArena();
+                // 2026-11-25 "เอาพื้นไปให้ higgsfield สร้าง animation": each element floor has a quiet 5 s loop made from its
+                // own art (MiniMax H3, StreamingAssets/BossBackgroundMovies/<art name>.mp4). Without the movie the floor
+                // falls back to the BossFloorGlow shader (lines breathe, a soft ring rolls out); walls stay as painted.
+                bool floorArt = fallbackTexture.name.StartsWith("BGFloor");
+                string floorMovie = Path.Combine(Application.streamingAssetsPath, "BossBackgroundMovies", $"{fallbackTexture.name}.mp4");
+                if (floorArt && useBossBackgroundMovies && File.Exists(floorMovie))
+                {
+                    if (runtime == null) runtime = new VideoBackgroundRuntime($"{target.name} Video", transform);
+                    runtime.Play(target, floorMovie, fallbackTexture);
+                    return;
+                }
+                runtime?.Suspend();
+                target.texture = fallbackTexture;
+                if (floorArt) target.material = FloorGlowMaterial(fallbackTexture);
                 return;
             }
             if (BossEnvironmentMotion.TryApply(target, fallbackTexture))

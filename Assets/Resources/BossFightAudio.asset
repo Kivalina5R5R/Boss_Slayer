@@ -40,8 +40,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 933217febe9048a6af329ad86c0adf51, type: 3}
   - id: countdown
     clip: {fileID: 8300000, guid: 5115d63a2bcfccb478a62844c4b5047c, type: 3}
-  - id: death_burst
-    clip: {fileID: 8300000, guid: 43c5d42f8581a0d42a6724a33ae78f3e, type: 3}
   - id: death_final
     clip: {fileID: 8300000, guid: 2dcf7c715656ebc46bfa98635afd5e25, type: 3}
   - id: gem_attack
@@ -94,8 +92,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: afb0c81d56041b64bb451260a43599ce, type: 3}
   - id: round_clear
     clip: {fileID: 8300000, guid: 9d886c6fa8da9204e89b74556757bf5d, type: 3}
-  - id: safe_zone
-    clip: {fileID: 8300000, guid: 1bf1c38f60cda474a9cf1ad3575a3b28, type: 3}
   - id: session_start
     clip: {fileID: 8300000, guid: e5cc5e4894d15014a8593ea74d06a2e6, type: 3}
   - id: stun

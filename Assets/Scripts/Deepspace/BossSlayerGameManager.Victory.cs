@@ -13,13 +13,9 @@ namespace Deepspace
             if(wallVoxels&&deathVfx==null)deathVfx=gameObject.AddComponent<BossDeathVfx>();
             if(wallVoxels)deathVfx.Play(bossModel,bossModel.GetComponentsInChildren<Renderer>(true)); // the new models break into their own voxels
             sfx?.Play("death_final",.8f,0,.2f,5);
-            if(floorDefeatBurst==null&&playArea!=null)
-            {
-                var go=new GameObject("VFX == Floor boss defeat voxels",typeof(RectTransform),typeof(CanvasRenderer),typeof(BossVictoryGraphic));
-                go.layer=playArea.gameObject.layer;var rect=(RectTransform)go.transform;rect.SetParent(playArea,false);rect.anchorMin=Vector2.zero;rect.anchorMax=Vector2.one;rect.offsetMin=rect.offsetMax=Vector2.zero;
-                floorDefeatBurst=go.GetComponent<BossVictoryGraphic>();floorDefeatBurst.BurstOnly=true;floorDefeatBurst.Floor=true;floorDefeatBurst.raycastTarget=false;
-            }
-            if(floorDefeatBurst!=null){floorDefeatBurst.Accent=BossAttackVfx.ElementColor(BossAttackVfx.ThemeFor(bossModel.name));floorDefeatBurst.Sample(0);floorDefeatBurst.transform.SetAsLastSibling();floorDefeatBurst.gameObject.SetActive(true);}
+            // 2026-11-25 "เวลาบอสตาย ให้กระจายที่จอกำแพงพอ จอพื้นที่กระจายเอาออกเลย": the floor no longer plays its own
+            // voxel burst; the boss breaks apart on the wall only.
+            if(floorDefeatBurst!=null)floorDefeatBurst.gameObject.SetActive(false);
         }
         IEnumerator ShowBossVictory()
         {
