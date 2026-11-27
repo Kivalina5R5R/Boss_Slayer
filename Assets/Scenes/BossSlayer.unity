@@ -3947,7 +3947,6 @@ MonoBehaviour:
   kioskCamera: {fileID: 0}
   kioskCanvases: []
   kioskDisplayResolution: {x: 1080, y: 1920}
-  kioskMonitorName: 
   sideCamera: {fileID: 1738562417}
   sideCanvases:
   - {fileID: 234538560}
@@ -27107,7 +27106,6 @@ MonoBehaviour:
   m_Script: {fileID: 490190538}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Deepspace.LangDriver
-  frame: 0
 --- !u!4 &883598390
 Transform:
   m_ObjectHideFlags: 0
@@ -38881,7 +38879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a5cbe7cedcdad94b8cdf8ee83b84661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fortal.UWB.UWBManager
-  transportMode: 2
+  transportMode: 0
   connectOnStart: 1
   autoReconnect: 1
   reconnectDelaySeconds: 2
@@ -50589,22 +50587,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ed4a4e6f2e79d4e9eb5089507df24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Deepspace.TutorialSlides
-  baked: 1
-  canvas: {fileID: 1815661210}
-  group: {fileID: 1815661208}
-  picture: {fileID: 1053889508}
-  pictureFit: {fileID: 1053889505}
-  kicker: {fileID: 1033601378}
-  heading: {fileID: 978125497}
-  headingThai: {fileID: 325117230}
-  body: {fileID: 1982770415}
-  pageLabel: {fileID: 1547398486}
-  progress: {fileID: 617102443}
-  dots:
-  - {fileID: 668057034}
-  - {fileID: 219652751}
-  - {fileID: 1451475323}
-  - {fileID: 107003735}
 --- !u!224 &1815661212
 RectTransform:
   m_ObjectHideFlags: 0
@@ -71154,8 +71136,6 @@ MonoBehaviour:
   gameplayPlayerScorePanel: {fileID: 0}
   sessionPackage: 3
   sessionTransitionFadeSeconds: 0.45
-  sessionTransitionHoldSeconds: 0.25
-  nextBossPreviewSeconds: 5
   sessionTransitionColor: {r: 0, g: 0, b: 0, a: 1}
   playerCount: 2
   readyScreens:
@@ -71212,10 +71192,6 @@ MonoBehaviour:
   bossEntrancePortalCloseSeconds: 0.4
   explosionVfx: {fileID: 0}
   bossDeathExplosionBursts: 4
-  bossDeathExplosionSpreadRadius: 2.5
-  bossDeathExplosionFrontOffset: 1
-  bossDeathExplosionIntervalSeconds: 0.18
-  bossDeathFinalExplosionScale: 2.2
   bossDeathResultDelaySeconds: 2.2
   attackChargeVfxNames:
   - FX_AttackChargeDemon
@@ -71337,6 +71313,7 @@ MonoBehaviour:
   floorBossSelection: {fileID: 0}
   wallBossSelection: {fileID: 0}
   bossSelectCountdownSeconds: 3
+  bossSelectHoldSeconds: 1.5
   enableBossUiTheme: 1
   bossUiThemeStrength: 1
   bossUiThemeFadeSeconds: 0.4

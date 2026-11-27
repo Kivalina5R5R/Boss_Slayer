@@ -117,7 +117,7 @@ namespace BossSlayer
                 SetSessionTransitionAlpha(0f);   // the intro's white flash covers the cut
                 JuiceMilestone("THE ABYSSAL KING AWAKENS", new Color(.75f, .4f, 1f));
             }
-            if (finalBossIntro == null || !finalBossIntro.Play(Risen, () => done = true, ShakeFinalIntroFloor)) { Risen(); yield break; }
+            if (finalBossIntro == null || !finalBossIntro.Play(Risen, () => done = true, ShakeFinalIntroFloor, ClearedBossKinds())) { Risen(); yield break; }
             while (!done) yield return null;
         }
 

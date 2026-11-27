@@ -22,11 +22,13 @@ namespace BossSlayer
         // 2026-11-19: "ตามันแดงเกินไป หรี่ลงหน่อย" - how strongly the eyes show (1 = the picture at full strength).
         const float EyeStrength = .52f;   // then "ลดอีกนิด": .55 -> .45, then "สว่างขึ้นอีกนิด": .52
         // Where each eye picture sits in SelectBossBG_v7 (0..1 of the picture, bottom = 0), at the picture's own pixel size.
+        // 2026-11-27 "ตาของ sentinel มันไม่ตรงรู": the Sentinel's (7th) was 8 px too high for its visor; it is now 1.13x
+        // and lowered so the Y's arms lie in the slit (x 3570..3614, y 368..376 from the top) and its stem runs down it.
         static readonly Rect[] Places =
         {
             new Rect(.1667f, .6781f, .0302f, .1797f), new Rect(.2624f, .4512f, .0492f, .1924f), new Rect(.4826f, .5824f, .0355f, .1631f),
             new Rect(.3122f, .5676f, .0447f, .1914f), new Rect(.3856f, .5159f, .0342f, .1572f), new Rect(.5856f, .5293f, .0342f, .1465f),
-            new Rect(.6573f, .5675f, .0342f, .1465f), new Rect(.7206f, .5782f, .0373f, .1973f), new Rect(.8009f, .5870f, .0580f, .2598f),
+            new Rect(.6551f, .5485f, .03866f, .1660f), new Rect(.7206f, .5782f, .0373f, .1973f), new Rect(.8009f, .5870f, .0580f, .2598f),
         };
 
         Func<Rect> view;

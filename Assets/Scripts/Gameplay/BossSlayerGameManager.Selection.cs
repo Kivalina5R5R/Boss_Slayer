@@ -123,11 +123,18 @@ namespace BossSlayer
             backdrop.SetAsFirstSibling();
             BossFloorMagicVideo.Attach(image);
         }
+        // The kinds of the bosses fought this session (their statues are broken in the hall).
+        HashSet<int> ClearedBossKinds()
+        {
+            var cleared = new HashSet<int>();
+            foreach (var candidate in sessionBossesPlayed) if (candidate != null) cleared.Add((int)BossPassiveState.Identify(candidate.name));
+            return cleared;
+        }
+
         void RefreshBossSelection()
         {
-            var available = new HashSet<int>(); var cleared = new HashSet<int>();
+            var available = new HashSet<int>(); var cleared = ClearedBossKinds();
             foreach (var candidate in bossModelCandidates) if (candidate != null) available.Add((int)BossPassiveState.Identify(candidate.name));
-            foreach (var candidate in sessionBossesPlayed) if (candidate != null) cleared.Add((int)BossPassiveState.Identify(candidate.name));
             int round = sessionActive ? sessionBossIndex + 1 : 1;
             int total = sessionActive ? sessionBossTargetCount : SelectedSessionBossCount;
             ThemeBossSelection();

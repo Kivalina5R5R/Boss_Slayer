@@ -69,6 +69,12 @@ namespace BossSlayer
         // The statue's box in SelectBossBG_v7 (0..1, bottom = 0) for boss kind 1..9 (BossStatueAura uses it too).
         public static Rect StatueBox(int kind) => kind >= 1 && kind <= Crops.Length ? Crops[kind - 1] : new Rect(0, 0, 0, 0);
 
+        // 2026-11-27 "รูปปั้นอันไหนที่พังก็ให้เห็นพังด้วย": for other screens showing the same hall (the final boss
+        // intro): boss kind 1..9's rubble picture, and its cleaned patch with the patch's box (null / empty when none).
+        public static Texture2D RubbleArt(int kind) => kind >= 1 && kind <= Names.Length ? GameArt.Load<Texture2D>(RubbleFolder + Names[kind - 1]) : null;
+        public static Rect PatchBox(int kind) => kind >= 1 && kind <= PatchBoxes.Length ? PatchBoxes[kind - 1] : Rect.zero;
+        public static Texture2D PatchArt(int kind) => PatchBox(kind).width > 0f ? GameArt.Load<Texture2D>(RubbleFolder + Names[kind - 1] + "_Patch") : null;
+
         // This boss's statue has broken (or is breaking) this session.
         public bool IsBroken(int kind) => broken.Contains(kind);
 

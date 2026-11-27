@@ -13,8 +13,10 @@ namespace BossSlayer
     {
         public sealed class Page
         {
-            public string heading, headingThai, image;
+            public string heading, headingThai;
             public string[] lines, linesEn;   // Thai / English (Lang)
+            // 2026-11-27: the moving picture beside the rules, built from the game's own art (TutorialScenes).
+            public TutorialScene.Kind art;
         }
 
         public string scene, title, tagline, taglineEn, folder;
@@ -25,7 +27,8 @@ namespace BossSlayer
         public Page[] pages;
         public Func<bool> tutorialAllowed;
 
-        public Texture2D Load(string name) => string.IsNullOrEmpty(name) ? null : GameArt.Load<Texture2D>(folder + "/Showcase/" + name);
+        // 2026-11-27: the art team's Start screen art (Art/UI/Start) - the old Showcase folder never had any pictures.
+        public Texture2D Load(string name) => string.IsNullOrEmpty(name) ? null : GameArt.Load<Texture2D>(folder + "/" + name);
 
         // 2026-11-20 (BossSlayer project): only Boss Slayer is left, whatever the scene is called.
         public static GameShowcase For(string scene)
@@ -40,20 +43,20 @@ namespace BossSlayer
         {
             new GameShowcase
             {
-                scene = "BossSlayer", folder = "Art/UI", title = "BOSS SLAYER", tagline = "ล่าบอสเป็นทีม · ปะทะราชาแห่งห้วงลึก", taglineEn = "Hunt bosses as a team · face the King of the Abyss",
+                scene = "BossSlayer", folder = "Art/UI/Start", title = "BOSS SLAYER", tagline = "ล่าบอสเป็นทีม · ปะทะราชาแห่งห้วงลึก", taglineEn = "Hunt bosses as a team · face the King of the Abyss",
                 ground = Hex(0x0B0812), panel = Hex(0x1A1424), frame = Hex(0xD9B25F), accent = Hex(0xD9B25F),
                 ink = Hex(0xEFE3C4), muted = Hex(0xB9AC8E), quit = Hex(0x8E2420),
                 headlineFonts = new[] { "Cinzel Black SDF", "Cinzel Bold SDF" },
-                logo = "Logo", backdrop = "Backdrop",
+                logo = "Logo", backdrop = "BG",
                 pages = new[]
                 {
-                    new Page { heading = "THE RAID", headingThai = "เป้าหมาย", image = "Slide1", lines = new[]
+                    new Page { heading = "THE RAID", headingThai = "เป้าหมาย", art = TutorialScene.Kind.Raid, lines = new[]
                         { "ร่วมทีมล่าบอส 3 ตัว → เลือกพลังพิเศษ → อีก 3 ตัว → เลือกพลัง", "ด่านสุดท้ายปะทะ ABYSSAL KING ราชาแห่งห้วงลึก", "ยืนบนการ์ดบนพื้นเพื่อเลือกบอสที่จะสู้" }, linesEn = new[] { "Hunt 3 bosses as a team → pick a power → 3 more → pick a power", "The final stage: face the ABYSSAL KING, lord of the abyss", "Stand on a card on the floor to choose your next boss" } },
-                    new Page { heading = "STRIKE WITH GEMS", headingThai = "โจมตีด้วยอัญมณี", image = "Slide2", lines = new[]
+                    new Page { heading = "STRIKE WITH GEMS", headingThai = "โจมตีด้วยอัญมณี", art = TutorialScene.Kind.Gems, lines = new[]
                         { "ยืนบนอัญมณีบนพื้นค้างไว้ครู่หนึ่ง เพื่อยิงใส่บอส", "แดง = โจมตีแรง · เขียว = ฟื้นเลือดทีม", "เหลือง = ทำให้บอสมึน · ฟ้า = ชาร์จท่าไม้ตาย" }, linesEn = new[] { "Hold your place on a gem on the floor to fire at the boss", "Red = heavy attack · Green = heals the team", "Yellow = stuns the boss · Blue = charges the ultimate" } },
-                    new Page { heading = "DODGE THE RED", headingThai = "หลบพื้นแดง", image = "Slide3", lines = new[]
+                    new Page { heading = "DODGE THE RED", headingThai = "หลบพื้นแดง", art = TutorialScene.Kind.Dodge, lines = new[]
                         { "พื้นสีแดงเตือน 2 วินาทีก่อนบอสโจมตี — รีบหลบออก!", "เลือดหมดจะล้ม 5 วินาที แล้วกลับมาด้วยเลือดครึ่งหนึ่ง", "สตันครบ บอสมึน 6 วิ · ชาร์จครบ 8 ปล่อยท่าไม้ตายทั้งทีม" }, linesEn = new[] { "Red floor warns 2 seconds before the boss strikes: get out!", "Out of health? Down for 5 seconds, back with half health", "Full stun = boss dazed 6 s · 8 charges = team ultimate" } },
-                    new Page { heading = "VICTORY", headingThai = "วิธีชนะ", image = "Slide4", lines = new[]
+                    new Page { heading = "VICTORY", headingThai = "วิธีชนะ", art = TutorialScene.Kind.Victory, lines = new[]
                         { "ระหว่างทาง ยืนบนการ์ดเพื่อโหวตพลังพิเศษของทีม", "โค่น ABYSSAL KING ได้ = RAID COMPLETE!", "แต้มคือดาเมจที่ทำได้ คนทำมากสุดได้ MVP" }, linesEn = new[] { "Between bosses, stand on a card to vote for a team power", "Bring down the ABYSSAL KING = RAID COMPLETE!", "Score is damage dealt: the top player is MVP" } },
                 },
                 tutorialAllowed = () => UnityEngine.Object.FindFirstObjectByType<BossSlayerGameManager>()?.TutorialAllowed ?? true,

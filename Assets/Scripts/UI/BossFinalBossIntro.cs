@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,6 +41,10 @@ namespace BossSlayer
         RectTransform root, cam, shaker, king;
         Image backdrop, flash;
         RawImage kingImage, hall, eyes;
+        CanvasGroup hallFade;
+        // 2026-11-27 "รูปปั้นอันไหนที่พังก็ให้เห็นพังด้วย ไม่ใช่ยืนอยู่ที่เดิม": the beaten bosses' rubble (and the Fish's
+        // patch) from the boss select (BossStatueShatter), laid on the hall at their statues' places.
+        readonly List<RawImage> rubble = new List<RawImage>();
         float eyesOpen;
         const string HallPath = "Art/UI/SelectBoss/SelectBossBG_v7";
         // How bright the hall shows behind him (1 = as painted), so the king stands out.
@@ -84,6 +89,9 @@ namespace BossSlayer
             hall.rectTransform.offsetMin = new Vector2(-ShakePixels * 2f, -ShakePixels * 2f);
             hall.rectTransform.offsetMax = new Vector2(ShakePixels * 2f, ShakePixels * 2f);
             hall.raycastTarget = false;
+            // the hall fades in as a whole, with the rubble laid on it (ShowBrokenStatues)
+            hallFade = hall.gameObject.AddComponent<CanvasGroup>();
+            hallFade.blocksRaycasts = false; hallFade.interactable = false;
             // The screen itself clips him (not the shaking layer), so his pedestal always meets the bottom edge.
             // (It zooms with the camera, but by then the pedestal is below the screen anyway.)
             var onScreen = new GameObject("On Screen", typeof(RectTransform), typeof(RectMask2D)).GetComponent<RectTransform>();
@@ -107,7 +115,8 @@ namespace BossSlayer
         // Plays the whole cutscene; onRisen runs under the closing flash (start the fight there), then the intro fades
         // away and onDone runs. Returns false (and runs nothing) when the sprite is missing.
         // onShake(seconds, strength) runs whenever the hall shakes (strength 1 = the rise), so the floor can shake with it.
-        public bool Play(System.Action onRisen, System.Action onDone, System.Action<float, float> onShake = null)
+        // brokenStatues: the boss kinds (1..9) beaten this session, whose statues show as rubble in the hall.
+        public bool Play(System.Action onRisen, System.Action onDone, System.Action<float, float> onShake = null, ICollection<int> brokenStatues = null)
         {
             var art = GameArt.Load<Texture2D>(SpritePath);
             if (art == null) return false;
@@ -135,7 +144,9 @@ namespace BossSlayer
                 float w = Mathf.Min(1f, size.x / size.y * hallArt.height / hallArt.width);
                 hall.uvRect = new Rect(.5f - w * .5f, 0f, w, 1f);
             }
-            hall.color = new Color(HallShade, HallShade, HallShade, 0f);
+            hall.color = new Color(HallShade, HallShade, HallShade, 1f);
+            hallFade.alpha = 0f;
+            ShowBrokenStatues(hallArt != null ? brokenStatues : null);
             SetAlpha(backdrop, 1f); SetAlpha(flash, 0f);
             shaker.anchoredPosition = Vector2.zero;
             var rest = new Vector2(0f, -sink);
@@ -144,7 +155,7 @@ namespace BossSlayer
             show = DOTween.Sequence().SetUpdate(true).SetTarget(this);
             // the hall fades in with the ground rumbling
             show.AppendCallback(() => BossFightAudio.PlayUi("wall_crumble", .6f, .2f, 4));
-            show.Append(hall.DOFade(1f, FadeInSeconds));
+            show.Append(hallFade.DOFade(1f, FadeInSeconds));
             // the king bursts up from the floor with the ground shaking
             show.AppendCallback(() => BossFightAudio.PlayUi("statue_awaken", .7f, .2f, 4));
             float riseAt = show.Duration();
@@ -164,10 +175,38 @@ namespace BossSlayer
             show.AppendInterval(HoldSeconds);   // a last close stare
             // white flash, the fight starts under it, then everything fades away
             show.Append(flash.DOFade(1f, FlashSeconds * .5f));
-            show.AppendCallback(() => { onRisen?.Invoke(); SetAlpha(backdrop, 0f); SetAlpha(hall, 0f); kingImage.enabled = false; eyesOpen = 0f; ShowEyes(); });
+            show.AppendCallback(() => { onRisen?.Invoke(); SetAlpha(backdrop, 0f); hallFade.alpha = 0f; kingImage.enabled = false; eyesOpen = 0f; ShowEyes(); });
             show.Append(flash.DOFade(0f, FlashSeconds * 1.5f));
             show.OnComplete(() => { show = null; kingImage.enabled = true; cam.localScale = Vector3.one; gameObject.SetActive(false); onDone?.Invoke(); });
             return true;
+        }
+
+        // Lays each beaten boss's rubble over its statue in the hall (all pieces first, then the patches, as on the boss
+        // select), shaded like the hall. The pieces are the hall's children, so they zoom, shake and fade with it.
+        void ShowBrokenStatues(ICollection<int> kinds)
+        {
+            foreach (var piece in rubble) if (piece != null) Destroy(piece.gameObject);
+            rubble.Clear();
+            if (kinds == null) return;
+            foreach (int kind in kinds) AddRubble("Rubble " + kind, BossStatueShatter.RubbleArt(kind), BossStatueShatter.StatueBox(kind));
+            foreach (int kind in kinds) AddRubble("Patch " + kind, BossStatueShatter.PatchArt(kind), BossStatueShatter.PatchBox(kind));
+        }
+
+        // box: 0..1 of the whole hall picture (bottom = 0), placed through the hall's crop (uvRect).
+        void AddRubble(string name, Texture2D art, Rect box)
+        {
+            if (art == null || box.width <= 0f) return;
+            var piece = new GameObject(name, typeof(RectTransform), typeof(RawImage)).GetComponent<RawImage>();
+            piece.rectTransform.SetParent(hall.rectTransform, false);
+            var crop = hall.uvRect;
+            piece.rectTransform.anchorMin = new Vector2((box.xMin - crop.x) / crop.width, (box.yMin - crop.y) / crop.height);
+            piece.rectTransform.anchorMax = new Vector2((box.xMax - crop.x) / crop.width, (box.yMax - crop.y) / crop.height);
+            piece.rectTransform.offsetMin = piece.rectTransform.offsetMax = Vector2.zero;
+            art.wrapMode = TextureWrapMode.Clamp;
+            piece.texture = art;
+            piece.color = hall.color;
+            piece.raycastTarget = false;
+            rubble.Add(piece);
         }
 
         // The eyes' glow: eyesOpen (0..1). "แสงไม่ต้องกระพริบ แค่ค่อยๆแดงขึ้น": no throb, it only grows steadily red.
