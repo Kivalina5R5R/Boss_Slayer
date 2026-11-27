@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: Icons
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: Abyss Pact II
+    asset: {fileID: 2800000, guid: 9929704e8090c2040b033c0a7133edab, type: 3}
+  - key: Abyss Pact
+    asset: {fileID: 2800000, guid: 7894496102fe20942909c0bd6d73962c, type: 3}
+  - key: Chain Curse
+    asset: {fileID: 2800000, guid: 90fbe296e9e32224686560753be8aecd, type: 3}
+  - key: Close Call
+    asset: {fileID: 2800000, guid: 8cfbdb08e443d8c4d93f345319826a70, type: 3}
+  - key: Death Curse
+    asset: {fileID: 2800000, guid: 53c1d7fe2864aa44792b64b79c796ddd, type: 3}
+  - key: Fortress
+    asset: {fileID: 2800000, guid: c835b708d7ead0642bedee7229e6b415, type: 3}
+  - key: Frost Wind
+    asset: {fileID: 2800000, guid: 22fe10bf9b791f241b75f2e4b74c7b1a, type: 3}
+  - key: Heavy Smash
+    asset: {fileID: 2800000, guid: fc59fbe9ad1691f45a210b552277ba21, type: 3}
+  - key: Ice Age
+    asset: {fileID: 2800000, guid: 601bac6adca0b7448b2c7d8eefb06eec, type: 3}
+  - key: Immortal
+    asset: {fileID: 2800000, guid: f59fb92494fae7343b53fbf1e059fffd, type: 3}
+  - key: Iron Armor
+    asset: {fileID: 2800000, guid: 17b81b1b0ce6a7446a7998c077ad304f, type: 3}
+  - key: Life Drain
+    asset: {fileID: 2800000, guid: 7fbc066f0a0a20d4ba767e9de724fbfb, type: 3}
+  - key: Lightning
+    asset: {fileID: 2800000, guid: f37157e1442c13f4c94cfc8a6e2c0d6f, type: 3}
+  - key: Never Give Up
+    asset: {fileID: 2800000, guid: 42175a3d95ee373459c55d897ae71a13, type: 3}
+  - key: One Heart
+    asset: {fileID: 2800000, guid: 0591cf5a2c9f731479db8369099ee701, type: 3}
+  - key: Power Up
+    asset: {fileID: 2800000, guid: 442700ea0ace2fa4fba9fc13949c889e, type: 3}
+  - key: Power Up2
+    asset: {fileID: 2800000, guid: 75770119e0643384fafb230ba1419d2f, type: 3}
+  - key: Quick Ultimate II
+    asset: {fileID: 2800000, guid: a5d8771172a8b02409ae18d4191d1f6a, type: 3}
+  - key: Quick Ultimate
+    asset: {fileID: 2800000, guid: d8e62332b932d3e43a1892a6a931c8b8, type: 3}
+  - key: Shadow Step
+    asset: {fileID: 2800000, guid: 0be0e84ed82cf3a489fd7285e8bccb37, type: 3}
+  - key: Shatter
+    asset: {fileID: 2800000, guid: 8db6f38332c46b145a46a44f0523cdd8, type: 3}
+  - key: Soul Drain
+    asset: {fileID: 2800000, guid: e3758a597f5326d4b804ef4685214a3a, type: 3}
+  - key: Team Up
+    asset: {fileID: 2800000, guid: 4ac70000d9c180d4c925ed01038c56e2, type: 3}
+  - key: Thunderstorm
+    asset: {fileID: 2800000, guid: 97c113fcac31e7f46b2d878a2ec1f327, type: 3}

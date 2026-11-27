@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: Ultimate
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: BG1
+    asset: {fileID: 2800000, guid: bd34012037e1faf42ac7bcb75d0a4d09, type: 3}
+  - key: BG2
+    asset: {fileID: 2800000, guid: c97a8ef5d756c6f4daefbcb58676ee90, type: 3}
+  - key: BG3
+    asset: {fileID: 2800000, guid: 78cf2ff1afc147b4487231b3bc6752fc, type: 3}
+  - key: BG4
+    asset: {fileID: 2800000, guid: f79894c0effa7d44bbcd22eac77d5cea, type: 3}
+  - key: ChargeBack
+    asset: {fileID: 2800000, guid: 5a5a6e7d637b6f645bc63cef39c8c3da, type: 3}
+  - key: ChargeFill
+    asset: {fileID: 2800000, guid: aa331160603835f4595bffdd36589098, type: 3}
+  - key: Text1
+    asset: {fileID: 2800000, guid: 3f554202acf45a24ebe6c409ca05d038, type: 3}
+  - key: Text2
+    asset: {fileID: 2800000, guid: b145cba4ad11f4841b262695e0be3539, type: 3}
+  - key: Text3
+    asset: {fileID: 2800000, guid: b6a89fc50aa281749901cb83069eb337, type: 3}
+  - key: Text4
+    asset: {fileID: 2800000, guid: 6f992047f3958e64c9fd4d2dfb365be4, type: 3}

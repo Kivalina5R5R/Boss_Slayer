@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: SFX
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: boss_big_charge
+    asset: {fileID: 8300000, guid: 330e67b5467a4ce78fbf5dd001a040d2, type: 3}
+  - key: boss_break
+    asset: {fileID: 8300000, guid: b3eecf0e22a8495f8ff95567adb5bd17, type: 3}
+  - key: boss_card_appear
+    asset: {fileID: 8300000, guid: b7a94740ae9e40488955d1a0b5d0656f, type: 3}
+  - key: boss_card_touch
+    asset: {fileID: 8300000, guid: 51c225cfba1e46d9aca9faef8041151d, type: 3}
+  - key: boss_escaped
+    asset: {fileID: 8300000, guid: 403b78ce3e13436ca4614159ae50eded, type: 3}
+  - key: card_locked
+    asset: {fileID: 8300000, guid: a4d6682a6e4b4aeeb2c9a2ab527eee3c, type: 3}
+  - key: charge_0
+    asset: {fileID: 8300000, guid: a59cda87ef3b4005aa60f020ec5cf654, type: 3}
+  - key: charge_1
+    asset: {fileID: 8300000, guid: 439c8c9c6e38467b957bca8b4b1e1610, type: 3}
+  - key: charge_2
+    asset: {fileID: 8300000, guid: f1a1089a4abd4b588c9e90743cfaab3f, type: 3}
+  - key: charge_3
+    asset: {fileID: 8300000, guid: 4d64d84c8e1f415aba8df00dc89012c4, type: 3}
+  - key: charge_4
+    asset: {fileID: 8300000, guid: 1e23c4b4bdb347c188b795bce73059f5, type: 3}
+  - key: charge_5
+    asset: {fileID: 8300000, guid: 0bf731880d1648afa2d10a1890b46b60, type: 3}
+  - key: charge_6
+    asset: {fileID: 8300000, guid: 59209707455f4733abaee5903681e68c, type: 3}
+  - key: charge_7
+    asset: {fileID: 8300000, guid: a7edf788f7f2409e954aef658a48e4a7, type: 3}
+  - key: charge_8
+    asset: {fileID: 8300000, guid: 6490b5dae0554841b8bc8a65ab82860f, type: 3}
+  - key: debris_ambience
+    asset: {fileID: 8300000, guid: 75f0b9a855794659a07f03134bacd8d8, type: 3}
+  - key: gem_flight
+    asset: {fileID: 8300000, guid: 9d8be927afcd4d63bb61989b3ef8ef69, type: 3}
+  - key: gem_impact
+    asset: {fileID: 8300000, guid: de742d0672624264879c97fee548f285, type: 3}
+  - key: gem_pickup
+    asset: {fileID: 8300000, guid: b04c6ae33b7640c384e7acd1a73f6ccf, type: 3}
+  - key: pad_appear
+    asset: {fileID: 8300000, guid: 46a0c54179a7496fb91b67cea1350ea7, type: 3}
+  - key: pad_cancel
+    asset: {fileID: 8300000, guid: 35697ce8f6c3488d891006d46005c803, type: 3}
+  - key: pad_hold
+    asset: {fileID: 8300000, guid: 13aa8cda7c8e4c7fbf00e622825c2214, type: 3}
+  - key: pad_hold_2
+    asset: {fileID: 8300000, guid: 05be361be4eb4b4d89c99b9e7e49c5d9, type: 3}
+  - key: pad_hold_3
+    asset: {fileID: 8300000, guid: 01267e47d65b4d0986261b0c95dc0269, type: 3}
+  - key: pad_ready
+    asset: {fileID: 8300000, guid: 1ee8ce209b444bffbf0b777a66645a0b, type: 3}
+  - key: pad_touch
+    asset: {fileID: 8300000, guid: c0e6bc05e2234f8cba96ebdb0a3fe2b0, type: 3}
+  - key: pad_vanish
+    asset: {fileID: 8300000, guid: fc5d0a378aa64052899d0c2053eac202, type: 3}
+  - key: ready_countdown
+    asset: {fileID: 8300000, guid: eb89ae36b7a24471ade8447ab1f2b45c, type: 3}
+  - key: release_0
+    asset: {fileID: 8300000, guid: 778d9e497f2042ba88e9583d7cc87e33, type: 3}
+  - key: release_1
+    asset: {fileID: 8300000, guid: 0ad319fe9af842ca9f97fd3ce247ad92, type: 3}
+  - key: release_2
+    asset: {fileID: 8300000, guid: 6d1ba18ede44437aa13c31e8d3e36639, type: 3}
+  - key: release_3
+    asset: {fileID: 8300000, guid: 0c38787c51414c179c8e7bc742e257db, type: 3}
+  - key: release_4
+    asset: {fileID: 8300000, guid: 62b5a9f3c6c74ceeae0c939198c40093, type: 3}
+  - key: release_5
+    asset: {fileID: 8300000, guid: 4b3420b1552a4949b9eab2bc9dcaaa3a, type: 3}
+  - key: release_6
+    asset: {fileID: 8300000, guid: 6322566d69524553857da9222374aba4, type: 3}
+  - key: release_7
+    asset: {fileID: 8300000, guid: 3b6642504d814fc9b5e6091118dab992, type: 3}
+  - key: release_8
+    asset: {fileID: 8300000, guid: 1d35c082e9214e4a992c9f8ad6a78bc7, type: 3}
+  - key: roar_0
+    asset: {fileID: 8300000, guid: b4ce01e1c0a447d3b702c1bcc7ac0ac7, type: 3}
+  - key: roar_1
+    asset: {fileID: 8300000, guid: db7ecd4d59a54d20988a5e4c9c7a0b70, type: 3}
+  - key: roar_2
+    asset: {fileID: 8300000, guid: 10a2693c86644f92916696d5787f776e, type: 3}
+  - key: roar_3
+    asset: {fileID: 8300000, guid: dc47b4a50b394c6aaf2b87e06caae824, type: 3}
+  - key: roar_4
+    asset: {fileID: 8300000, guid: 54e7bc76971940068d7dec714347299a, type: 3}
+  - key: roar_5
+    asset: {fileID: 8300000, guid: 0d88eabe51d6402888aa02ec91162927, type: 3}
+  - key: roar_6
+    asset: {fileID: 8300000, guid: c31f4fd165ab4eb79396416a3f317a51, type: 3}
+  - key: roar_7
+    asset: {fileID: 8300000, guid: 99b53334ca5c450e96031321296fc62c, type: 3}
+  - key: roar_8
+    asset: {fileID: 8300000, guid: 8189a148cb42490e97c9b91f62d0114c, type: 3}
+  - key: select_countdown
+    asset: {fileID: 8300000, guid: e541bf63711d42e983ceedd0546a84d1, type: 3}
+  - key: select_press
+    asset: {fileID: 8300000, guid: fba9ad060fac44228663c2e2e2492ca8, type: 3}
+  - key: statue_awaken
+    asset: {fileID: 8300000, guid: 10565dad212b4f5da053c3823ae54c85, type: 3}
+  - key: statue_collapse
+    asset: {fileID: 8300000, guid: 25a059d89f59424a9239179ff40e6519, type: 3}
+  - key: statue_crumble
+    asset: {fileID: 8300000, guid: 63c3076009e94a6bbfad879a0a660ba1, type: 3}
+  - key: statue_slam
+    asset: {fileID: 8300000, guid: 99ad6fc022f14bae96acf7dcf687a05c, type: 3}
+  - key: transition
+    asset: {fileID: 8300000, guid: 2495adbe75dd4371b433d347e3b50e53, type: 3}
+  - key: wall_boulder_fall
+    asset: {fileID: 8300000, guid: 49ceb23a277f4a31a07e8c8c7682ab34, type: 3}
+  - key: wall_crumble
+    asset: {fileID: 8300000, guid: 43850e4b036a4add997d1b33182e58ed, type: 3}
+  - key: wall_rocks_fall
+    asset: {fileID: 8300000, guid: 76cad61aecd845f88a9d6a388b08f56c, type: 3}
+  - key: wall_zoom
+    asset: {fileID: 8300000, guid: e328671b2710412d83fe9b7b21a7e949, type: 3}

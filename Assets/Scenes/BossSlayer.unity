@@ -27107,6 +27107,7 @@ MonoBehaviour:
   m_Script: {fileID: 490190538}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Deepspace.LangDriver
+  frame: 0
 --- !u!4 &883598390
 Transform:
   m_ObjectHideFlags: 0
@@ -38880,7 +38881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a5cbe7cedcdad94b8cdf8ee83b84661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fortal.UWB.UWBManager
-  transportMode: 0
+  transportMode: 2
   connectOnStart: 1
   autoReconnect: 1
   reconnectDelaySeconds: 2
@@ -71124,6 +71125,10 @@ MonoBehaviour:
   abyssalKingWarningSeconds: 2
   abyssalKingUltimateWarningSeconds: 1.9
   abyssalKingRestSeconds: 1.2
+  signatureWindupSeconds: 6
+  windupStunGemGapMeters: 2.5
+  signatureHitDamage: 35
+  healGemsAfterSignature: 2
   useUwbInput: 1
   useMouseInEditor: 1
   playArea: {fileID: 1345996998}
@@ -71146,9 +71151,6 @@ MonoBehaviour:
   statusText: {fileID: 0}
   resultPanel: {fileID: 0}
   gameplayResultPanel: {fileID: 0}
-  mvpScoreImage: {fileID: 0}
-  mvpScoreText: {fileID: 0}
-  playerScorePanel: {fileID: 0}
   gameplayPlayerScorePanel: {fileID: 0}
   sessionPackage: 3
   sessionTransitionFadeSeconds: 0.45
@@ -71279,12 +71281,11 @@ MonoBehaviour:
   attackGapSeconds: 4
   finalPhaseAttackGapSeconds: 4.4
   finalPhaseRecoverySeconds: 2
-  spotGapSeconds: 0.9
   spotLifeSeconds: 10
   spotHoldSeconds: 0.75
-  maxSpots: 6
   openingSpots: 4
   spotMinGapMeters: 1.6
+  spotEdgeMarginMeters: 0.35
   gemFrameSizeMultiplier: 1.5
   gemGlowIntensity: 4.5
   gemGlowIdleFraction: 0.55
@@ -71303,11 +71304,7 @@ MonoBehaviour:
   ultimateTouchDamage: 220
   playerMoveSmoothTime: 0.05
   playerMoveMaxSpeed: 900
-  spotWeights:
-  - 45
-  - 12
-  - 22
-  - 21
+  spotBag: 08000000030000000400000005000000
   playerCursorCircleDiameter: 90
   playerCursorInnerCircleDiameter: 36
   playerSelect: 1
@@ -71323,8 +71320,7 @@ MonoBehaviour:
   preloadAssets: 1
   rushMode: 1
   rushBossesPerHalf: 3
-  rushPerkSeconds: 40
-  rushPerkVoteSeconds: 28
+  rushPerkVoteSeconds: 25
   rushSpeedStepPerBoss: 0.06
   rushBossHpTable: 7017000064190000581b0000c8320000bc340000b036000050460000
   playerCountHpMultiplier:
@@ -71338,7 +71334,6 @@ MonoBehaviour:
   bossEscapeWarnSeconds: 80
   abyssalKingChargeSeconds: 105
   abyssalKingEndSeconds: 120
-  perkLineAttackDimSeconds: 4
   floorBossSelection: {fileID: 0}
   wallBossSelection: {fileID: 0}
   bossSelectCountdownSeconds: 3

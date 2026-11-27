@@ -14,7 +14,6 @@ namespace Fortal.Displays
         [SerializeField] private Camera kioskCamera;
         [SerializeField] private Canvas[] kioskCanvases;
         [SerializeField] private Vector2Int kioskDisplayResolution = new Vector2Int(1080, 1920);
-        [SerializeField] private string kioskMonitorName = "";
 
         [Header("Display 2 - Wall")]
         [SerializeField] private Camera sideCamera;

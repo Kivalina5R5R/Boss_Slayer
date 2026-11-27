@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: Hud
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: HpBack
+    asset: {fileID: 2800000, guid: 4d542fabfbc663641b6f235f0ddb6d4b, type: 3}
+  - key: HpFill
+    asset: {fileID: 2800000, guid: f87ef9d24fce2754b8ddb7f52d6b9fb3, type: 3}
+  - key: NamePlate
+    asset: {fileID: 2800000, guid: af4613a3a263e1f4ca2f9a5dd5ffe2c4, type: 3}
+  - key: PlayerHpBack
+    asset: {fileID: 2800000, guid: 9f01f8fba616c824c8f009e8d6380fc6, type: 3}
+  - key: PlayerPlate1
+    asset: {fileID: 2800000, guid: aa7cd321806daa443abf2473473d547c, type: 3}
+  - key: PlayerPlate2
+    asset: {fileID: 2800000, guid: 697c8fdf6a6785247bbf04057b32cf8f, type: 3}
+  - key: PlayerPlate3
+    asset: {fileID: 2800000, guid: 9acebf53ef25f014c9ab3c81a84d72d9, type: 3}
+  - key: PlayerPlate4
+    asset: {fileID: 2800000, guid: 0e77fc813e6f0de40a92ef43b1555c04, type: 3}
+  - key: PlayerPlate5
+    asset: {fileID: 2800000, guid: 538b6dbb9f62f674c86d440fd9774ee9, type: 3}
+  - key: PlayerPlate6
+    asset: {fileID: 2800000, guid: e4316842e5ab45b44bcc3a99af37dbd4, type: 3}
+  - key: StunBack
+    asset: {fileID: 2800000, guid: 0099d6ccd9c86b346997d164c2723b00, type: 3}
+  - key: StunFill
+    asset: {fileID: 2800000, guid: cfb133103a6172a4d815d67aaa8ac54b, type: 3}
+  - key: StunPlate
+    asset: {fileID: 2800000, guid: 7183328af48c6984cba4c582fde41f61, type: 3}
+  - key: UltimateBack
+    asset: {fileID: 2800000, guid: 55e828ab68af8654eb9426c61e08b946, type: 3}
+  - key: UltimateFill
+    asset: {fileID: 2800000, guid: 7e298976913c73f4782acc3d0eeb2e09, type: 3}
+  - key: UltimatePlate
+    asset: {fileID: 2800000, guid: 9cb508f9fa18fe045b52ef80108e408e, type: 3}

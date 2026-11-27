@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: Theme
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: Outline Cinzel Black SDF 0.12 1A1208
+    asset: {fileID: 2100000, guid: ec906fe7941a626489855aef2cce49b6, type: 2}
+  - key: Outline Cinzel Black SDF 0.18 0B0812
+    asset: {fileID: 2100000, guid: 37f93b1ab38244747a21128d50bae403, type: 2}
+  - key: Outline Cinzel Black SDF 0.20 1A1208
+    asset: {fileID: 2100000, guid: 35638a40c001ebd4588fb0db1e1589f4, type: 2}
+  - key: Theme Chamfer Plate
+    asset: {fileID: 2800000, guid: 82b9ab9e6ed5ab140bb7ace9485d30ad, type: 3}
+  - key: Theme Chamfer Trim
+    asset: {fileID: 2800000, guid: 2ec26e59851acb34ebd34b3f34a37257, type: 3}
+  - key: Theme Glow
+    asset: {fileID: 2800000, guid: 3fa842a81ed23a345b879bcd5247d904, type: 3}
+  - key: Theme Rounded Plate
+    asset: {fileID: 2800000, guid: 7d766bc16807204499129d6900e393fa, type: 3}
+  - key: Theme Rounded Trim
+    asset: {fileID: 2800000, guid: f282d3f58e57c304f8a3dc3a826b5ca4, type: 3}

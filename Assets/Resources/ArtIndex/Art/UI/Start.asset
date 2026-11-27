@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: BG
+    asset: {fileID: 2800000, guid: 0d3160cc22434b868fc240437be83fd5, type: 3}
+  - key: LineBG1
+    asset: {fileID: 2800000, guid: a01e128e70ad4dfab4415cc0eee13164, type: 3}
+  - key: LineBG2
+    asset: {fileID: 2800000, guid: 84d9ed652f6a4d9eb87cc125d7e0e747, type: 3}
+  - key: Logo
+    asset: {fileID: 2800000, guid: 0834a82ae09b4047822e969b207c1e6b, type: 3}
+  - key: Particle
+    asset: {fileID: 2800000, guid: e5daeee4a37a49288116e2ef7560c45d, type: 3}
+  - key: Shard
+    asset: {fileID: 2800000, guid: 2b312e47035343428c1fbcf583ef7c68, type: 3}

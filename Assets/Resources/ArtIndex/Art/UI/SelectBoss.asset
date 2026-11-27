@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: SelectBoss
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: CardBlue
+    asset: {fileID: 2800000, guid: 190e5466a09149c45ab8cfcac130f056, type: 3}
+  - key: CardBrown
+    asset: {fileID: 2800000, guid: 3e14f1bc65b523b499a0f732d47ee0e9, type: 3}
+  - key: CardRed
+    asset: {fileID: 2800000, guid: 33baf9cb7125c5e46b160191109257eb, type: 3}
+  - key: Clear
+    asset: {fileID: 2800000, guid: be8314f55f87a4748b687d461d2b4be5, type: 3}
+  - key: SelectBossBG_v7
+    asset: {fileID: 2800000, guid: eadd024e124c4fc9bf5a5d941de88d1c, type: 3}
+  - key: SelectButton
+    asset: {fileID: 2800000, guid: 5e1ec7b0a7d34f0c9a2b6d8e1f3c4a71, type: 3}
+  - key: SelectLoadBG
+    asset: {fileID: 2800000, guid: 2a1708f4a3bd4b6cad96410bba70948f, type: 3}
+  - key: SelectLoadFill
+    asset: {fileID: 2800000, guid: 2ff857b8776f4f72911e9b3df5a4471d, type: 3}

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: Gems
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: Blue
+    asset: {fileID: 2800000, guid: c8f3ee4d258979742bfb4399371aca40, type: 3}
+  - key: BlueParticles
+    asset: {fileID: 2800000, guid: 502b62144fdf0a046be69bc94c3da7a2, type: 3}
+  - key: GemAttack
+    asset: {fileID: 2800000, guid: 87c82891f5f74f6997d92061d901d8f2, type: 3}
+  - key: GemHeal
+    asset: {fileID: 2800000, guid: 86da56db19f4497da3c98a1dd3b10f0f, type: 3}
+  - key: GemLoadBar
+    asset: {fileID: 2800000, guid: afe630f45d5f4e51b677c245ad16dccb, type: 3}
+  - key: GemLoadBarBG
+    asset: {fileID: 2800000, guid: 6979857ec8e84a2ba3fdb8288679ce56, type: 3}
+  - key: GemSparkle
+    asset: {fileID: 2800000, guid: 47412cbe6a4070148a9c5a1d5024829d, type: 3}
+  - key: GemStun
+    asset: {fileID: 2800000, guid: a5de3880184146909631ed5694af7b59, type: 3}
+  - key: GemUltimate
+    asset: {fileID: 2800000, guid: 9fc63b05adf246dda86bf3636d07e981, type: 3}
+  - key: Green
+    asset: {fileID: 2800000, guid: a4bf917f8c801ad48ac3fa5a3add0783, type: 3}
+  - key: GreenParticles
+    asset: {fileID: 2800000, guid: 8c14d4f6ea3fa8046a9b27e7f2db7405, type: 3}
+  - key: Red
+    asset: {fileID: 2800000, guid: 87ddee48a17e46e4896f6accd9cca143, type: 3}
+  - key: RedParticles
+    asset: {fileID: 2800000, guid: 1b2e16f15322fd5429ad09b450aaec15, type: 3}
+  - key: Yellow
+    asset: {fileID: 2800000, guid: d5f56f5fb2933f247965aac2f77ef7bf, type: 3}
+  - key: YellowParticles
+    asset: {fileID: 2800000, guid: 2b81590c34317a54b99386dccb738f69, type: 3}

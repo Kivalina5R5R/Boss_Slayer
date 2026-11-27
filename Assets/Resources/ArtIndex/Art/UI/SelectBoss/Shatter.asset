@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: Shatter
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: Demon
+    asset: {fileID: 2800000, guid: 136cdecc2ec043579f6b48b94ff921b8, type: 3}
+  - key: Dragon
+    asset: {fileID: 2800000, guid: 3cd64a82422c402a902ef2f00ecdface, type: 3}
+  - key: Fish
+    asset: {fileID: 2800000, guid: 507308f882ed40b782ad10520cc7b9e0, type: 3}
+  - key: Fish_Patch
+    asset: {fileID: 2800000, guid: 303bd31485224c3580e967c1b3e67345, type: 3}
+  - key: Golem
+    asset: {fileID: 2800000, guid: d267e705f53a4774b7caccfdea26beeb, type: 3}
+  - key: Hydra
+    asset: {fileID: 2800000, guid: 5c4b6d1b732c44f585049498fea2a2b6, type: 3}
+  - key: Jellyfish
+    asset: {fileID: 2800000, guid: 42b4bd076fe3493d88f9aeb9915e1136, type: 3}
+  - key: Sentinel
+    asset: {fileID: 2800000, guid: 13a4dd02d36b4bff80706ad1409019f5, type: 3}
+  - key: Serpent
+    asset: {fileID: 2800000, guid: 82bf5ac2e7aa409d9a72a0db475e2529, type: 3}
+  - key: Wraith
+    asset: {fileID: 2800000, guid: 86ff033496ec489eafc37a55a0b24061, type: 3}

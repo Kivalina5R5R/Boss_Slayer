@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: Bosses
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: Boss_AbyssalKing
+    asset: {fileID: 8650939645054131124, guid: a401e3d4d43449641ae15d190948a7f7, type: 3}
+  - key: Boss_CrystalGolem
+    asset: {fileID: 243616817325276530, guid: 90cf8803bbd7fe34a891829b1d404be1, type: 3}
+  - key: Boss_Demon_RedBoy
+    asset: {fileID: 4163944340372986830, guid: 8dd414e046b1265469e0c8a35505a886, type: 3}
+  - key: Boss_Demon_YakshaKing
+    asset: {fileID: 8595122536460221047, guid: 3b4a91dcac1495a4e929e89adba8d404, type: 3}
+  - key: Boss_Dragon
+    asset: {fileID: 8711536394877650825, guid: a1a1724500632e040a034ed0c56c7e4c, type: 3}
+  - key: Boss_GiantFish
+    asset: {fileID: 2300990747823647999, guid: f5018ee4b8051594ba24da4789dfb737, type: 3}
+  - key: Boss_Hydra
+    asset: {fileID: 8049643669766694057, guid: fa1091d62678f714ca91dffd898e7da8, type: 3}
+  - key: Boss_Jellyfish
+    asset: {fileID: 3222936498892247293, guid: 4444d865029890f439aa324c326fd581, type: 3}
+  - key: Boss_SeaSerpent
+    asset: {fileID: 5623441520637658421, guid: 3f29411ba4ede4a498fc551aa48f89b8, type: 3}
+  - key: Boss_Sentinel
+    asset: {fileID: 5658598411187202778, guid: a95a1ae74618b8841a5f14a45b562c4c, type: 3}
+  - key: Boss_VoidWraith
+    asset: {fileID: 6838385633805158843, guid: fe05d62bfb852e743988c6f71b1dc5be, type: 3}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: Fire
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: BGFireWall
+    asset: {fileID: 2800000, guid: f57160bbfc8642a3a6ee1818136696bb, type: 3}
+  - key: BGFloorFire
+    asset: {fileID: 2800000, guid: d98575af8a8048fda8c9e6e05a802cdd, type: 3}
+  - key: Flame
+    asset: {fileID: 2800000, guid: 1c81525bf46942b3a057c54a1092a8f8, type: 3}
+  - key: Particle
+    asset: {fileID: 2800000, guid: 93c875691b9b45c5a2f8113a1b647512, type: 3}
+  - key: RedAlpha
+    asset: {fileID: 2800000, guid: 40f65a05f5ba4209a70f94e9f7d6fc92, type: 3}

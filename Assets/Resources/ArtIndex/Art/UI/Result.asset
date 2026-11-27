@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: Result
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: EdgeLight
+    asset: {fileID: 2800000, guid: db61dc62f25744238ac05981348c7964, type: 3}
+  - key: EdgeLightTight
+    asset: {fileID: 2800000, guid: 5f94f057b7c34d8f83c3671526652e2e, type: 3}
+  - key: GemLine
+    asset: {fileID: 2800000, guid: 51fb7d3312d64ec2bfa4773b11b66f74, type: 3}
+  - key: Panel
+    asset: {fileID: 2800000, guid: 3df5fa28ccf142a58d9011d41f0cd472, type: 3}
+  - key: ParticleDot
+    asset: {fileID: 2800000, guid: 95a4f11742404c9eaa2c7649ee4bbe5e, type: 3}
+  - key: ParticleSquare
+    asset: {fileID: 2800000, guid: d5893786ce554d238a2d9d02fb1a9154, type: 3}
+  - key: PlayerRow
+    asset: {fileID: 2800000, guid: 569525ceb3b24d37abe53d724cb332ca, type: 3}
+  - key: Point
+    asset: {fileID: 2800000, guid: 65d8f080c4a243de81e87db856c8aff7, type: 3}
+  - key: RaidCompleteText
+    asset: {fileID: 2800000, guid: 0bdc3a306304455db15b7ffe0976debf, type: 3}
+  - key: RaidGlow
+    asset: {fileID: 2800000, guid: abb33667b9b84a4880a6bd6bd492d38a, type: 3}
+  - key: RingCycle
+    asset: {fileID: 2800000, guid: ca9f8588578b454391ad03deaf1fbf91, type: 3}

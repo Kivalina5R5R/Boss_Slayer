@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: Land
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: BGEarthScene
+    asset: {fileID: 2800000, guid: 4fd04cf8e5574445b1ac838edf431d7f, type: 3}
+  - key: BGFloorLand
+    asset: {fileID: 2800000, guid: 21e928fde41342c0a493d882ab9eee8e, type: 3}
+  - key: Particle
+    asset: {fileID: 2800000, guid: 72dcceb05cfe4c02a535c458016d5ebc, type: 3}
+  - key: Rock0
+    asset: {fileID: 2800000, guid: 06b42dc72677485aa7b263dad2ffe5f6, type: 3}
+  - key: Rock1
+    asset: {fileID: 2800000, guid: 56242249aac143a59791cc4229e78ae7, type: 3}
+  - key: Rock2
+    asset: {fileID: 2800000, guid: 049765af7c27446cb0c2a9bc3938cff1, type: 3}
+  - key: Rock3
+    asset: {fileID: 2800000, guid: 5b5abfbc567545048a05a643d047986c, type: 3}
+  - key: Rock4
+    asset: {fileID: 2800000, guid: bdb36b25090f46bd914e56e4933b7527, type: 3}
+  - key: Rock5
+    asset: {fileID: 2800000, guid: 53b44a127e9f4873872f1bdcb5c1bf09, type: 3}

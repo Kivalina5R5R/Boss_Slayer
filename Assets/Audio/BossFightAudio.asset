@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f19ffa5302959042861548e72dbfeff, type: 3}
+  m_Name: BossFightAudio
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.BossFightAudioBank
+  output: {fileID: 2060251416485090535, guid: f2fbe0f34b55a714a9205ba943e2a46e, type: 2}
+  clips:
+  - id: boss_card_appear
+    clip: {fileID: 8300000, guid: b7a94740ae9e40488955d1a0b5d0656f, type: 3}
+  - id: boss_card_touch
+    clip: {fileID: 8300000, guid: 51c225cfba1e46d9aca9faef8041151d, type: 3}
+  - id: card_locked
+    clip: {fileID: 8300000, guid: a4d6682a6e4b4aeeb2c9a2ab527eee3c, type: 3}
+  - id: debris_ambience
+    clip: {fileID: 8300000, guid: 75f0b9a855794659a07f03134bacd8d8, type: 3}
+  - id: pad_appear
+    clip: {fileID: 8300000, guid: 46a0c54179a7496fb91b67cea1350ea7, type: 3}
+  - id: pad_cancel
+    clip: {fileID: 8300000, guid: 35697ce8f6c3488d891006d46005c803, type: 3}
+  - id: pad_hold
+    clip: {fileID: 8300000, guid: 13aa8cda7c8e4c7fbf00e622825c2214, type: 3}
+  - id: pad_hold_2
+    clip: {fileID: 8300000, guid: 05be361be4eb4b4d89c99b9e7e49c5d9, type: 3}
+  - id: pad_hold_3
+    clip: {fileID: 8300000, guid: 01267e47d65b4d0986261b0c95dc0269, type: 3}
+  - id: pad_ready
+    clip: {fileID: 8300000, guid: 1ee8ce209b444bffbf0b777a66645a0b, type: 3}
+  - id: pad_touch
+    clip: {fileID: 8300000, guid: c0e6bc05e2234f8cba96ebdb0a3fe2b0, type: 3}
+  - id: pad_vanish
+    clip: {fileID: 8300000, guid: fc5d0a378aa64052899d0c2053eac202, type: 3}
+  - id: ready_countdown
+    clip: {fileID: 8300000, guid: eb89ae36b7a24471ade8447ab1f2b45c, type: 3}
+  - id: select_countdown
+    clip: {fileID: 8300000, guid: e541bf63711d42e983ceedd0546a84d1, type: 3}
+  - id: select_press
+    clip: {fileID: 8300000, guid: fba9ad060fac44228663c2e2e2492ca8, type: 3}
+  - id: statue_awaken
+    clip: {fileID: 8300000, guid: 10565dad212b4f5da053c3823ae54c85, type: 3}
+  - id: statue_crumble
+    clip: {fileID: 8300000, guid: 63c3076009e94a6bbfad879a0a660ba1, type: 3}
+  - id: transition
+    clip: {fileID: 8300000, guid: 2495adbe75dd4371b433d347e3b50e53, type: 3}
+  - id: wall_crumble
+    clip: {fileID: 8300000, guid: 43850e4b036a4add997d1b33182e58ed, type: 3}
+  - id: wall_zoom
+    clip: {fileID: 8300000, guid: e328671b2710412d83fe9b7b21a7e949, type: 3}
+  - id: wall_rocks_fall
+    clip: {fileID: 8300000, guid: 76cad61aecd845f88a9d6a388b08f56c, type: 3}
+  - id: wall_boulder_fall
+    clip: {fileID: 8300000, guid: 49ceb23a277f4a31a07e8c8c7682ab34, type: 3}
+  - id: statue_collapse
+    clip: {fileID: 8300000, guid: 25a059d89f59424a9239179ff40e6519, type: 3}
+  - id: statue_slam
+    clip: {fileID: 8300000, guid: 99ad6fc022f14bae96acf7dcf687a05c, type: 3}
+  - id: gem_flight
+    clip: {fileID: 8300000, guid: 9d8be927afcd4d63bb61989b3ef8ef69, type: 3}
+  - id: gem_impact
+    clip: {fileID: 8300000, guid: de742d0672624264879c97fee548f285, type: 3}
+  - id: gem_pickup
+    clip: {fileID: 8300000, guid: b04c6ae33b7640c384e7acd1a73f6ccf, type: 3}
+  - id: charge_0
+    clip: {fileID: 8300000, guid: a59cda87ef3b4005aa60f020ec5cf654, type: 3}
+  - id: charge_1
+    clip: {fileID: 8300000, guid: 439c8c9c6e38467b957bca8b4b1e1610, type: 3}
+  - id: charge_2
+    clip: {fileID: 8300000, guid: f1a1089a4abd4b588c9e90743cfaab3f, type: 3}
+  - id: charge_3
+    clip: {fileID: 8300000, guid: 4d64d84c8e1f415aba8df00dc89012c4, type: 3}
+  - id: charge_4
+    clip: {fileID: 8300000, guid: 1e23c4b4bdb347c188b795bce73059f5, type: 3}
+  - id: charge_5
+    clip: {fileID: 8300000, guid: 0bf731880d1648afa2d10a1890b46b60, type: 3}
+  - id: charge_6
+    clip: {fileID: 8300000, guid: 59209707455f4733abaee5903681e68c, type: 3}
+  - id: charge_7
+    clip: {fileID: 8300000, guid: a7edf788f7f2409e954aef658a48e4a7, type: 3}
+  - id: charge_8
+    clip: {fileID: 8300000, guid: 6490b5dae0554841b8bc8a65ab82860f, type: 3}
+  - id: release_0
+    clip: {fileID: 8300000, guid: 778d9e497f2042ba88e9583d7cc87e33, type: 3}
+  - id: release_1
+    clip: {fileID: 8300000, guid: 0ad319fe9af842ca9f97fd3ce247ad92, type: 3}
+  - id: release_2
+    clip: {fileID: 8300000, guid: 6d1ba18ede44437aa13c31e8d3e36639, type: 3}
+  - id: release_3
+    clip: {fileID: 8300000, guid: 0c38787c51414c179c8e7bc742e257db, type: 3}
+  - id: release_4
+    clip: {fileID: 8300000, guid: 62b5a9f3c6c74ceeae0c939198c40093, type: 3}
+  - id: release_5
+    clip: {fileID: 8300000, guid: 4b3420b1552a4949b9eab2bc9dcaaa3a, type: 3}
+  - id: release_6
+    clip: {fileID: 8300000, guid: 6322566d69524553857da9222374aba4, type: 3}
+  - id: release_7
+    clip: {fileID: 8300000, guid: 3b6642504d814fc9b5e6091118dab992, type: 3}
+  - id: release_8
+    clip: {fileID: 8300000, guid: 1d35c082e9214e4a992c9f8ad6a78bc7, type: 3}
+  - id: boss_big_charge
+    clip: {fileID: 8300000, guid: 330e67b5467a4ce78fbf5dd001a040d2, type: 3}
+  - id: boss_break
+    clip: {fileID: 8300000, guid: b3eecf0e22a8495f8ff95567adb5bd17, type: 3}
+  - id: boss_escaped
+    clip: {fileID: 8300000, guid: 403b78ce3e13436ca4614159ae50eded, type: 3}

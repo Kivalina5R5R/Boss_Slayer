@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: Final
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: BGFinalBossScene
+    asset: {fileID: 2800000, guid: 97d2ad88670d4575a0bf388db6644db8, type: 3}
+  - key: BGFloorFinal
+    asset: {fileID: 2800000, guid: f34a18c7dd534a008dcb5eafd2041997, type: 3}
+  - key: Float0
+    asset: {fileID: 2800000, guid: 2bdbfb9192cc4a5dbb532eb2edbca825, type: 3}
+  - key: Float1
+    asset: {fileID: 2800000, guid: 7633e4f73d094c98b6867ca22d10e97e, type: 3}
+  - key: Float2
+    asset: {fileID: 2800000, guid: 051547ae4d634dbe9c4f3f89a618749c, type: 3}
+  - key: Float3
+    asset: {fileID: 2800000, guid: fe4ed186ce7d4928a2d1eaf991900dd6, type: 3}
+  - key: Float4
+    asset: {fileID: 2800000, guid: fbe76a0550a3492cbc76a05cf8804e3e, type: 3}
+  - key: Float5
+    asset: {fileID: 2800000, guid: c3e902236b9f48f8b310c0802a210390, type: 3}
+  - key: Float6
+    asset: {fileID: 2800000, guid: 93aa34e50e9a44bda26e35db3f458fc3, type: 3}
+  - key: Float7
+    asset: {fileID: 2800000, guid: 5919ddfb17cd4a5f904edebb54b4fa75, type: 3}
+  - key: Float8
+    asset: {fileID: 2800000, guid: 7060f97755e54b81852f877603da76e6, type: 3}

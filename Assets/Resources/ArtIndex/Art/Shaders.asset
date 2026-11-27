@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1101ed93b3ed4e72a788918589d28c01, type: 3}
+  m_Name: Shaders
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.ArtFolderIndex
+  entries:
+  - key: BossAttackSpark
+    asset: {fileID: 4800000, guid: 1b99682cf465b4b4bae090815f5d3069, type: 3}
+  - key: BossAttackSurface
+    asset: {fileID: 4800000, guid: e16275dba3ad33f4e972fec6ba4ebf89, type: 3}
+  - key: BossCharge
+    asset: {fileID: 4800000, guid: 91e70722d66c4ad18c1c6e07ef1a4bde, type: 3}
+  - key: BossChargeBurst
+    asset: {fileID: 4800000, guid: e124593b77564018ab0b9e5880ab1397, type: 3}
+  - key: BossCinematic
+    asset: {fileID: 4800000, guid: 2064f0ce154c23c49ab2beca6fab6fe1, type: 3}
+  - key: BossCrystalBeamVolume
+    asset: {fileID: 4800000, guid: d36dfc1fca8f1f44da21cbc06c1c60d1, type: 3}
+  - key: BossDemonRageFlame
+    asset: {fileID: 4800000, guid: b5918937cf607c64a9085b53b3b83def, type: 3}
+  - key: BossDivineHalo
+    asset: {fileID: 4800000, guid: 5683571f0cf0d784a85201bfc5705738, type: 3}
+  - key: BossDragonChestHeat
+    asset: {fileID: 4800000, guid: 3dcb94c9a7b5cd542b9362ce8d3beefa, type: 3}
+  - key: BossDragonFireEdge
+    asset: {fileID: 4800000, guid: 7c7fdbbf79f9fdc46aba6cc093864bb9, type: 3}
+  - key: BossDragonPhaseFlame
+    asset: {fileID: 4800000, guid: 370e0a28ca928ec40bcbfda6b7c6bed3, type: 3}
+  - key: BossEdgeFeather
+    asset: {fileID: 4800000, guid: e31831c7aeb4e324cbdbf09ebba4563e, type: 3}
+  - key: BossEnvironmentMotion
+    asset: {fileID: 4800000, guid: 829a89c9a194d3546b33fabf8fa72746, type: 3}
+  - key: BossFantasyExplosion
+    asset: {fileID: 4800000, guid: 8546f2906e3a3c34ca086d723ebd1eab, type: 3}
+  - key: BossFloorGlow
+    asset: {fileID: 4800000, guid: 69352eafd8a20a849932c4f6bf86d890, type: 3}
+  - key: BossGemAura
+    asset: {fileID: 4800000, guid: 938a98898d0e4fc885c2463c1ae869b2, type: 3}
+  - key: BossGemCrystal
+    asset: {fileID: 4800000, guid: fa9e6b5daa0649f4a5f63e60564cdbb7, type: 3}
+  - key: BossGemParticle
+    asset: {fileID: 4800000, guid: 7c4554c1d7ff47744b4ac575c74978d5, type: 3}
+  - key: BossJellyElectric
+    asset: {fileID: 4800000, guid: 1779183c586f3564bbe3710d682a5ecc, type: 3}
+  - key: BossPortalOrbit
+    asset: {fileID: 4800000, guid: 7a1666e1b5894ac9b6392bc50edd9900, type: 3}
+  - key: BossPortalSpin
+    asset: {fileID: 4800000, guid: f74bbf890be3b6d4e825e0eac567f170, type: 3}
+  - key: BossSafeZone
+    asset: {fileID: 4800000, guid: 6973b4212e240a94abaa4aebc0afeac8, type: 3}
+  - key: BossSerpentWater
+    asset: {fileID: 4800000, guid: 91f43e24548e8eb439a8a3e4782b363a, type: 3}
+  - key: BossShockwave
+    asset: {fileID: 4800000, guid: 7bd4b6592ffb4c3a9452b16f8352e1db, type: 3}
+  - key: BossThemeSurface
+    asset: {fileID: 4800000, guid: a6d794ad897b604479b9ca44af55374e, type: 3}
+  - key: BossUiAdditive
+    asset: {fileID: 4800000, guid: 94a4162feedd15f43a930725b98415c4, type: 3}
+  - key: BossVoxelEnergy
+    asset: {fileID: 4800000, guid: 272b45bc7dd82454ab500ed930b447eb, type: 3}
+  - key: BossWaterCaustics
+    asset: {fileID: 4800000, guid: 047a6dc22b3d460099c430485d4330e5, type: 3}
+  - key: BossWraithMist
+    asset: {fileID: 4800000, guid: d19127799ca2fbe4f8542fea990d9d31, type: 3}
+  - key: VertexColorLit
+    asset: {fileID: 4800000, guid: 3d58f30caffeaeb4a9307d34f0562f9d, type: 3}

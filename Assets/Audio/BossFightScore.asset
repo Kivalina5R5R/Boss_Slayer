@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ffba9f66573e844945f352a405365e, type: 3}
+  m_Name: BossFightScore
+  m_EditorClassIdentifier: Assembly-CSharp::BossSlayer.BossFightScoreBank
+  output: {fileID: -7566028490912883298, guid: f2fbe0f34b55a714a9205ba943e2a46e, type: 2}
+  menu: {fileID: 8300000, guid: d67f8c03ec0f461aa32074cb79b30ba4, type: 3}
+  result: {fileID: 8300000, guid: 23160fd80e0e466fb26e4cbeefa6416f, type: 3}
+  abyssalKing: {fileID: 8300000, guid: 718391ddeff54c7684527a7ac1755483, type: 3}
+  bosses:
+  - bossName: DemonBoss
+    music: {fileID: 8300000, guid: 3098b439b65f44f381d0ba2b8661543b, type: 3}
+    roar: {fileID: 8300000, guid: b4ce01e1c0a447d3b702c1bcc7ac0ac7, type: 3}
+  - bossName: GiantFish
+    music: {fileID: 8300000, guid: f85e934907df461cbdeb6ed722b17856, type: 3}
+    roar: {fileID: 8300000, guid: db7ecd4d59a54d20988a5e4c9c7a0b70, type: 3}
+  - bossName: JeelyFishBoss
+    music: {fileID: 8300000, guid: f85e934907df461cbdeb6ed722b17856, type: 3}
+    roar: {fileID: 8300000, guid: 10a2693c86644f92916696d5787f776e, type: 3}
+  - bossName: DragonBoss
+    music: {fileID: 8300000, guid: 3098b439b65f44f381d0ba2b8661543b, type: 3}
+    roar: {fileID: 8300000, guid: dc47b4a50b394c6aaf2b87e06caae824, type: 3}
+  - bossName: CrystalGolem
+    music: {fileID: 8300000, guid: 8dba9c6a71424f36b83fd5757fdd1b4a, type: 3}
+    roar: {fileID: 8300000, guid: 54e7bc76971940068d7dec714347299a, type: 3}
+  - bossName: SeaSerpentBoss
+    music: {fileID: 8300000, guid: f85e934907df461cbdeb6ed722b17856, type: 3}
+    roar: {fileID: 8300000, guid: 0d88eabe51d6402888aa02ec91162927, type: 3}
+  - bossName: SentinelBoss
+    music: {fileID: 8300000, guid: 8dba9c6a71424f36b83fd5757fdd1b4a, type: 3}
+    roar: {fileID: 8300000, guid: c31f4fd165ab4eb79396416a3f317a51, type: 3}
+  - bossName: VoidWraithBoss
+    music: {fileID: 8300000, guid: 3098b439b65f44f381d0ba2b8661543b, type: 3}
+    roar: {fileID: 8300000, guid: 99b53334ca5c450e96031321296fc62c, type: 3}
+  - bossName: HydraBoss
+    music: {fileID: 8300000, guid: 8dba9c6a71424f36b83fd5757fdd1b4a, type: 3}
+    roar: {fileID: 8300000, guid: 8189a148cb42490e97c9b91f62d0114c, type: 3}
